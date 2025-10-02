@@ -1,0 +1,10 @@
+E:/Programming/Verilog/Template/build/CMakeFiles/and_gate_build.dir
+E:/Programming/Verilog/Template/build/CMakeFiles/run_and_gate.dir
+E:/Programming/Verilog/Template/build/CMakeFiles/logic_gate_build.dir
+E:/Programming/Verilog/Template/build/CMakeFiles/run_logic_gate.dir
+E:/Programming/Verilog/Template/build/CMakeFiles/or_gate_build.dir
+E:/Programming/Verilog/Template/build/CMakeFiles/run_or_gate.dir
+E:/Programming/Verilog/Template/build/CMakeFiles/run_all.dir
+E:/Programming/Verilog/Template/build/CMakeFiles/clean_all.dir
+E:/Programming/Verilog/Template/build/CMakeFiles/ALL_BUILD.dir
+E:/Programming/Verilog/Template/build/CMakeFiles/ZERO_CHECK.dir
