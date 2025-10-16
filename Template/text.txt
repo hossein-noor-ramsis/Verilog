@@ -1,0 +1,3 @@
+"code-runner.executorMap": {
+  "verilog": "cd $dir && iverilog -o ../build/$fileNameWithoutExt.out ../tb/$fileNameWithoutExt.v ../src/*.v && vvp ../build/$fileNameWithoutExt.out"
+}

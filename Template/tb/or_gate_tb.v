@@ -19,8 +19,8 @@ module or_gate_tb;
 
   // Generate waveform file
   initial begin
-    $dumpfile("wave/or_gate.vcd");
-    $dumpvars(0, tb_or_gate);
+    $dumpfile("../wave/or_gate_tb.vcd");
+    $dumpvars(0, or_gate_tb);
   end
 
   // Apply test vectors

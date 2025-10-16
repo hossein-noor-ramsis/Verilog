@@ -17,8 +17,8 @@ module logic_tb;
   );
 
   initial begin
-    $dumpfile("wave/tb_logic.vcd");
-    $dumpvars(0, tb_logic);
+    $dumpfile("../wave/logic_tb.vcd");
+    $dumpvars(0, logic_tb);
 
     a = 0;
     b = 0;

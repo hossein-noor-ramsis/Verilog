@@ -18,8 +18,8 @@ module and_gate_tb;
 
   // Generate waveform file (optional)
   initial begin
-    $dumpfile("wave/and_gate.vcd");
-    $dumpvars(0, tb_and_gate);
+    $dumpfile("../wave/and_gate_tb.vcd");
+    $dumpvars(0, and_gate_tb);
   end
 
   // Test cases

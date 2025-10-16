@@ -7,130 +7,93 @@
 :vpi_module "D:\iverilog\lib\ivl\vhdl_textio.vpi";
 :vpi_module "D:\iverilog\lib\ivl\v2005_math.vpi";
 :vpi_module "D:\iverilog\lib\ivl\va_math.vpi";
-S_0000027a9b06bbd0 .scope module, "adder" "adder" 2 1;
+S_000001d67c955060 .scope module, "d_ff_tb" "d_ff_tb" 2 3;
  .timescale -9 -12;
-    .port_info 0 /INPUT 8 "a";
-    .port_info 1 /INPUT 8 "b";
-    .port_info 2 /OUTPUT 8 "sum";
-P_0000027a9b01af00 .param/l "WIDTH" 0 2 2, +C4<00000000000000000000000000001000>;
-o0000027a9b06cf98 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
-v0000027a9b058830_0 .net "a", 7 0, o0000027a9b06cf98;  0 drivers
-o0000027a9b06cfc8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
-v0000027a9b069e10_0 .net "b", 7 0, o0000027a9b06cfc8;  0 drivers
-v0000027a9b069eb0_0 .net "sum", 7 0, L_0000027a9b064a40;  1 drivers
-L_0000027a9b064a40 .arith/sum 8, o0000027a9b06cf98, o0000027a9b06cfc8;
-S_0000027a9b06bd60 .scope module, "and_gate" "and_gate" 3 3;
- .timescale -9 -9;
-    .port_info 0 /INPUT 1 "a";
-    .port_info 1 /INPUT 1 "b";
-    .port_info 2 /OUTPUT 1 "y";
-o0000027a9b06d0b8 .functor BUFZ 1, C4<z>; HiZ drive
-o0000027a9b06d0e8 .functor BUFZ 1, C4<z>; HiZ drive
-L_0000027a9b056780 .functor AND 1, o0000027a9b06d0b8, o0000027a9b06d0e8, C4<1>, C4<1>;
-v0000027a9b06bef0_0 .net "a", 0 0, o0000027a9b06d0b8;  0 drivers
-v0000027a9b06bf90_0 .net "b", 0 0, o0000027a9b06d0e8;  0 drivers
-v0000027a9b01e9f0_0 .net "y", 0 0, L_0000027a9b056780;  1 drivers
-S_0000027a9b069af0 .scope module, "or_gate" "or_gate" 4 3;
- .timescale -9 -9;
-    .port_info 0 /INPUT 1 "a";
-    .port_info 1 /INPUT 1 "b";
-    .port_info 2 /OUTPUT 1 "y";
-o0000027a9b06d1d8 .functor BUFZ 1, C4<z>; HiZ drive
-o0000027a9b06d208 .functor BUFZ 1, C4<z>; HiZ drive
-L_0000027a9b0568d0 .functor OR 1, o0000027a9b06d1d8, o0000027a9b06d208, C4<0>, C4<0>;
-v0000027a9b01ea90_0 .net "a", 0 0, o0000027a9b06d1d8;  0 drivers
-v0000027a9b01eb30_0 .net "b", 0 0, o0000027a9b06d208;  0 drivers
-v0000027a9b01ebd0_0 .net "y", 0 0, L_0000027a9b0568d0;  1 drivers
-S_0000027a9b069c80 .scope module, "tb_d_ff" "tb_d_ff" 5 3;
+v000001d67c966d90_0 .var "clk", 0 0;
+v000001d67c966e30_0 .var "d", 0 0;
+v000001d67c966ed0_0 .net "q", 0 0, v000001d67c91cd20_0;  1 drivers
+v000001d67c9645a0_0 .var "rstn", 0 0;
+S_000001d67c966b60 .scope module, "dut" "d_ff" 2 12, 3 1 0, S_000001d67c955060;
  .timescale -9 -12;
-v0000027a9b064cc0_0 .var "clk", 0 0;
-v0000027a9b064b80_0 .var "d", 0 0;
-v0000027a9b064720_0 .net "q", 0 0, v0000027a9b032610_0;  1 drivers
-v0000027a9b064ae0_0 .var "rstn", 0 0;
-S_0000027a9b01ec70 .scope module, "dut" "d_ff" 5 12, 6 1 0, S_0000027a9b069c80;
- .timescale -9 -9;
     .port_info 0 /INPUT 1 "clk";
     .port_info 1 /INPUT 1 "rstn";
     .port_info 2 /INPUT 1 "d";
     .port_info 3 /OUTPUT 1 "q";
-v0000027a9b0324d0_0 .net "clk", 0 0, v0000027a9b064cc0_0;  1 drivers
-v0000027a9b032570_0 .net "d", 0 0, v0000027a9b064b80_0;  1 drivers
-v0000027a9b032610_0 .var "q", 0 0;
-v0000027a9b0326b0_0 .net "rstn", 0 0, v0000027a9b064ae0_0;  1 drivers
-E_0000027a9b01b2c0/0 .event negedge, v0000027a9b0326b0_0;
-E_0000027a9b01b2c0/1 .event posedge, v0000027a9b0324d0_0;
-E_0000027a9b01b2c0 .event/or E_0000027a9b01b2c0/0, E_0000027a9b01b2c0/1;
-    .scope S_0000027a9b01ec70;
+v000001d67c9551f0_0 .net "clk", 0 0, v000001d67c966d90_0;  1 drivers
+v000001d67c932910_0 .net "d", 0 0, v000001d67c966e30_0;  1 drivers
+v000001d67c91cd20_0 .var "q", 0 0;
+v000001d67c966cf0_0 .net "rstn", 0 0, v000001d67c9645a0_0;  1 drivers
+E_000001d67c91c790/0 .event negedge, v000001d67c966cf0_0;
+E_000001d67c91c790/1 .event posedge, v000001d67c9551f0_0;
+E_000001d67c91c790 .event/or E_000001d67c91c790/0, E_000001d67c91c790/1;
+    .scope S_000001d67c966b60;
 T_0 ;
-    %wait E_0000027a9b01b2c0;
-    %load/vec4 v0000027a9b0326b0_0;
+    %wait E_000001d67c91c790;
+    %load/vec4 v000001d67c966cf0_0;
     %nor/r;
     %flag_set/vec4 8;
     %jmp/0xz  T_0.0, 8;
     %pushi/vec4 0, 0, 1;
-    %assign/vec4 v0000027a9b032610_0, 0;
+    %assign/vec4 v000001d67c91cd20_0, 0;
     %jmp T_0.1;
 T_0.0 ;
-    %load/vec4 v0000027a9b032570_0;
-    %assign/vec4 v0000027a9b032610_0, 0;
+    %load/vec4 v000001d67c932910_0;
+    %assign/vec4 v000001d67c91cd20_0, 0;
 T_0.1 ;
     %jmp T_0;
     .thread T_0;
-    .scope S_0000027a9b069c80;
+    .scope S_000001d67c955060;
 T_1 ;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0000027a9b064cc0_0, 0, 1;
+    %store/vec4 v000001d67c966d90_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0000027a9b064ae0_0, 0, 1;
+    %store/vec4 v000001d67c9645a0_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0000027a9b064b80_0, 0, 1;
+    %store/vec4 v000001d67c966e30_0, 0, 1;
     %end;
     .thread T_1;
-    .scope S_0000027a9b069c80;
+    .scope S_000001d67c955060;
 T_2 ;
     %delay 5000, 0;
-    %load/vec4 v0000027a9b064cc0_0;
+    %load/vec4 v000001d67c966d90_0;
     %inv;
-    %store/vec4 v0000027a9b064cc0_0, 0, 1;
+    %store/vec4 v000001d67c966d90_0, 0, 1;
     %jmp T_2;
     .thread T_2;
-    .scope S_0000027a9b069c80;
+    .scope S_000001d67c955060;
 T_3 ;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0000027a9b064ae0_0, 0, 1;
+    %store/vec4 v000001d67c9645a0_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0000027a9b064b80_0, 0, 1;
+    %store/vec4 v000001d67c966e30_0, 0, 1;
     %delay 10000, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0000027a9b064ae0_0, 0, 1;
+    %store/vec4 v000001d67c9645a0_0, 0, 1;
     %delay 10000, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0000027a9b064b80_0, 0, 1;
+    %store/vec4 v000001d67c966e30_0, 0, 1;
     %delay 10000, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0000027a9b064b80_0, 0, 1;
+    %store/vec4 v000001d67c966e30_0, 0, 1;
     %delay 10000, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0000027a9b064b80_0, 0, 1;
+    %store/vec4 v000001d67c966e30_0, 0, 1;
     %delay 15000, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0000027a9b064b80_0, 0, 1;
+    %store/vec4 v000001d67c966e30_0, 0, 1;
     %delay 20000, 0;
-    %vpi_call 5 38 "$finish" {0 0 0};
+    %vpi_call 2 38 "$finish" {0 0 0};
     %end;
     .thread T_3;
-    .scope S_0000027a9b069c80;
+    .scope S_000001d67c955060;
 T_4 ;
-    %vpi_call 5 43 "$display", "Time\011clk\011rstn\011d\011q" {0 0 0};
-    %vpi_call 5 44 "$monitor", "%0t\011%b\011%b\011%b\011%b", $time, v0000027a9b064cc0_0, v0000027a9b064ae0_0, v0000027a9b064b80_0, v0000027a9b064720_0 {0 0 0};
+    %vpi_call 2 43 "$display", "Time\011clk\011rstn\011d\011q" {0 0 0};
+    %vpi_call 2 44 "$monitor", "%0t\011%b\011%b\011%b\011%b", $time, v000001d67c966d90_0, v000001d67c9645a0_0, v000001d67c966e30_0, v000001d67c966ed0_0 {0 0 0};
     %end;
     .thread T_4;
 # The file index is used to find the file name in the following table.
-:file_names 7;
+:file_names 4;
     "N/A";
     "<interactive>";
-    "src/adder.v";
-    "src/and_gate.v";
-    "src/or_gate.v";
-    "tb/d_ff.v";
-    "src/d_ff.v";
+    "./tb/d_ff.v";
+    "./src/d_ff.v";

@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps  // optional but recommended for simulation
+`timescale 1ns / 1ns  // optional but recommended for simulation
 
 module d_ff_tb;
   wire q;  // output
@@ -35,13 +35,13 @@ module d_ff_tb;
     #15 d = 0;  // extra time to see changes across clock edges
 
     // End simulation
-    #20 $finish;
+    #21 $finish;
   end
 
   // Monitor outputs
   initial begin
-    $display("Time\tclk\trstn\td\tq");
-    $monitor("%0t\t%b\t%b\t%b\t%b", $time, clk, rstn, d, q);
+    $display("Time   clk   rstn   d   q");
+    $monitor("%0t    %b    t%b    %b  %b", $time, clk, rstn, d, q);
   end
 
 endmodule
