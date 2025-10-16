@@ -1,0 +1,218 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Programming/Verilog/CA1
+vnand2_gate
+Z1 !s110 1760635274
+!i10b 1
+!s100 0XoFBP1m8WUGeQc4A^19>2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IjoO=YlMhhLB8O1gOa]__13
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1760615371
+8E:/Programming/Verilog/CA1/nand2_gate.v
+FE:/Programming/Verilog/CA1/nand2_gate.v
+!i122 9
+L0 3 18
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1760635274.000000
+!s107 E:/Programming/Verilog/CA1/nand2_gate.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA1/nand2_gate.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vnand2_gate_tb
+R1
+!i10b 1
+!s100 L^@_V@CRcWO3zIHoFJ_N]3
+R2
+I0KARTM;XFIQ0gNK?YhY862
+R3
+R0
+w1760630250
+8E:/Programming/Verilog/CA1/nand2_gate_tb.v
+FE:/Programming/Verilog/CA1/nand2_gate_tb.v
+!i122 11
+L0 3 32
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Programming/Verilog/CA1/nand2_gate_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA1/nand2_gate_tb.v|
+!i113 1
+R6
+R7
+vnand2_gate_tb2
+R1
+!i10b 1
+!s100 72:J8Bi4DT0Dj[3cEIBf21
+R2
+I]DK3;l2MT0OWhN8XBDO7@3
+R3
+R0
+w1760630256
+8E:/Programming/Verilog/CA1/nand2_gate_tb2.v
+FE:/Programming/Verilog/CA1/nand2_gate_tb2.v
+!i122 12
+L0 3 34
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Programming/Verilog/CA1/nand2_gate_tb2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA1/nand2_gate_tb2.v|
+!i113 1
+R6
+R7
+vnand2_tristate_gate
+R1
+!i10b 1
+!s100 jf_bdcLeS6Ez<FH7PzAzD3
+R2
+IL_X?]8PGN8;TnQj=TdY9g1
+R3
+R0
+w1760633239
+8E:/Programming/Verilog/CA1/nand2_tristate_gate.v
+FE:/Programming/Verilog/CA1/nand2_tristate_gate.v
+!i122 13
+L0 3 25
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Programming/Verilog/CA1/nand2_tristate_gate.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA1/nand2_tristate_gate.v|
+!i113 1
+R6
+R7
+vnand2_tristate_gate_tb
+R1
+!i10b 1
+!s100 d`NHkjAe1J]LT6L3[aRPV3
+R2
+IGZ2J0AMJOdI=KXAJGDW9B1
+R3
+R0
+w1760633230
+8E:/Programming/Verilog/CA1/nand2_tristate_gate_tb.v
+FE:/Programming/Verilog/CA1/nand2_tristate_gate_tb.v
+!i122 14
+L0 3 56
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Programming/Verilog/CA1/nand2_tristate_gate_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA1/nand2_tristate_gate_tb.v|
+!i113 1
+R6
+R7
+vnand2_tristate_gate_tb2
+R1
+!i10b 1
+!s100 ZbQiPS20PA>8e86jBUa8_2
+R2
+I`7KH9zMSe<H4kOmO;m56O3
+R3
+R0
+w1760633203
+8E:/Programming/Verilog/CA1/nand2_tristate_gate_tb2.v
+FE:/Programming/Verilog/CA1/nand2_tristate_gate_tb2.v
+!i122 15
+L0 3 65
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Programming/Verilog/CA1/nand2_tristate_gate_tb2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA1/nand2_tristate_gate_tb2.v|
+!i113 1
+R6
+R7
+vnand3_gate
+R1
+!i10b 1
+!s100 3Wd>6BYLgW]i7]b5oG_TO1
+R2
+IEe:l_1PSaAZCCK?D@1iXH3
+R3
+R0
+w1760615127
+8E:/Programming/Verilog/CA1/nand3_gate.v
+FE:/Programming/Verilog/CA1/nand3_gate.v
+!i122 10
+L0 3 22
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Programming/Verilog/CA1/nand3_gate.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA1/nand3_gate.v|
+!i113 1
+R6
+R7
+vnand3_gate_tb
+R1
+!i10b 1
+!s100 9YEgkf><Rn;>0JRCTedn33
+R2
+I2kmGgFN`GCo5M4CYgm65;2
+R3
+R0
+w1760633487
+8E:/Programming/Verilog/CA1/nand3_gate_tb.v
+FE:/Programming/Verilog/CA1/nand3_gate_tb.v
+!i122 17
+L0 3 57
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Programming/Verilog/CA1/nand3_gate_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA1/nand3_gate_tb.v|
+!i113 1
+R6
+R7
+vnand3_gate_tb2
+R1
+!i10b 1
+!s100 :gfKK[a];16_6J2FBYNBP3
+R2
+IGcn^CU@zic6hJHZ;`B[I?0
+R3
+R0
+w1760633415
+8E:/Programming/Verilog/CA1/nand3_gate_tb2.v
+FE:/Programming/Verilog/CA1/nand3_gate_tb2.v
+!i122 16
+L0 3 59
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Programming/Verilog/CA1/nand3_gate_tb2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA1/nand3_gate_tb2.v|
+!i113 1
+R6
+R7

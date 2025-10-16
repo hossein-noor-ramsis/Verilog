@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>E:\Programming\Verilog\Template\build\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\Programming\Verilog\Template\build\x64\Debug\and_gate_build</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\Programming\Verilog\Template\build\x64\Debug\run_and_gate</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\Programming\Verilog\Template\build\x64\Debug\logic_gate_build</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\Programming\Verilog\Template\build\x64\Debug\run_logic_gate</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\Programming\Verilog\Template\build\x64\Debug\or_gate_build</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\Programming\Verilog\Template\build\x64\Debug\run_or_gate</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\Programming\Verilog\Template\build\x64\Debug\run_all</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
