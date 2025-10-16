@@ -1,0 +1,28 @@
+^E:\PROGRAMMING\VERILOG\TEMPLATE\BUILD\CMAKEFILES\C827BC1BE90C4ABFBD071488D305EAF8\OR_GATE.OUT.RULE
+setlocal
+iverilog -o E:/Programming/Verilog/Template/build/or_gate.out E:/Programming/Verilog/Template/tb/or_gate.v E:/Programming/Verilog/Template/src/and_gate.v E:/Programming/Verilog/Template/src/or_gate.v
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^E:\PROGRAMMING\VERILOG\TEMPLATE\BUILD\CMAKEFILES\7F6D8FD93A960082B13FC62E839CC6BF\OR_GATE_BUILD.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^E:\PROGRAMMING\VERILOG\TEMPLATE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/Programming/Verilog/Template -BE:/Programming/Verilog/Template/build --check-stamp-file E:/Programming/Verilog/Template/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

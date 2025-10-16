@@ -1,7 +1,7 @@
 `timescale 1ns / 1ns
 
 // File: tb/or_gate.v
-module tb_or_gate;
+module or_gate_tb;
 
   // Inputs
   reg  a;

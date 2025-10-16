@@ -1,0 +1,26 @@
+^E:\PROGRAMMING\VERILOG\TEMPLATE\BUILD\CMAKEFILES\7F6D8FD93A960082B13FC62E839CC6BF\RUN_LOGIC_GATE.RULE
+setlocal
+cd E:\Programming\Verilog\Template
+if %errorlevel% neq 0 goto :cmEnd
+E:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "Running E:/Programming/Verilog/Template/build/logic_gate.out"
+if %errorlevel% neq 0 goto :cmEnd
+vvp E:/Programming/Verilog/Template/build/logic_gate.out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^E:\PROGRAMMING\VERILOG\TEMPLATE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/Programming/Verilog/Template -BE:/Programming/Verilog/Template/build --check-stamp-file E:/Programming/Verilog/Template/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

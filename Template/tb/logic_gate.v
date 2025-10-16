@@ -1,6 +1,6 @@
 `timescale 1ns / 1ns
 
-module tb_logic;
+module logic_tb;
   reg a, b;
   wire y_and, y_or;
 

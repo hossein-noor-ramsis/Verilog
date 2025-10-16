@@ -1,7 +1,7 @@
 `timescale 1ns / 1ns
 
 // File: tb/and_gate.v
-module tb_and_gate;
+module and_gate_tb;
   reg a, b;  // inputs to the module
   wire y;  // output from the module
 

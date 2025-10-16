@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps  // optional but recommended for simulation
 
-module tb_d_ff;
+module d_ff_tb;
   wire q;  // output
 
   // Testbench signals
