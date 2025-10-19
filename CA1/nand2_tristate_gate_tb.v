@@ -54,5 +54,6 @@ module nand2_tristate_gate_tb;
     c = 1;
     #50;
 
+    $stop;
   end
 endmodule

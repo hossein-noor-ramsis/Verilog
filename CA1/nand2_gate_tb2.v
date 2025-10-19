@@ -11,7 +11,7 @@ module nand2_gate_tb2;
       .w(w1)
   );
 
-  nand #(5, 8) (w2, a, b);
+  nand #(10, 8) (w2, a, b);
 
   // Test cases
   initial begin

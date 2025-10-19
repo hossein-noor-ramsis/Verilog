@@ -19,7 +19,7 @@ module nand2_tristate_gate_tb2;
       .w(h)
   );
 
-  bufif1 #(10, 13, 15) uut3 (w2, h, c);
+  bufif1 #(15, 13, 17) uut3 (w2, h, c);
 
   // Test cases
   initial begin
@@ -63,5 +63,6 @@ module nand2_tristate_gate_tb2;
     c = 1;
     #50;
 
+    $stop;
   end
 endmodule

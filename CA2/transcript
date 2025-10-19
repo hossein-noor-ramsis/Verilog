@@ -1,0 +1,114 @@
+# Compile of nand2_gate.v was successful.
+# Compile of nand3_gate.v was successful.
+# Compile of nand2_gate_tb.v was successful.
+# Compile of nand2_gate_tb2.v was successful.
+# Compile of nand2_tristate_gate.v was successful.
+# Compile of nand2_tristate_gate_tb.v was successful.
+# Compile of nand2_tristate_gate_tb2.v was successful.
+# Compile of nand3_gate_tb2.v was successful.
+# Compile of nand3_gate_tb.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.nand2_gate_tb
+# vsim work.nand2_gate_tb 
+# Start time: 23:55:55 on Oct 18,2025
+# Loading work.nand2_gate_tb
+# Loading work.nand2_gate
+add wave -position insertpoint  \
+sim:/nand2_gate_tb/a \
+sim:/nand2_gate_tb/b \
+sim:/nand2_gate_tb/w
+run -all
+# ** Note: $stop    : E:/Programming/Verilog/CA1/nand2_gate_tb.v(32)
+#    Time: 160 ns  Iteration: 0  Instance: /nand2_gate_tb
+# Break in Module nand2_gate_tb at E:/Programming/Verilog/CA1/nand2_gate_tb.v line 32
+vsim work.nand3_gate_tb
+# End time: 23:57:54 on Oct 18,2025, Elapsed time: 0:01:59
+# Errors: 0, Warnings: 2
+# vsim work.nand3_gate_tb 
+# Start time: 23:57:54 on Oct 18,2025
+# Loading work.nand3_gate_tb
+# Loading work.nand3_gate
+add wave -position insertpoint  \
+sim:/nand3_gate_tb/a \
+sim:/nand3_gate_tb/b \
+sim:/nand3_gate_tb/c \
+sim:/nand3_gate_tb/w
+run -all
+# ** Note: $stop    : E:/Programming/Verilog/CA1/nand3_gate_tb.v(57)
+#    Time: 480 ns  Iteration: 0  Instance: /nand3_gate_tb
+# Break in Module nand3_gate_tb at E:/Programming/Verilog/CA1/nand3_gate_tb.v line 57
+# Load canceled
+vsim work.nand2_gate_tb2
+# End time: 00:00:07 on Oct 19,2025, Elapsed time: 0:02:13
+# Errors: 0, Warnings: 1
+# vsim work.nand2_gate_tb2 
+# Start time: 00:00:07 on Oct 19,2025
+# Loading work.nand2_gate_tb2
+# Loading work.nand2_gate
+add wave -position insertpoint  \
+sim:/nand2_gate_tb2/a \
+sim:/nand2_gate_tb2/b \
+sim:/nand2_gate_tb2/w1 \
+sim:/nand2_gate_tb2/w2
+run -all
+# ** Note: $stop    : E:/Programming/Verilog/CA1/nand2_gate_tb2.v(34)
+#    Time: 160 ns  Iteration: 0  Instance: /nand2_gate_tb2
+# Break in Module nand2_gate_tb2 at E:/Programming/Verilog/CA1/nand2_gate_tb2.v line 34
+vsim work.nand3_gate_tb2
+# End time: 00:01:14 on Oct 19,2025, Elapsed time: 0:01:07
+# Errors: 0, Warnings: 1
+# vsim work.nand3_gate_tb2 
+# Start time: 00:01:14 on Oct 19,2025
+# Loading work.nand3_gate_tb2
+# Loading work.nand3_gate
+add wave -position insertpoint  \
+sim:/nand3_gate_tb2/a \
+sim:/nand3_gate_tb2/b \
+sim:/nand3_gate_tb2/c \
+sim:/nand3_gate_tb2/w1 \
+sim:/nand3_gate_tb2/w2
+run -all
+# ** Note: $stop    : E:/Programming/Verilog/CA1/nand3_gate_tb2.v(59)
+#    Time: 480 ns  Iteration: 0  Instance: /nand3_gate_tb2
+# Break in Module nand3_gate_tb2 at E:/Programming/Verilog/CA1/nand3_gate_tb2.v line 59
+vsim work.nand2_tristate_gate_tb
+# End time: 00:02:26 on Oct 19,2025, Elapsed time: 0:01:12
+# Errors: 0, Warnings: 1
+# vsim work.nand2_tristate_gate_tb 
+# Start time: 00:02:26 on Oct 19,2025
+# Loading work.nand2_tristate_gate_tb
+# Loading work.nand2_tristate_gate
+add wave -position insertpoint  \
+sim:/nand2_tristate_gate_tb/a \
+sim:/nand2_tristate_gate_tb/b \
+sim:/nand2_tristate_gate_tb/c \
+sim:/nand2_tristate_gate_tb/w
+run -all
+# ** Note: $stop    : E:/Programming/Verilog/CA1/nand2_tristate_gate_tb.v(57)
+#    Time: 400 ns  Iteration: 0  Instance: /nand2_tristate_gate_tb
+# Break in Module nand2_tristate_gate_tb at E:/Programming/Verilog/CA1/nand2_tristate_gate_tb.v line 57
+run -all
+vsim work.nand2_tristate_gate_tb2
+# End time: 00:03:40 on Oct 19,2025, Elapsed time: 0:01:14
+# Errors: 0, Warnings: 1
+# vsim work.nand2_tristate_gate_tb2 
+# Start time: 00:03:40 on Oct 19,2025
+# Loading work.nand2_tristate_gate_tb2
+# Loading work.nand2_tristate_gate
+# Loading work.nand2_gate
+add wave -position insertpoint  \
+sim:/nand2_tristate_gate_tb2/a \
+sim:/nand2_tristate_gate_tb2/b \
+sim:/nand2_tristate_gate_tb2/c \
+sim:/nand2_tristate_gate_tb2/w1 \
+sim:/nand2_tristate_gate_tb2/w2 \
+sim:/nand2_tristate_gate_tb2/h
+run -all
+# ** Note: $stop    : E:/Programming/Verilog/CA1/nand2_tristate_gate_tb2.v(66)
+#    Time: 400 ns  Iteration: 0  Instance: /nand2_tristate_gate_tb2
+# Break in Module nand2_tristate_gate_tb2 at E:/Programming/Verilog/CA1/nand2_tristate_gate_tb2.v line 66
+run -all
+# End time: 00:10:20 on Oct 19,2025, Elapsed time: 0:06:40
+# Errors: 0, Warnings: 1
+# Closing project E:/Programming/Verilog/CA1/CA1.mpf
+# reading modelsim.ini

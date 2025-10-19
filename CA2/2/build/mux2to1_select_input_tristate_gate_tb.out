@@ -1,0 +1,281 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "D:\iverilog\lib\ivl\system.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\va_math.vpi";
+S_00000128a6bb3510 .scope module, "mux2to1_select_input_tristate_gate_tb" "mux2to1_select_input_tristate_gate_tb" 2 3;
+ .timescale -9 -9;
+v00000128a6c0ae00_0 .var "a", 0 0;
+v00000128a6c0b760_0 .var "b", 0 0;
+v00000128a6c0a9a0_0 .var "oe", 0 0;
+v00000128a6c0acc0_0 .var "s", 0 0;
+v00000128a6c0a680_0 .net "y", 0 0, L_00000128a6b9b510;  1 drivers
+S_00000128a6bb36a0 .scope module, "uut" "mux2to1_select_input_tristate_gate" 2 8, 3 3 0, S_00000128a6bb3510;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "s";
+    .port_info 3 /INPUT 1 "oe";
+    .port_info 4 /OUTPUT 1 "y";
+L_00000128a6b9b0b0 .functor NOT 1, v00000128a6c0acc0_0, C4<0>, C4<0>, C4<0>;
+o00000128a6bb84f8 .functor BUFZ 1, C4<z>; HiZ drive
+L_00000128a6b9b510 .functor NOT 1, o00000128a6bb84f8, C4<0>, C4<0>, C4<0>;
+v00000128a6c0bda0_0 .net "a", 0 0, v00000128a6c0ae00_0;  1 drivers
+v00000128a6c0b940_0 .net "b", 0 0, v00000128a6c0b760_0;  1 drivers
+RS_00000128a6bb8078 .resolv tri, L_00000128a6b9b740, L_00000128a6b9afd0, L_00000128a6b9b120;
+v00000128a6c0b1c0_0 .net8 "h1", 0 0, RS_00000128a6bb8078;  3 drivers, strength-aware
+RS_00000128a6bb8228 .resolv tri, L_00000128a6b9b5f0, L_00000128a6b9bc10, L_00000128a6b9b200;
+v00000128a6c0ad60_0 .net8 "h2", 0 0, RS_00000128a6bb8228;  3 drivers, strength-aware
+RS_00000128a6bb8408 .resolv tri, L_00000128a6b9b890, L_00000128a6b9b430;
+v00000128a6c0aae0_0 .net8 "h3", 0 0, RS_00000128a6bb8408;  2 drivers, strength-aware
+v00000128a6c0a0e0_0 .net "h4", 0 0, o00000128a6bb84f8;  0 drivers
+v00000128a6c0a7c0_0 .net "not_s", 0 0, L_00000128a6b9b0b0;  1 drivers
+v00000128a6c0b440_0 .net "oe", 0 0, v00000128a6c0a9a0_0;  1 drivers
+v00000128a6c0b8a0_0 .net "s", 0 0, v00000128a6c0acc0_0;  1 drivers
+v00000128a6c0b080_0 .net "y", 0 0, L_00000128a6b9b510;  alias, 1 drivers
+S_00000128a6bb0bf0 .scope module, "nand1" "nand2_gate" 3 20, 4 3 0, S_00000128a6bb36a0;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "w";
+L_00000128a6b9b970 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_00000128a6b9bba0/d .functor NMOS 1, L_00000128a6b9b970, v00000128a6c0acc0_0, C4<0>, C4<0>;
+L_00000128a6b9bba0 .delay 1 (3,4,5) L_00000128a6b9bba0/d;
+L_00000128a6b9b740/d .functor NMOS 1, L_00000128a6b9bba0, v00000128a6c0b760_0, C4<0>, C4<0>;
+L_00000128a6b9b740 .delay 1 (3,4,5) L_00000128a6b9b740/d;
+L_00000128a6b9af60 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_00000128a6b9afd0/d .functor PMOS 1, L_00000128a6b9af60, v00000128a6c0b760_0, C4<0>, C4<0>;
+L_00000128a6b9afd0 .delay 1 (5,6,7) L_00000128a6b9afd0/d;
+L_00000128a6b9b120/d .functor PMOS 1, L_00000128a6b9af60, v00000128a6c0acc0_0, C4<0>, C4<0>;
+L_00000128a6b9b120 .delay 1 (5,6,7) L_00000128a6b9b120/d;
+v00000128a6b9e5c0_0 .net "a", 0 0, v00000128a6c0b760_0;  alias, 1 drivers
+v00000128a6b9ea20_0 .net "b", 0 0, v00000128a6c0acc0_0;  alias, 1 drivers
+v00000128a6b9eca0_0 .net8 "gnd", 0 0, L_00000128a6b9b970;  1 drivers, strength-aware
+v00000128a6b9e980_0 .net8 "h1", 0 0, L_00000128a6b9bba0;  1 drivers, strength-aware
+v00000128a6b9ed40_0 .net8 "vdd", 0 0, L_00000128a6b9af60;  1 drivers, strength-aware
+v00000128a6b9f1a0_0 .net8 "w", 0 0, RS_00000128a6bb8078;  alias, 3 drivers, strength-aware
+S_00000128a6bb0d80 .scope module, "nand2" "nand2_gate" 3 27, 4 3 0, S_00000128a6bb36a0;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "w";
+L_00000128a6b9be40 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_00000128a6b9b820/d .functor NMOS 1, L_00000128a6b9be40, v00000128a6c0ae00_0, C4<0>, C4<0>;
+L_00000128a6b9b820 .delay 1 (3,4,5) L_00000128a6b9b820/d;
+L_00000128a6b9b5f0/d .functor NMOS 1, L_00000128a6b9b820, L_00000128a6b9b0b0, C4<0>, C4<0>;
+L_00000128a6b9b5f0 .delay 1 (3,4,5) L_00000128a6b9b5f0/d;
+L_00000128a6b9b270 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_00000128a6b9bc10/d .functor PMOS 1, L_00000128a6b9b270, L_00000128a6b9b0b0, C4<0>, C4<0>;
+L_00000128a6b9bc10 .delay 1 (5,6,7) L_00000128a6b9bc10/d;
+L_00000128a6b9b200/d .functor PMOS 1, L_00000128a6b9b270, v00000128a6c0ae00_0, C4<0>, C4<0>;
+L_00000128a6b9b200 .delay 1 (5,6,7) L_00000128a6b9b200/d;
+v00000128a6b9eac0_0 .net "a", 0 0, L_00000128a6b9b0b0;  alias, 1 drivers
+v00000128a6b9e2a0_0 .net "b", 0 0, v00000128a6c0ae00_0;  alias, 1 drivers
+v00000128a6b9e3e0_0 .net8 "gnd", 0 0, L_00000128a6b9be40;  1 drivers, strength-aware
+v00000128a6b9f100_0 .net8 "h1", 0 0, L_00000128a6b9b820;  1 drivers, strength-aware
+v00000128a6b9e7a0_0 .net8 "vdd", 0 0, L_00000128a6b9b270;  1 drivers, strength-aware
+v00000128a6b9e480_0 .net8 "w", 0 0, RS_00000128a6bb8228;  alias, 3 drivers, strength-aware
+S_00000128a6b72ce0 .scope module, "nand_tristate" "nand2_tristate_gate" 3 34, 5 3 0, S_00000128a6bb36a0;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /OUTPUT 1 "w";
+L_00000128a6b9ba50 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_00000128a6b9bc80/d .functor NMOS 1, L_00000128a6b9ba50, RS_00000128a6bb8078, C4<0>, C4<0>;
+L_00000128a6b9bc80 .delay 1 (3,4,5) L_00000128a6b9bc80/d;
+L_00000128a6b9bcf0/d .functor NMOS 1, L_00000128a6b9bc80, RS_00000128a6bb8228, C4<0>, C4<0>;
+L_00000128a6b9bcf0 .delay 1 (3,4,5) L_00000128a6b9bcf0/d;
+L_00000128a6b9bac0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_00000128a6b9b350/d .functor PMOS 1, L_00000128a6b9bac0, RS_00000128a6bb8228, C4<0>, C4<0>;
+L_00000128a6b9b350 .delay 1 (5,6,7) L_00000128a6b9b350/d;
+L_00000128a6b9b3c0/d .functor PMOS 1, L_00000128a6b9bac0, RS_00000128a6bb8078, C4<0>, C4<0>;
+L_00000128a6b9b3c0 .delay 1 (5,6,7) L_00000128a6b9b3c0/d;
+RS_00000128a6bb83a8 .resolv tri, L_00000128a6b9bcf0, L_00000128a6b9b350, L_00000128a6b9b3c0;
+L_00000128a6b9b890/d .functor NMOS 1, RS_00000128a6bb83a8, v00000128a6c0a9a0_0, C4<0>, C4<0>;
+L_00000128a6b9b890 .delay 1 (3,4,5) L_00000128a6b9b890/d;
+L_00000128a6b9b430/d .functor PMOS 1, RS_00000128a6bb83a8, L_00000128a6b9b4a0, C4<0>, C4<0>;
+L_00000128a6b9b430 .delay 1 (5,6,7) L_00000128a6b9b430/d;
+L_00000128a6b9b4a0 .functor NOT 1, v00000128a6c0a9a0_0, C4<0>, C4<0>, C4<0>;
+v00000128a6b9e660_0 .net *"_ivl_8", 0 0, L_00000128a6b9b4a0;  1 drivers
+v00000128a6b9ec00_0 .net8 "a", 0 0, RS_00000128a6bb8228;  alias, 3 drivers, strength-aware
+v00000128a6b9efc0_0 .net8 "b", 0 0, RS_00000128a6bb8078;  alias, 3 drivers, strength-aware
+v00000128a6b9eb60_0 .net "c", 0 0, v00000128a6c0a9a0_0;  alias, 1 drivers
+v00000128a6b9ede0_0 .net8 "gnd", 0 0, L_00000128a6b9ba50;  1 drivers, strength-aware
+v00000128a6b9ee80_0 .net8 "h1", 0 0, L_00000128a6b9bc80;  1 drivers, strength-aware
+v00000128a6b9f060_0 .net8 "h2", 0 0, RS_00000128a6bb83a8;  3 drivers, strength-aware
+v00000128a6c0bd00_0 .net8 "vdd", 0 0, L_00000128a6b9bac0;  1 drivers, strength-aware
+v00000128a6c0b3a0_0 .net8 "w", 0 0, RS_00000128a6bb8408;  alias, 2 drivers, strength-aware
+    .scope S_00000128a6bb3510;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_00000128a6bb3510;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0ae00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0b760_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0acc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000128a6c0a9a0_0, 0, 1;
+    %delay 100, 0;
+    %vpi_call 2 115 "$stop" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "../tb/mux2to1_select_input_tristate_gate_tb.v";
+    "../src/mux2to1_select_input_tristate_gate.v";
+    "../src/nand2_gate.v";
+    "../src/nand2_tristate_gate.v";
