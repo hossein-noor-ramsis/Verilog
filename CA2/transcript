@@ -256,3 +256,5 @@ run -all
 # ** Note: $stop    : E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb4.v(130)
 #    Time: 3400 ns  Iteration: 0  Instance: /mux2to1_select_input_gate_tb4
 # Break in Module mux2to1_select_input_gate_tb4 at E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb4.v line 130
+# End time: 15:16:19 on Oct 22,2025, Elapsed time: 0:14:34
+# Errors: 0, Warnings: 1
