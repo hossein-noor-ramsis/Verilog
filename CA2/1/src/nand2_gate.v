@@ -16,5 +16,4 @@ module nand2_gate (
 
   pmos #(5, 6, 7) (w, vdd, a);
   pmos #(5, 6, 7) (w, vdd, b);
-
 endmodule

@@ -2,7 +2,7 @@
 
 module mux2to1_select_input_tristate_gate_tb2 ();
   reg a = 0, b = 0, s = 0, oe = 0;
-  wire y1, y2;
+  wire y;
 
   // Instance
   mux2to1_select_input_tristate_gate uut (
@@ -11,10 +11,8 @@ module mux2to1_select_input_tristate_gate_tb2 ();
       .s (s),
       .oe(oe),
 
-      .y(y1)
+      .y(y)
   );
-
-  assign #(25, 21, 17) y2 = oe ? (a & ~s) | (b & s) : 1'bz;
 
   // Test Case
   initial begin
@@ -112,6 +110,12 @@ module mux2to1_select_input_tristate_gate_tb2 ();
     a  = 1;
     b  = 1;
     oe = 1;
+    #100;
+
+    s  = 0;
+    a  = 0;
+    b  = 0;
+    oe = 0;
     #100;
 
     $stop;

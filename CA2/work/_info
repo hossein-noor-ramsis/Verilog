@@ -10,7 +10,7 @@ z2
 cModel Technology
 dE:/Programming/Verilog/CA1
 vmux2to1_select_input_gate
-Z0 !s110 1760863545
+Z0 !s110 1761132604
 !i10b 1
 !s100 DVYneL`67;4]F7`;=<zib2
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,13 +20,13 @@ Z3 dE:/Programming/Verilog/CA2
 w1760812459
 8E:/Programming/Verilog/CA2/1/src/mux2to1_select_input_gate.v
 FE:/Programming/Verilog/CA2/1/src/mux2to1_select_input_gate.v
-!i122 180
+!i122 35
 L0 3 46
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1760863545.000000
+Z5 !s108 1761132604.000000
 !s107 E:/Programming/Verilog/CA2/1/src/mux2to1_select_input_gate.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/1/src/mux2to1_select_input_gate.v|
 !i113 1
@@ -35,16 +35,16 @@ Z7 tCvgOpt 0
 vmux2to1_select_input_gate_tb
 R0
 !i10b 1
-!s100 :V]JfnK674Nnd[MdE3z7f0
+!s100 d1;IfUmB=JjZfX@o:QS<L2
 R1
-IJ^Zblf31FzKMRWfBT3l>E2
+I8lNXXAnmS1LXT>^GnCNX71
 R2
 R3
-w1760863398
+w1761132031
 8E:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v
 FE:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v
-!i122 179
-Z8 L0 3 115
+!i122 34
+Z8 L0 3 121
 R4
 r1
 !s85 0
@@ -55,31 +55,31 @@ R5
 !i113 1
 R6
 R7
-vmux2to1_select_input_gate_tb3
-Z9 !s110 1760863546
+vmux2to1_select_input_gate_tb4
+R0
 !i10b 1
-!s100 86_ZMl0Z@zf7:mdW_ZS2?2
+!s100 dn1^jTV21gN9ZjAMS0nbP3
 R1
-Ig=[8RN]RZSNbggcEYg@<00
+I6D3i_Y36PnW5Ol6><XEg:0
 R2
 R3
-w1760863416
-8E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb3.v
-FE:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb3.v
-!i122 185
-Z10 L0 3 117
+w1761132009
+8E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb4.v
+FE:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb4.v
+!i122 40
+Z9 L0 3 130
 R4
 r1
 !s85 0
 31
-Z11 !s108 1760863546.000000
-!s107 E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb3.v|
-!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb3.v|
+R5
+!s107 E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb4.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb4.v|
 !i113 1
 R6
 R7
 vmux2to1_select_input_tristate_gate
-R9
+R0
 !i10b 1
 !s100 FEP`YacFMO;I=Y_EUlj2i3
 R1
@@ -89,77 +89,77 @@ R3
 w1760814836
 8E:/Programming/Verilog/CA2/2/src/mux2to1_select_input_tristate_gate.v
 FE:/Programming/Verilog/CA2/2/src/mux2to1_select_input_tristate_gate.v
-!i122 183
+!i122 37
 L0 3 38
 R4
 r1
 !s85 0
 31
-R11
+R5
 !s107 E:/Programming/Verilog/CA2/2/src/mux2to1_select_input_tristate_gate.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/2/src/mux2to1_select_input_tristate_gate.v|
 !i113 1
 R6
 R7
-vmux2to1_select_input_tristate_gate_tb
-R9
+vmux2to1_select_input_tristate_gate_tb2
+R0
 !i10b 1
-!s100 VF2zM98JK:eO1W>68P<c?3
+!s100 i[>gP5W=YZMf;GL?]6gBk0
 R1
-IS::80>mHmXWZ28m[PCnXa0
+If5Glj^Q:IL_]1H@9bUZFR1
 R2
 R3
-w1760863215
-8E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb.v
-FE:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb.v
-!i122 182
+w1761132047
+8E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb2.v
+FE:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb2.v
+!i122 38
 R8
 R4
 r1
 !s85 0
 31
-R11
-!s107 E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb.v|
+R5
+!s107 E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb2.v|
 !i113 1
 R6
 R7
-vmux2to1_select_input_tristate_gate_tb2
-R9
+vmux2to1_select_input_tristate_gate_tb3
+R0
 !i10b 1
-!s100 I5oi8Aj7D=@c51Ni`k=1a0
+!s100 QPh^f?Xzl6O7>J6NmE9O=3
 R1
-IgFX>:z8JS11fZ]oGkB8cW0
+IJdG>U9>=<jmo;;V;H=ZBA2
 R2
 R3
-w1760863374
-8E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb2.v
-FE:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb2.v
-!i122 184
-R10
+w1761132485
+8E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb3.v
+FE:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb3.v
+!i122 39
+R9
 R4
 r1
 !s85 0
 31
-R11
-!s107 E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb2.v|
-!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb2.v|
+R5
+!s107 E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb3.v|
 !i113 1
 R6
 R7
 vnand2_gate
 R0
 !i10b 1
-!s100 0XoFBP1m8WUGeQc4A^19>2
+!s100 GXfndmEDV8jcb[R4N]TZX3
 R1
-I[4ZZf0FGW2CY8l=L^W=WW0
+Ide>n@SAXdG<]onX7UzEZ73
 R2
 R3
-w1760808750
+w1761131579
 8E:/Programming/Verilog/CA2/1/src/nand2_gate.v
 FE:/Programming/Verilog/CA2/1/src/nand2_gate.v
-!i122 178
-L0 3 18
+!i122 33
+L0 3 17
 R4
 r1
 !s85 0
@@ -171,7 +171,7 @@ R5
 R6
 R7
 vnand2_tristate_gate
-R9
+R0
 !i10b 1
 !s100 jf_bdcLeS6Ez<FH7PzAzD3
 R1
@@ -181,7 +181,7 @@ R3
 w1760808737
 8E:/Programming/Verilog/CA2/2/src/nand2_tristate_gate.v
 FE:/Programming/Verilog/CA2/2/src/nand2_tristate_gate.v
-!i122 181
+!i122 36
 L0 3 25
 R4
 r1
@@ -190,6 +190,29 @@ r1
 R5
 !s107 E:/Programming/Verilog/CA2/2/src/nand2_tristate_gate.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/2/src/nand2_tristate_gate.v|
+!i113 1
+R6
+R7
+vnative_mux2to1_select_input_tristate_gate
+R0
+!i10b 1
+!s100 Vk=QN=FUR<gB14@_h4^@02
+R1
+IA=XPi4HX=GdDf<gGDi:]i0
+R2
+R3
+w1761132586
+8E:/Programming/Verilog/CA2/3/src/native_mux2to1_select_input_tristate_gate.v
+FE:/Programming/Verilog/CA2/3/src/native_mux2to1_select_input_tristate_gate.v
+!i122 41
+L0 3 11
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Programming/Verilog/CA2/3/src/native_mux2to1_select_input_tristate_gate.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/3/src/native_mux2to1_select_input_tristate_gate.v|
 !i113 1
 R6
 R7

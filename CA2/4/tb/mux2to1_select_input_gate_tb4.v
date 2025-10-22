@@ -1,6 +1,6 @@
 `timescale 1ns / 1ns
 
-module mux2to1_select_input_gate_tb3 ();
+module mux2to1_select_input_gate_tb4 ();
   reg a = 0, b = 0, s = 0, oe = 0;
   wire y1, y2;
 
@@ -14,7 +14,14 @@ module mux2to1_select_input_gate_tb3 ();
       .y(y1)
   );
 
-  assign #(25, 21, 17) y2 = oe ? (a & ~s) | (b & s) : 1'bz;
+  native_mux2to1_select_input_tristate_gate uut2 (
+      .a (a),
+      .b (b),
+      .s (s),
+      .oe(oe),
+
+      .y(y2)
+  );
 
   // Test Case
   initial begin
@@ -112,6 +119,12 @@ module mux2to1_select_input_gate_tb3 ();
     a  = 1;
     b  = 1;
     oe = 1;
+    #200;
+
+    s  = 0;
+    a  = 0;
+    b  = 0;
+    oe = 0;
     #200;
 
     $stop;

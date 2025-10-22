@@ -1,11 +1,4 @@
-E:/Programming/Verilog/CA1/nand3_gate_tb.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA1/nand3_gate_tb.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module nand3_gate_tb
-
-Top level modules:
-	nand3_gate_tb
-
-} {} {}} E:/Programming/Verilog/CA1/nand2_tristate_gate_tb2.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA1/nand2_tristate_gate_tb2.v
+E:/Programming/Verilog/CA1/nand2_tristate_gate_tb2.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA1/nand2_tristate_gate_tb2.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module nand2_tristate_gate_tb2
 

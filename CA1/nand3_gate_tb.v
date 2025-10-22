@@ -54,7 +54,11 @@ module nand3_gate_tb;
     c = 1;
     #60;
 
+    a = 0;
+    b = 0;
+    c = 0;
+    #60;
+
     $stop;
   end
 endmodule
-

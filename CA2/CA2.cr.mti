@@ -1,16 +1,16 @@
-E:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v
+E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb3.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb3.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux2to1_select_input_tristate_gate_tb3
+
+Top level modules:
+	mux2to1_select_input_tristate_gate_tb3
+
+} {} {}} E:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module mux2to1_select_input_gate_tb
 
 Top level modules:
 	mux2to1_select_input_gate_tb
-
-} {} {}} E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module mux2to1_select_input_tristate_gate_tb
-
-Top level modules:
-	mux2to1_select_input_tristate_gate_tb
 
 } {} {}} E:/Programming/Verilog/CA2/1/src/mux2to1_select_input_gate.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA2/1/src/mux2to1_select_input_gate.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -26,12 +26,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	mux2to1_select_input_tristate_gate
 
-} {} {}} E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb3.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb3.v
+} {} {}} E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb2.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb2.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module mux2to1_select_input_gate_tb3
+-- Compiling module mux2to1_select_input_tristate_gate_tb2
 
 Top level modules:
-	mux2to1_select_input_gate_tb3
+	mux2to1_select_input_tristate_gate_tb2
 
 } {} {}} E:/Programming/Verilog/CA2/1/src/nand2_gate.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA2/1/src/nand2_gate.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -47,11 +47,11 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	nand2_tristate_gate
 
-} {} {}} E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb2.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb2.v
+} {} {}} E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb4.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb4.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module mux2to1_select_input_tristate_gate_tb2
+-- Compiling module mux2to1_select_input_gate_tb4
 
 Top level modules:
-	mux2to1_select_input_tristate_gate_tb2
+	mux2to1_select_input_gate_tb4
 
 } {} {}}

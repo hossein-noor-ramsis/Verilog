@@ -112,6 +112,12 @@ module mux2to1_select_input_gate_tb ();
     e = 1;
     #100;
 
+    s = 0;
+    a = 0;
+    b = 0;
+    e = 0;
+    #100;
+
     $stop;
   end
 endmodule
