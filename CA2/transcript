@@ -1,250 +1,80 @@
 # Compile of nand2_gate.v was successful.
 # Compile of mux2to1_select_input_gate_tb.v was successful.
 # Compile of mux2to1_select_input_gate.v was successful.
-# Compile of nand2_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb.v was successful.
-# Compile of mux2to1_select_input_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
-# Compile of mux2to1_select_input_gate_tb3.v was successful.
-# 8 compiles, 0 failed with no errors.
-# Load canceled
+# 3 compiles, 6 failed with no errors.
 # Compile of nand2_gate.v was successful.
 # Compile of mux2to1_select_input_gate_tb.v was successful.
 # Compile of mux2to1_select_input_gate.v was successful.
-# Compile of nand2_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate.v was successful.
-# 5 compiles, 3 failed with no errors.
-# Compile of nand2_gate.v was successful.
-# Compile of mux2to1_select_input_gate_tb.v was successful.
-# Compile of mux2to1_select_input_gate.v was successful.
-# Compile of nand2_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
-# Compile of mux2to1_select_input_gate_tb4.v was successful.
-# 8 compiles, 0 failed with no errors.
-# Load canceled
-# Compile of nand2_gate.v was successful.
-# Compile of mux2to1_select_input_gate_tb.v was successful.
-# Compile of mux2to1_select_input_gate.v was successful.
-# Compile of nand2_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
-# Compile of mux2to1_select_input_gate_tb4.v was successful.
-# 8 compiles, 0 failed with no errors.
-# Compile of nand2_gate.v was successful.
-# Compile of mux2to1_select_input_gate_tb.v was successful.
-# Compile of mux2to1_select_input_gate.v was successful.
-# Compile of nand2_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
-# Compile of mux2to1_select_input_gate_tb4.v was successful.
-# 8 compiles, 0 failed with no errors.
-vsim work.mux2to1_select_input_gate_tb
-# vsim work.mux2to1_select_input_gate_tb 
-# Start time: 14:47:47 on Oct 22,2025
-# Loading work.mux2to1_select_input_gate_tb
-# Loading work.mux2to1_select_input_gate
-# Loading work.nand2_gate
-add wave -position insertpoint sim:/mux2to1_select_input_gate_tb/*
-run -all
-# ** Note: $stop    : E:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v(115)
-#    Time: 1600 ns  Iteration: 0  Instance: /mux2to1_select_input_gate_tb
-# Break in Module mux2to1_select_input_gate_tb at E:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v line 115
-# Compile of nand2_gate.v was successful.
-# Compile of mux2to1_select_input_gate_tb.v was successful.
-# Compile of mux2to1_select_input_gate.v was successful.
-# Compile of nand2_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
-# Compile of mux2to1_select_input_gate_tb4.v was successful.
-# 8 compiles, 0 failed with no errors.
-vsim work.mux2to1_select_input_gate_tb
-# End time: 14:52:02 on Oct 22,2025, Elapsed time: 0:04:15
-# Errors: 0, Warnings: 11
-# vsim work.mux2to1_select_input_gate_tb 
-# Start time: 14:52:02 on Oct 22,2025
-# Loading work.mux2to1_select_input_gate_tb
-# Loading work.mux2to1_select_input_gate
-# Loading work.nand2_gate
-add wave -position insertpoint  \
-sim:/mux2to1_select_input_gate_tb/a \
-sim:/mux2to1_select_input_gate_tb/b \
-sim:/mux2to1_select_input_gate_tb/s \
-sim:/mux2to1_select_input_gate_tb/e \
-sim:/mux2to1_select_input_gate_tb/y
-run -all
-# ** Note: $stop    : E:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v(121)
-#    Time: 1700 ns  Iteration: 0  Instance: /mux2to1_select_input_gate_tb
-# Break in Module mux2to1_select_input_gate_tb at E:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v line 121
-vsim work.mux2to1_select_input_tristate_gate_tb2
-# End time: 14:53:06 on Oct 22,2025, Elapsed time: 0:01:04
-# Errors: 0, Warnings: 1
-# vsim work.mux2to1_select_input_tristate_gate_tb2 
-# Start time: 14:53:06 on Oct 22,2025
-# Loading work.mux2to1_select_input_tristate_gate_tb2
-# Loading work.mux2to1_select_input_tristate_gate
-# Loading work.nand2_gate
-# Loading work.nand2_tristate_gate
-run -all
-# ** Note: $stop    : E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb2.v(121)
-#    Time: 1700 ns  Iteration: 0  Instance: /mux2to1_select_input_tristate_gate_tb2
-# Break in Module mux2to1_select_input_tristate_gate_tb2 at E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb2.v line 121
-add wave -position insertpoint  \
-sim:/mux2to1_select_input_tristate_gate_tb2/a \
-sim:/mux2to1_select_input_tristate_gate_tb2/b \
-sim:/mux2to1_select_input_tristate_gate_tb2/s \
-sim:/mux2to1_select_input_tristate_gate_tb2/oe \
-sim:/mux2to1_select_input_tristate_gate_tb2/y
-run -all
-run -all
-run -all
-run -all
-run -all
-run -all
-run -all
-run -all
-run -all
-run -all
-run -all
-run -all
-run -all
-# Compile of nand2_gate.v was successful.
-# Compile of mux2to1_select_input_gate_tb.v was successful.
-# Compile of mux2to1_select_input_gate.v was successful.
-# Compile of nand2_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
-# Compile of mux2to1_select_input_gate_tb4.v was successful.
-# 8 compiles, 0 failed with no errors.
-vsim work.mux2to1_select_input_tristate_gate_tb2
-# End time: 14:56:09 on Oct 22,2025, Elapsed time: 0:03:03
-# Errors: 0, Warnings: 2
-# vsim work.mux2to1_select_input_tristate_gate_tb2 
-# Start time: 14:56:09 on Oct 22,2025
-# Loading work.mux2to1_select_input_tristate_gate_tb2
-# Loading work.mux2to1_select_input_tristate_gate
-# Loading work.nand2_gate
-# Loading work.nand2_tristate_gate
-add wave -position insertpoint  \
-sim:/mux2to1_select_input_tristate_gate_tb2/a \
-sim:/mux2to1_select_input_tristate_gate_tb2/b \
-sim:/mux2to1_select_input_tristate_gate_tb2/s \
-sim:/mux2to1_select_input_tristate_gate_tb2/oe \
-sim:/mux2to1_select_input_tristate_gate_tb2/y
-run -all
-# ** Note: $stop    : E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb2.v(121)
-#    Time: 1700 ns  Iteration: 0  Instance: /mux2to1_select_input_tristate_gate_tb2
-# Break in Module mux2to1_select_input_tristate_gate_tb2 at E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_tristate_gate_tb2.v line 121
-vsim work.mux2to1_select_input_tristate_gate_tb3
-# End time: 14:57:43 on Oct 22,2025, Elapsed time: 0:01:34
-# Errors: 0, Warnings: 1
-# vsim work.mux2to1_select_input_tristate_gate_tb3 
-# Start time: 14:57:43 on Oct 22,2025
-# Loading work.mux2to1_select_input_tristate_gate_tb3
-# Loading work.mux2to1_select_input_tristate_gate
-# Loading work.nand2_gate
-# Loading work.nand2_tristate_gate
-# ** Error: (vsim-3033) Instantiation of 'native_mux2to1_select_input_tristate_gate' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /mux2to1_select_input_tristate_gate_tb3 File: E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb3.v Line: 17
-#         Searched libraries:
-#             E:/Programming/Verilog/CA2/work
-# Error loading design
-# End time: 14:57:44 on Oct 22,2025, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 1
-vsim work.mux2to1_select_input_tristate_gate_tb3
-# vsim work.mux2to1_select_input_tristate_gate_tb3 
-# Start time: 14:57:54 on Oct 22,2025
-# Loading work.mux2to1_select_input_tristate_gate_tb3
-# Loading work.mux2to1_select_input_tristate_gate
-# Loading work.nand2_gate
-# Loading work.nand2_tristate_gate
-# ** Error: (vsim-3033) Instantiation of 'native_mux2to1_select_input_tristate_gate' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /mux2to1_select_input_tristate_gate_tb3 File: E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb3.v Line: 17
-#         Searched libraries:
-#             E:/Programming/Verilog/CA2/work
-# Error loading design
-vsim work.mux2to1_select_input_tristate_gate_tb3
-# End time: 14:57:54 on Oct 22,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 1
-# vsim work.mux2to1_select_input_tristate_gate_tb3 
-# Start time: 14:57:54 on Oct 22,2025
-# Loading work.mux2to1_select_input_tristate_gate_tb3
-# Loading work.mux2to1_select_input_tristate_gate
-# Loading work.nand2_gate
-# Loading work.nand2_tristate_gate
-# ** Error: (vsim-3033) Instantiation of 'native_mux2to1_select_input_tristate_gate' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /mux2to1_select_input_tristate_gate_tb3 File: E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb3.v Line: 17
-#         Searched libraries:
-#             E:/Programming/Verilog/CA2/work
-# Error loading design
-# End time: 14:57:54 on Oct 22,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 1
-# Compile of nand2_gate.v was successful.
-# Compile of mux2to1_select_input_gate_tb.v was successful.
-# Compile of mux2to1_select_input_gate.v was successful.
-# Compile of nand2_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
 # Compile of mux2to1_select_input_gate_tb4.v was successful.
 # Compile of native_mux2to1_select_input_tristate_gate.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim work.mux2to1_select_input_tristate_gate_tb3
-# vsim work.mux2to1_select_input_tristate_gate_tb3 
-# Start time: 14:59:19 on Oct 22,2025
-# Loading work.mux2to1_select_input_tristate_gate_tb3
-# Loading work.mux2to1_select_input_tristate_gate
-# Loading work.nand2_gate
-# Loading work.nand2_tristate_gate
-# Loading work.native_mux2to1_select_input_tristate_gate
-# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'native_mux2to1_select_input_tristate_gate' does not have a timeunit/timeprecision specification in effect, but other modules do.
-#    Time: 0 ps  Iteration: 0  Instance: /mux2to1_select_input_tristate_gate_tb3/uut2 File: E:/Programming/Verilog/CA2/3/src/native_mux2to1_select_input_tristate_gate.v
-# Error loading design
-# End time: 14:59:20 on Oct 22,2025, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 3
+# 5 compiles, 5 failed with no errors.
 # Compile of nand2_gate.v was successful.
 # Compile of mux2to1_select_input_gate_tb.v was successful.
 # Compile of mux2to1_select_input_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb4.v was successful.
+# Compile of native_mux2to1_select_input_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
+# 6 compiles, 4 failed with no errors.
+# Compile of nand2_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb.v was successful.
+# Compile of mux2to1_select_input_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb4.v was successful.
+# Compile of native_mux2to1_select_input_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
+# 6 compiles, 4 failed with no errors.
+# Compile of nand2_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb.v was successful.
+# Compile of mux2to1_select_input_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb4.v was successful.
+# Compile of native_mux2to1_select_input_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
 # Compile of nand2_tristate_gate.v was successful.
 # Compile of mux2to1_select_input_tristate_gate.v was successful.
 # Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
-# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
+# 9 compiles, 3 failed with no errors.
+# Compile of nand2_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb.v was successful.
+# Compile of mux2to1_select_input_gate.v was successful.
 # Compile of mux2to1_select_input_gate_tb4.v was successful.
 # Compile of native_mux2to1_select_input_tristate_gate.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim work.mux2to1_select_input_tristate_gate_tb3
-# vsim work.mux2to1_select_input_tristate_gate_tb3 
-# Start time: 15:00:05 on Oct 22,2025
-# Loading work.mux2to1_select_input_tristate_gate_tb3
-# Loading work.mux2to1_select_input_tristate_gate
-# Loading work.nand2_gate
-# Loading work.nand2_tristate_gate
-# Loading work.native_mux2to1_select_input_tristate_gate
-add wave -position insertpoint  \
-sim:/mux2to1_select_input_tristate_gate_tb3/a \
-sim:/mux2to1_select_input_tristate_gate_tb3/b \
-sim:/mux2to1_select_input_tristate_gate_tb3/s \
-sim:/mux2to1_select_input_tristate_gate_tb3/oe \
-sim:/mux2to1_select_input_tristate_gate_tb3/y1 \
-sim:/mux2to1_select_input_tristate_gate_tb3/y2
-run -all
-# ** Note: $stop    : E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb3.v(130)
-#    Time: 1700 ns  Iteration: 0  Instance: /mux2to1_select_input_tristate_gate_tb3
-# Break in Module mux2to1_select_input_tristate_gate_tb3 at E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb3.v line 130
+# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
+# Compile of nand2_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
+# Compile of native_mux2to1_select_input_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
+# 11 compiles, 0 failed with no errors.
+# Compile of nand2_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb.v was successful.
+# Compile of mux2to1_select_input_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb4.v was successful.
+# Compile of native_mux2to1_select_input_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
+# Compile of nand2_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
+# Compile of native_mux2to1_select_input_gate.v was successful.
+# 10 compiles, 1 failed with no errors.
+# Compile of nand2_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb.v was successful.
+# Compile of mux2to1_select_input_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb4.v was successful.
+# Compile of native_mux2to1_select_input_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
+# Compile of nand2_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
+# Compile of native_mux2to1_select_input_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb2.v was successful.
+# 11 compiles, 0 failed with no errors.
 vsim work.mux2to1_select_input_gate_tb4
-# End time: 15:01:45 on Oct 22,2025, Elapsed time: 0:01:40
-# Errors: 0, Warnings: 2
 # vsim work.mux2to1_select_input_gate_tb4 
-# Start time: 15:01:45 on Oct 22,2025
+# Start time: 17:29:08 on Oct 25,2025
 # Loading work.mux2to1_select_input_gate_tb4
 # Loading work.mux2to1_select_input_gate
 # Loading work.nand2_gate
-# Loading work.native_mux2to1_select_input_tristate_gate
+# Loading work.mux2to1_select_input_tristate_gate
+# Loading work.nand2_tristate_gate
 add wave -position insertpoint  \
 sim:/mux2to1_select_input_gate_tb4/a \
 sim:/mux2to1_select_input_gate_tb4/b \
@@ -253,8 +83,61 @@ sim:/mux2to1_select_input_gate_tb4/oe \
 sim:/mux2to1_select_input_gate_tb4/y1 \
 sim:/mux2to1_select_input_gate_tb4/y2
 run -all
-# ** Note: $stop    : E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb4.v(130)
+# ** Note: $stop    : E:/Programming/Verilog/CA2/5/tb/mux2to1_select_input_gate_tb4.v(46)
+#    Time: 3200 ns  Iteration: 0  Instance: /mux2to1_select_input_gate_tb4
+# Break in Module mux2to1_select_input_gate_tb4 at E:/Programming/Verilog/CA2/5/tb/mux2to1_select_input_gate_tb4.v line 46
+# Compile of nand2_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb.v was successful.
+# Compile of mux2to1_select_input_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb4.v was successful.
+# Compile of native_mux2to1_select_input_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate_tb3.v was successful.
+# Compile of nand2_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate.v was successful.
+# Compile of mux2to1_select_input_tristate_gate_tb2.v was successful.
+# Compile of native_mux2to1_select_input_gate.v was successful.
+# Compile of mux2to1_select_input_gate_tb2.v was successful.
+# 11 compiles, 0 failed with no errors.
+vsim work.mux2to1_select_input_gate_tb4
+# End time: 17:30:29 on Oct 25,2025, Elapsed time: 0:01:21
+# Errors: 0, Warnings: 29
+# vsim work.mux2to1_select_input_gate_tb4 
+# Start time: 17:30:29 on Oct 25,2025
+# Loading work.mux2to1_select_input_gate_tb4
+# Loading work.mux2to1_select_input_gate
+# Loading work.nand2_gate
+# Loading work.mux2to1_select_input_tristate_gate
+# Loading work.nand2_tristate_gate
+add wave -position insertpoint  \
+sim:/mux2to1_select_input_gate_tb4/a \
+sim:/mux2to1_select_input_gate_tb4/b \
+sim:/mux2to1_select_input_gate_tb4/s \
+sim:/mux2to1_select_input_gate_tb4/oe \
+sim:/mux2to1_select_input_gate_tb4/y1 \
+sim:/mux2to1_select_input_gate_tb4/y2
+run -all
+# ** Note: $stop    : E:/Programming/Verilog/CA2/5/tb/mux2to1_select_input_gate_tb4.v(130)
 #    Time: 3400 ns  Iteration: 0  Instance: /mux2to1_select_input_gate_tb4
-# Break in Module mux2to1_select_input_gate_tb4 at E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_gate_tb4.v line 130
-# End time: 15:16:19 on Oct 22,2025, Elapsed time: 0:14:34
+# Break in Module mux2to1_select_input_gate_tb4 at E:/Programming/Verilog/CA2/5/tb/mux2to1_select_input_gate_tb4.v line 130
+vsim work.mux2to1_select_input_gate_tb2
+# End time: 17:41:51 on Oct 25,2025, Elapsed time: 0:11:22
+# Errors: 0, Warnings: 1
+# vsim work.mux2to1_select_input_gate_tb2 
+# Start time: 17:41:51 on Oct 25,2025
+# Loading work.mux2to1_select_input_gate_tb2
+# Loading work.mux2to1_select_input_gate
+# Loading work.nand2_gate
+# Loading work.native_mux2to1_select_input_gate
+add wave -position insertpoint  \
+sim:/mux2to1_select_input_gate_tb2/a \
+sim:/mux2to1_select_input_gate_tb2/b \
+sim:/mux2to1_select_input_gate_tb2/s \
+sim:/mux2to1_select_input_gate_tb2/e \
+sim:/mux2to1_select_input_gate_tb2/y1 \
+sim:/mux2to1_select_input_gate_tb2/y2
+run -all
+# ** Note: $stop    : E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_gate_tb2.v(130)
+#    Time: 1700 ns  Iteration: 0  Instance: /mux2to1_select_input_gate_tb2
+# Break in Module mux2to1_select_input_gate_tb2 at E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_gate_tb2.v line 130
+# End time: 17:48:07 on Oct 25,2025, Elapsed time: 0:06:16
 # Errors: 0, Warnings: 1

@@ -14,7 +14,7 @@ module mux2to1_select_input_gate_tb4 ();
       .y(y1)
   );
 
-  native_mux2to1_select_input_tristate_gate uut2 (
+  mux2to1_select_input_tristate_gate uut2 (
       .a (a),
       .b (b),
       .s (s),

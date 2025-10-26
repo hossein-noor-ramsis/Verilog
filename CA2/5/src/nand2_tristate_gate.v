@@ -23,5 +23,4 @@ module nand2_tristate_gate (
   // ternary
   nmos #(3, 4, 5) (w, h2, c);
   pmos #(5, 6, 7) (w, h2, ~c);
-
 endmodule
