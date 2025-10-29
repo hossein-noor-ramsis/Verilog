@@ -9,5 +9,5 @@ module native_mux2to1_select_input_gate (
     input wire e
 );
 
-  assign #(20, 20, 7) y = e ? (a & ~s) | (b & s) : 1'b0;
+  assign #(20, 20) y = e ? (a & ~s) | (b & s) : 1'b0;
 endmodule

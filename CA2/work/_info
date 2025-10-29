@@ -10,7 +10,7 @@ z2
 cModel Technology
 dE:/Programming/Verilog/CA1
 vmux2to1_select_input_gate
-Z0 !s110 1761400821
+Z0 !s110 1761650154
 !i10b 1
 !s100 DVYneL`67;4]F7`;=<zib2
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,20 +20,20 @@ Z3 dE:/Programming/Verilog/CA2
 w1760812459
 8E:/Programming/Verilog/CA2/1/src/mux2to1_select_input_gate.v
 FE:/Programming/Verilog/CA2/1/src/mux2to1_select_input_gate.v
-!i122 105
+!i122 116
 L0 3 46
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1761400821.000000
+Z5 !s108 1761650153.000000
 !s107 E:/Programming/Verilog/CA2/1/src/mux2to1_select_input_gate.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/1/src/mux2to1_select_input_gate.v|
 !i113 1
 Z6 o-work work
 Z7 tCvgOpt 0
 vmux2to1_select_input_gate_tb
-R0
+Z8 !s110 1761650153
 !i10b 1
 !s100 d1;IfUmB=JjZfX@o:QS<L2
 R1
@@ -43,8 +43,8 @@ R3
 w1761132031
 8E:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v
 FE:/Programming/Verilog/CA2/1/tb/mux2to1_select_input_gate_tb.v
-!i122 104
-Z8 L0 3 121
+!i122 115
+Z9 L0 3 121
 R4
 r1
 !s85 0
@@ -56,7 +56,7 @@ R5
 R6
 R7
 vmux2to1_select_input_gate_tb2
-Z9 !s110 1761400822
+Z10 !s110 1761650164
 !i10b 1
 !s100 lfUX;?DU?91`if_ICccTg0
 R1
@@ -66,13 +66,13 @@ R3
 w1761400625
 8E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_gate_tb2.v
 FE:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_gate_tb2.v
-!i122 113
-Z10 L0 3 130
+!i122 124
+Z11 L0 3 130
 R4
 r1
 !s85 0
 31
-Z11 !s108 1761400822.000000
+Z12 !s108 1761650164.000000
 !s107 E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_gate_tb2.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/2/tb/mux2to1_select_input_gate_tb2.v|
 !i113 1
@@ -86,23 +86,23 @@ R1
 I^l4nV3]<B;BO4HI6C74[K1
 R2
 R3
-w1761400816
+w1761401013
 8E:/Programming/Verilog/CA2/5/tb/mux2to1_select_input_gate_tb4.v
 FE:/Programming/Verilog/CA2/5/tb/mux2to1_select_input_gate_tb4.v
-!i122 106
-R10
+!i122 117
+R11
 R4
 r1
 !s85 0
 31
-R5
+Z13 !s108 1761650154.000000
 !s107 E:/Programming/Verilog/CA2/5/tb/mux2to1_select_input_gate_tb4.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/5/tb/mux2to1_select_input_gate_tb4.v|
 !i113 1
 R6
 R7
 vmux2to1_select_input_tristate_gate
-R9
+!s110 1761650156
 !i10b 1
 !s100 FEP`YacFMO;I=Y_EUlj2i3
 R1
@@ -112,20 +112,20 @@ R3
 w1760814836
 8E:/Programming/Verilog/CA2/3/src/mux2to1_select_input_tristate_gate.v
 FE:/Programming/Verilog/CA2/3/src/mux2to1_select_input_tristate_gate.v
-!i122 110
+!i122 121
 L0 3 38
 R4
 r1
 !s85 0
 31
-R11
+!s108 1761650156.000000
 !s107 E:/Programming/Verilog/CA2/3/src/mux2to1_select_input_tristate_gate.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/3/src/mux2to1_select_input_tristate_gate.v|
 !i113 1
 R6
 R7
 vmux2to1_select_input_tristate_gate_tb2
-R9
+!s110 1761650161
 !i10b 1
 !s100 i[>gP5W=YZMf;GL?]6gBk0
 R1
@@ -135,20 +135,20 @@ R3
 w1761132047
 8E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb2.v
 FE:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb2.v
-!i122 111
-R8
+!i122 122
+R9
 R4
 r1
 !s85 0
 31
-R11
+!s108 1761650161.000000
 !s107 E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb2.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/3/tb/mux2to1_select_input_tristate_gate_tb2.v|
 !i113 1
 R6
 R7
 vmux2to1_select_input_tristate_gate_tb3
-R9
+R0
 !i10b 1
 !s100 QPh^f?Xzl6O7>J6NmE9O=3
 R1
@@ -158,20 +158,20 @@ R3
 w1761132485
 8E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_tristate_gate_tb3.v
 FE:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_tristate_gate_tb3.v
-!i122 108
-R10
+!i122 119
+R11
 R4
 r1
 !s85 0
 31
-R5
+R13
 !s107 E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_tristate_gate_tb3.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/4/tb/mux2to1_select_input_tristate_gate_tb3.v|
 !i113 1
 R6
 R7
 vnand2_gate
-R0
+R8
 !i10b 1
 !s100 GXfndmEDV8jcb[R4N]TZX3
 R1
@@ -181,7 +181,7 @@ R3
 w1761131579
 8E:/Programming/Verilog/CA2/1/src/nand2_gate.v
 FE:/Programming/Verilog/CA2/1/src/nand2_gate.v
-!i122 103
+!i122 114
 L0 3 17
 R4
 r1
@@ -194,7 +194,7 @@ R5
 R6
 R7
 vnand2_tristate_gate
-R9
+R0
 !i10b 1
 !s100 jf_bdcLeS6Ez<FH7PzAzD3
 R1
@@ -204,20 +204,20 @@ R3
 w1760808737
 8E:/Programming/Verilog/CA2/3/src/nand2_tristate_gate.v
 FE:/Programming/Verilog/CA2/3/src/nand2_tristate_gate.v
-!i122 109
+!i122 120
 L0 3 25
 R4
 r1
 !s85 0
 31
-R11
+R13
 !s107 E:/Programming/Verilog/CA2/3/src/nand2_tristate_gate.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/3/src/nand2_tristate_gate.v|
 !i113 1
 R6
 R7
 vnative_mux2to1_select_input_gate
-R9
+R10
 !i10b 1
 !s100 [j9?nDTBf;aX]?ToI1^aQ1
 R1
@@ -227,13 +227,13 @@ R3
 w1761399509
 8E:/Programming/Verilog/CA2/2/src/native_mux2to1_select_input_gate.v
 FE:/Programming/Verilog/CA2/2/src/native_mux2to1_select_input_gate.v
-!i122 112
-Z12 L0 3 11
+!i122 123
+Z14 L0 3 11
 R4
 r1
 !s85 0
 31
-R11
+R12
 !s107 E:/Programming/Verilog/CA2/2/src/native_mux2to1_select_input_gate.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/2/src/native_mux2to1_select_input_gate.v|
 !i113 1
@@ -250,13 +250,13 @@ R3
 w1761132586
 8E:/Programming/Verilog/CA2/4/src/native_mux2to1_select_input_tristate_gate.v
 FE:/Programming/Verilog/CA2/4/src/native_mux2to1_select_input_tristate_gate.v
-!i122 107
-R12
+!i122 118
+R14
 R4
 r1
 !s85 0
 31
-R5
+R13
 !s107 E:/Programming/Verilog/CA2/4/src/native_mux2to1_select_input_tristate_gate.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA2/4/src/native_mux2to1_select_input_tristate_gate.v|
 !i113 1
