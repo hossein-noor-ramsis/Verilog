@@ -1,0 +1,134 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/Programming/Verilog/CA2
+valu_behavioral
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1763045103
+!i10b 1
+!s100 Km6fVThTbCW>lA7L]PPfc0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+INO<fE;>_]^jI44eYAzL832
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z4 dE:/Programming/Verilog/CA3
+w1763038705
+8E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv
+FE:/Programming/Verilog/CA3/1/src/alu_behavioral.sv
+!i122 16
+L0 3 30
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1763045103.000000
+!s107 E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+valu_behavioral_netlist
+R0
+R1
+!i10b 1
+!s100 Ia`Udo]gZg1Fd6FYO?7h]2
+R2
+In0^>aYjZE43a[DYd[Ka]i1
+R3
+S1
+R4
+w1763038807
+8E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv
+FE:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv
+!i122 15
+L0 5 1030
+R5
+r1
+!s85 0
+31
+!s108 1763045102.000000
+!s107 E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv|
+!i113 1
+R7
+R8
+valu_behavioral_netlist_tb
+R1
+!i10b 1
+!s100 k?iCBfj<iA<:cF<SnAPIQ1
+R2
+IMO_bez82UTl;1QhdmHMMU3
+R3
+R4
+w1763037630
+8E:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v
+FE:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v
+!i122 17
+Z9 L0 3 64
+R5
+r1
+!s85 0
+31
+R6
+!s107 E:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v|
+!i113 1
+o-work work
+R8
+valu_behavioral_speed_tb
+R0
+R1
+!i10b 1
+!s100 i2aIQCZ0JH>KScPMQo=U;0
+R2
+I`b_Wh15<FcaA;ZC<PJ?2_1
+R3
+S1
+R4
+w1763045095
+8E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv
+FE:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv
+!i122 18
+L0 3 51
+R5
+r1
+!s85 0
+31
+R6
+!s107 E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv|
+!i113 1
+R7
+R8
+valu_behavioral_tb
+R0
+R1
+!i10b 1
+!s100 za^=[>76_Lc]TJ_Z5UT^E2
+R2
+IET0?CoE`Gi:nWb>zz7De`1
+R3
+S1
+R4
+w1763037624
+8E:/Programming/Verilog/CA3/alu_behavioral_tb.sv
+FE:/Programming/Verilog/CA3/alu_behavioral_tb.sv
+!i122 19
+R9
+R5
+r1
+!s85 0
+31
+R6
+!s107 E:/Programming/Verilog/CA3/alu_behavioral_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/alu_behavioral_tb.sv|
+!i113 1
+R7
+R8

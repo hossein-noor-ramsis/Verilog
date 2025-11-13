@@ -1,0 +1,119 @@
+# Compile of alu_behavioral_netlist.sv was successful.
+# Compile of alu_behavioral.sv was successful.
+# Compile of alu_behavioral_netlist_tb.v was successful.
+# Compile of alu_behavioral_speed_tb.sv was successful.
+# Compile of alu_behavioral_tb.sv was successful.
+# Compile of alu_structural.sv was successful.
+# Compile of alu_structural_tb.sv was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -gui work.alu_behavioral_speed_tb
+# vsim -gui work.alu_behavioral_speed_tb 
+# Start time: 18:07:33 on Nov 13,2025
+# Loading sv_std.std
+# Loading work.alu_behavioral_speed_tb
+# Loading work.alu_behavioral
+# Loading work.alu_behavioral_netlist
+# ** Error: (vsim-3043) Unresolved reference to 'neg'.
+#    Time: 0 ns  Iteration: 0  Instance: /alu_behavioral_speed_tb File: E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv Line: 42
+# ** Error: (vsim-3043) Unresolved reference to 'outW'.
+#    Time: 0 ns  Iteration: 0  Instance: /alu_behavioral_speed_tb File: E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv Line: 42
+# ** Error: (vsim-3043) Unresolved reference to 'zer'.
+#    Time: 0 ns  Iteration: 0  Instance: /alu_behavioral_speed_tb File: E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv Line: 42
+# Error loading design
+# End time: 18:07:34 on Nov 13,2025, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 15
+# Compile of alu_behavioral_netlist.sv was successful.
+# Compile of alu_behavioral.sv was successful.
+# Compile of alu_behavioral_netlist_tb.v was successful.
+# Compile of alu_behavioral_speed_tb.sv was successful.
+# Compile of alu_behavioral_tb.sv was successful.
+# Compile of alu_structural.sv was successful.
+# Compile of alu_structural_tb.sv was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -gui work.alu_behavioral_speed_tb
+# vsim -gui work.alu_behavioral_speed_tb 
+# Start time: 18:10:50 on Nov 13,2025
+# Loading sv_std.std
+# Loading work.alu_behavioral_speed_tb
+# Loading work.alu_behavioral
+# Loading work.alu_behavioral_netlist
+add wave -position insertpoint  \
+sim:/alu_behavioral_speed_tb/inA \
+sim:/alu_behavioral_speed_tb/inB \
+sim:/alu_behavioral_speed_tb/inC \
+sim:/alu_behavioral_speed_tb/opc \
+sim:/alu_behavioral_speed_tb/outW1 \
+sim:/alu_behavioral_speed_tb/zer1 \
+sim:/alu_behavioral_speed_tb/neg1 \
+sim:/alu_behavioral_speed_tb/outW2 \
+sim:/alu_behavioral_speed_tb/zer2 \
+sim:/alu_behavioral_speed_tb/neg2
+run -all
+# ** Note: $stop    : E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv(56)
+#    Time: 60 ns  Iteration: 0  Instance: /alu_behavioral_speed_tb
+# Break in Module alu_behavioral_speed_tb at E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv line 56
+# Saving layout as "Simulate"
+# Compile of alu_behavioral_netlist.sv was successful.
+# Compile of alu_behavioral.sv was successful.
+# Compile of alu_behavioral_netlist_tb.v was successful.
+# Compile of alu_behavioral_speed_tb.sv was successful.
+# Compile of alu_behavioral_tb.sv was successful.
+# Compile of alu_structural.sv was successful.
+# Compile of alu_structural_tb.sv was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -gui work.alu_behavioral_speed_tb
+# End time: 18:13:10 on Nov 13,2025, Elapsed time: 0:02:20
+# Errors: 0, Warnings: 3
+# vsim -gui work.alu_behavioral_speed_tb 
+# Start time: 18:13:10 on Nov 13,2025
+# Loading sv_std.std
+# Loading work.alu_behavioral_speed_tb
+# Loading work.alu_behavioral
+# Loading work.alu_behavioral_netlist
+add wave -position insertpoint  \
+sim:/alu_behavioral_speed_tb/inA \
+sim:/alu_behavioral_speed_tb/inB \
+sim:/alu_behavioral_speed_tb/inC \
+sim:/alu_behavioral_speed_tb/opc \
+sim:/alu_behavioral_speed_tb/outW1 \
+sim:/alu_behavioral_speed_tb/zer1 \
+sim:/alu_behavioral_speed_tb/neg1 \
+sim:/alu_behavioral_speed_tb/outW2 \
+sim:/alu_behavioral_speed_tb/zer2 \
+sim:/alu_behavioral_speed_tb/neg2
+run -all
+# ** Note: $stop    : E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv(44)
+#    Time: 20 ns  Iteration: 0  Instance: /alu_behavioral_speed_tb
+# Break in Module alu_behavioral_speed_tb at E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv line 44
+# Compile of alu_behavioral_netlist.sv was successful.
+# Compile of alu_behavioral.sv was successful.
+# Compile of alu_behavioral_netlist_tb.v was successful.
+# Compile of alu_behavioral_speed_tb.sv was successful.
+# Compile of alu_behavioral_tb.sv was successful.
+# Compile of alu_structural.sv was successful.
+# Compile of alu_structural_tb.sv was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -gui work.alu_behavioral_speed_tb
+# End time: 18:15:14 on Nov 13,2025, Elapsed time: 0:02:04
+# Errors: 0, Warnings: 2
+# vsim -gui work.alu_behavioral_speed_tb 
+# Start time: 18:15:14 on Nov 13,2025
+# Loading sv_std.std
+# Loading work.alu_behavioral_speed_tb
+# Loading work.alu_behavioral
+# Loading work.alu_behavioral_netlist
+add wave -position insertpoint  \
+sim:/alu_behavioral_speed_tb/inA \
+sim:/alu_behavioral_speed_tb/inB \
+sim:/alu_behavioral_speed_tb/inC \
+sim:/alu_behavioral_speed_tb/opc \
+sim:/alu_behavioral_speed_tb/outW1 \
+sim:/alu_behavioral_speed_tb/zer1 \
+sim:/alu_behavioral_speed_tb/neg1 \
+sim:/alu_behavioral_speed_tb/outW2 \
+sim:/alu_behavioral_speed_tb/zer2 \
+sim:/alu_behavioral_speed_tb/neg2
+run -all
+# ** Note: $stop    : E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv(50)
+#    Time: 40 ns  Iteration: 0  Instance: /alu_behavioral_speed_tb
+# Break in Module alu_behavioral_speed_tb at E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv line 50
