@@ -33,3 +33,18 @@ endmodule
 
 // yosys command: yosys -p "read_verilog -sv alu_behavioral.sv; synth -top alu_behavioral; stat; write_verilog alu_behavioral_netlist.v"
 // yosys command: yosys -p "read_verilog -sv alu_behavioral.sv; read_liberty mycells.lib; synth -top alu_behavioral; stat; write_verilog alu_behavioral_netlist.v" > yosys_report.txt
+// yosys command: yosys -p "read_verilog -sv alu_behavioral.sv; synth -top alu_behavioral; dfflibmap -liberty mycells.lib; abc -liberty mycells.lib; clean; stat; write_verilog -noattr alu_behavioral_netlist.v"
+
+// # read design 
+// read_verilog simple.v
+
+// # generic synthesis
+// synth -top simple
+
+// # mapping to mycells.lib
+// dfflibmap -liberty mycells.lib
+// abc -liberty mycells.lib
+// clean
+
+// # write synthesized design
+// write_verilog -noattr synth.v

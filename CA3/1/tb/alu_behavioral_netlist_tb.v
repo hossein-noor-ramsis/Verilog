@@ -34,21 +34,21 @@ module alu_behavioral_netlist_tb;
     inB = 16'sd3;
     inC = 1'b0;
     opc = 3'b000;
-    #20;
+    #100;
     print_result();
 
     inA = 16'sd5;
     inB = 16'sd3;
     inC = 1'b0;
     opc = 3'b010;
-    #20;
+    #100;
     print_result();
 
     inA = -16'sd7;
     inB = 16'sd2;
     inC = 1'b0;
     opc = 3'b011;
-    #20;
+    #100;
     print_result();
 
     repeat (20) begin
@@ -56,7 +56,7 @@ module alu_behavioral_netlist_tb;
       inB = $random;
       inC = $random & 1;
       opc = $random % 8;  // opcode از 0 تا 7
-      #20;
+      #100;
       print_result();
     end
 

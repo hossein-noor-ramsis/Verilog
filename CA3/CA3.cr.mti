@@ -1,5 +1,19 @@
-E:/Programming/Verilog/CA3/2/tb/alu_structural_tb.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/2/tb/alu_structural_tb.sv
+E:/Programming/Verilog/CA3/1/src/mycells.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA3/1/src/mycells.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module NOT
+-- Compiling module NAND
+-- Compiling module NOR
+-- Compiling module DFF
+-- Compiling module DFF_PP0
+-- Compiling module DFF_PP1
+
+Top level modules:
+	NOT
+	NAND
+	NOR
+	DFF
+	DFF_PP0
+	DFF_PP1
 
 } {} {}} E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -8,8 +22,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	alu_behavioral
 
-} {} {}} E:/Programming/Verilog/CA3/2/src/alu_structural.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/2/src/alu_structural.sv
+} {} {}} E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu_behavioral_netlist
+
+Top level modules:
+	alu_behavioral_netlist
 
 } {} {}} E:/Programming/Verilog/CA3/alu_behavioral_tb.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/alu_behavioral_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -17,19 +35,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	alu_behavioral_tb
-
-} {} {}} E:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module alu_behavioral_netlist_tb
-
-Top level modules:
-	alu_behavioral_netlist_tb
-
-} {} {}} E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module alu_behavioral_netlist
-
-Top level modules:
-	alu_behavioral_netlist
 
 } {} {}}
