@@ -1,4 +1,25 @@
-E:/Programming/Verilog/CA3/1/src/mycells.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA3/1/src/mycells.v
+E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu_structural_speed_tb
+
+Top level modules:
+	alu_structural_speed_tb
+
+} {} {}} E:/Programming/Verilog/CA3/2/tb/alu_structural_tb.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/2/tb/alu_structural_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu_structural_tb
+
+Top level modules:
+	alu_structural_tb
+
+} {} {}} E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu_behavioral
+
+Top level modules:
+	alu_behavioral
+
+} {} {}} E:/Programming/Verilog/CA3/1/src/mycells.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA3/1/src/mycells.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module NOT
 -- Compiling module NAND
@@ -15,12 +36,37 @@ Top level modules:
 	DFF_PP0
 	DFF_PP1
 
-} {} {}} E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv
+} {} {}} E:/Programming/Verilog/CA3/2/src/comp_gate.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/2/src/comp_gate.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module alu_behavioral
+-- Compiling module comp_gate
 
 Top level modules:
-	alu_behavioral
+	comp_gate
+
+} {} {}} E:/Programming/Verilog/CA3/2/src/comp16_component.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/2/src/comp16_component.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module comp16_component
+
+Top level modules:
+	comp16_component
+
+} {} {}} E:/Programming/Verilog/CA3/2/src/full_adder_gate.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/2/src/full_adder_gate.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module full_adder_gate
+
+Top level modules:
+	full_adder_gate
+
+} {} {}} E:/Programming/Verilog/CA3/2/src/alu_structural_netlist.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/2/src/alu_structural_netlist.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module adder16_component_netlist
+-- Compiling module alu_structural_netlist
+-- Compiling module comp16_component_netlist
+-- Compiling module comp_gate_netlist
+-- Compiling module full_adder_gate_netlist
+
+Top level modules:
+	alu_structural_netlist
 
 } {} {}} E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -28,6 +74,27 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	alu_behavioral_netlist
+
+} {} {}} E:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu_behavioral_netlist_tb
+
+Top level modules:
+	alu_behavioral_netlist_tb
+
+} {} {}} E:/Programming/Verilog/CA3/2/src/adder16_component.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/2/src/adder16_component.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module adder16_component
+
+Top level modules:
+	adder16_component
+
+} {} {}} E:/Programming/Verilog/CA3/2/src/alu_structural.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/2/src/alu_structural.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu_structural
+
+Top level modules:
+	alu_structural
 
 } {} {}} E:/Programming/Verilog/CA3/alu_behavioral_tb.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/alu_behavioral_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

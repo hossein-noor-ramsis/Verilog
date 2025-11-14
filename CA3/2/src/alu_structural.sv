@@ -23,31 +23,34 @@ module alu_structural (
   assign shiftedB = inB >>> 1;
 
   logic cary1 = 1'b1;
-  logic zero = 16'b0;
+  logic [15:0] zero = 16'b0;
 
   logic isEq, isGt;
 
   adder16_component add0 (
-      .a(inA),
-      .b(inB),
+      .a  (inA),
+      .b  (inB),
       .cin(inC),
-      .sum(sum1_wire),
+
+      .sum (sum1_wire),
       .cout(cout1_wire)
   );
 
   adder16_component add1 (
-      .a(inA),
-      .b(cary1),
-      .cin(zero),
-      .sum(sum2_wire),
+      .a  (inA),
+      .b  (zero),
+      .cin(cary1),
+
+      .sum (sum2_wire),
       .cout(cout2_wire)
   );
 
   adder16_component add2 (
-      .a(inA),
-      .b(shiftedB),
+      .a  (inA),
+      .b  (shiftedB),
       .cin(inC),
-      .sum(sum3_wire),
+
+      .sum (sum3_wire),
       .cout(cout3_wire)
   );
 
