@@ -11,7 +11,7 @@ cModel Technology
 dE:/Programming/Verilog/CA2
 vadder16_component
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1763495801
+Z1 !s110 1763496258
 !i10b 1
 !s100 Z;?aSHo2gnan]>aBzWRjA1
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -22,13 +22,13 @@ Z4 dE:/Programming/Verilog/CA3
 w1763105126
 8E:/Programming/Verilog/CA3/2/src/adder16_component.sv
 FE:/Programming/Verilog/CA3/2/src/adder16_component.sv
-!i122 204
+!i122 218
 Z5 L0 1 139
 Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1763495801.000000
+Z7 !s108 1763496258.000000
 !s107 E:/Programming/Verilog/CA3/2/src/adder16_component.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/2/src/adder16_component.sv|
 !i113 1
@@ -36,7 +36,7 @@ Z8 o-work work -sv
 Z9 tCvgOpt 0
 vadder16_component_netlist
 R0
-R1
+Z10 !s110 1763496255
 !i10b 1
 !s100 Li3N2A84gX[<kZg:k5n[62
 R2
@@ -44,18 +44,18 @@ I9fYBzO`mQIS?o789LnfSB2
 R3
 S1
 R4
-Z10 w1763114531
-Z11 8E:/Programming/Verilog/CA3/2/src/alu_structural_netlist.sv
-Z12 FE:/Programming/Verilog/CA3/2/src/alu_structural_netlist.sv
-!i122 203
+Z11 w1763496191
+Z12 8E:/Programming/Verilog/CA3/2/src/alu_structural_netlist.sv
+Z13 FE:/Programming/Verilog/CA3/2/src/alu_structural_netlist.sv
+!i122 217
 L0 3 126
 R6
 r1
 !s85 0
 31
-Z13 !s108 1763495800.000000
-Z14 !s107 E:/Programming/Verilog/CA3/2/src/alu_structural_netlist.sv|
-Z15 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/2/src/alu_structural_netlist.sv|
+Z14 !s108 1763496255.000000
+Z15 !s107 E:/Programming/Verilog/CA3/2/src/alu_structural_netlist.sv|
+Z16 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/2/src/alu_structural_netlist.sv|
 !i113 1
 R8
 R9
@@ -86,7 +86,7 @@ R8
 R9
 valu_behavioral
 R0
-Z16 !s110 1763495780
+Z17 !s110 1763496245
 !i10b 1
 !s100 Km6fVThTbCW>lA7L]PPfc0
 R2
@@ -97,13 +97,13 @@ R4
 w1763058357
 8E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv
 FE:/Programming/Verilog/CA3/1/src/alu_behavioral.sv
-!i122 194
+!i122 208
 L0 3 30
 R6
 r1
 !s85 0
 31
-Z17 !s108 1763495780.000000
+Z18 !s108 1763496245.000000
 !s107 E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/1/src/alu_behavioral.sv|
 !i113 1
@@ -111,7 +111,7 @@ R8
 R9
 valu_behavioral_netlist
 R0
-R16
+R17
 !i10b 1
 !s100 1e56zn2FBN_OdYaU9lW_c0
 R2
@@ -122,20 +122,20 @@ R4
 w1763058399
 8E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv
 FE:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv
-!i122 193
+!i122 207
 L0 3 4721
 R6
 r1
 !s85 0
 31
-R17
+R18
 !s107 E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/1/src/alu_behavioral_netlist.sv|
 !i113 1
 R8
 R9
 valu_behavioral_netlist_tb
-R16
+Z19 !s110 1763496246
 !i10b 1
 !s100 PRR@bM=[VIZbe]LRmlQnW0
 R2
@@ -145,21 +145,21 @@ R4
 w1763098664
 8E:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v
 FE:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v
-!i122 195
-Z18 L0 3 64
+!i122 209
+Z20 L0 3 64
 R6
 r1
 !s85 0
 31
-R17
+Z21 !s108 1763496246.000000
 !s107 E:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA3/1/tb/alu_behavioral_netlist_tb.v|
 !i113 1
-Z19 o-work work
+Z22 o-work work
 R9
 valu_behavioral_speed_tb
 R0
-R16
+R19
 !i10b 1
 !s100 CPF5YIdK:<O4;<AENLDM;1
 R2
@@ -170,13 +170,13 @@ R4
 w1763115179
 8E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv
 FE:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv
-!i122 196
+!i122 210
 L0 3 50
 R6
 r1
 !s85 0
 31
-R17
+R21
 !s107 E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv|
 !i113 1
@@ -184,7 +184,7 @@ R8
 R9
 valu_behavioral_tb
 R0
-R16
+R19
 !i10b 1
 !s100 za^=[>76_Lc]TJ_Z5UT^E2
 R2
@@ -195,13 +195,13 @@ R4
 w1763037624
 8E:/Programming/Verilog/CA3/alu_behavioral_tb.sv
 FE:/Programming/Verilog/CA3/alu_behavioral_tb.sv
-!i122 197
-R18
+!i122 211
+R20
 R6
 r1
 !s85 0
 31
-R17
+R21
 !s107 E:/Programming/Verilog/CA3/alu_behavioral_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/alu_behavioral_tb.sv|
 !i113 1
@@ -209,7 +209,7 @@ R8
 R9
 valu_structural
 R0
-Z20 !s110 1763495781
+R19
 !i10b 1
 !s100 7`PZCim`Q_1bUhf<D1E<W1
 R2
@@ -220,13 +220,13 @@ R4
 w1763493964
 8E:/Programming/Verilog/CA3/2/src/alu_structural.sv
 FE:/Programming/Verilog/CA3/2/src/alu_structural.sv
-!i122 198
+!i122 212
 L0 3 75
 R6
 r1
 !s85 0
 31
-R17
+R21
 !s107 E:/Programming/Verilog/CA3/2/src/alu_structural.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/2/src/alu_structural.sv|
 !i113 1
@@ -234,32 +234,32 @@ R8
 R9
 valu_structural_netlist
 R0
-R1
+R10
 !i10b 1
-!s100 O8In8C8IDDbE<5eeB=U^[3
+!s100 nfN7?l`hERGYE]`ZhRV@n0
 R2
-IogH=l]6`O?3E[TeHz:;Sh0
+ILk`jSJObdozUW3S:L@Ng`0
 R3
 S1
 R4
-R10
 R11
 R12
-!i122 203
-L0 130 2451
+R13
+!i122 217
+L0 130 2734
 R6
 r1
 !s85 0
 31
-R13
 R14
 R15
+R16
 !i113 1
 R8
 R9
 valu_structural_speed_tb
 R0
-!s110 1763495797
+!s110 1763496248
 !i10b 1
 !s100 @L`^j`:2@m9zPaOKREOe21
 R2
@@ -270,13 +270,13 @@ R4
 w1763115100
 8E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv
 FE:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv
-!i122 202
+!i122 216
 L0 3 51
 R6
 r1
 !s85 0
 31
-!s108 1763495797.000000
+!s108 1763496248.000000
 !s107 E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv|
 !i113 1
@@ -284,7 +284,7 @@ R8
 R9
 valu_structural_tb
 R0
-R20
+R19
 !i10b 1
 !s100 NBTaD:hkFK^i1KjCIaBNM0
 R2
@@ -295,13 +295,13 @@ R4
 w1763114121
 8E:/Programming/Verilog/CA3/2/tb/alu_structural_tb.sv
 FE:/Programming/Verilog/CA3/2/tb/alu_structural_tb.sv
-!i122 199
+!i122 213
 L0 3 63
 R6
 r1
 !s85 0
 31
-Z21 !s108 1763495781.000000
+R21
 !s107 E:/Programming/Verilog/CA3/2/tb/alu_structural_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA3/2/tb/alu_structural_tb.sv|
 !i113 1
@@ -320,7 +320,7 @@ R4
 w1763105844
 8E:/Programming/Verilog/CA3/2/src/comp16_component.sv
 FE:/Programming/Verilog/CA3/2/src/comp16_component.sv
-!i122 205
+!i122 219
 L0 1 31
 R6
 r1
@@ -334,26 +334,26 @@ R8
 R9
 vcomp16_component_netlist
 R0
-R1
+R10
 !i10b 1
-!s100 e8f8D7JQ08W<b2FC[]AWR3
+!s100 jUM]C8iKI_mbY:TJa0hM32
 R2
-I0P56G?c89_0dUboNjQYfd2
+I82LoHTBif?OiP6CaLSLFJ1
 R3
 S1
 R4
-R10
 R11
 R12
-!i122 203
-L0 2582 143
+R13
+!i122 217
+L0 2865 143
 R6
 r1
 !s85 0
 31
-R13
 R14
 R15
+R16
 !i113 1
 R8
 R9
@@ -370,7 +370,7 @@ R4
 w1763105801
 8E:/Programming/Verilog/CA3/2/src/comp_gate.sv
 FE:/Programming/Verilog/CA3/2/src/comp_gate.sv
-!i122 206
+!i122 220
 L0 1 27
 R6
 r1
@@ -384,31 +384,31 @@ R8
 R9
 vcomp_gate_netlist
 R0
-R1
+R10
 !i10b 1
-!s100 =YiPH0K]llJi;zV[gkYOJ0
+!s100 aW[`=dNWF@1E@n4<K4=>[3
 R2
-IGR6_X>>2D^gKFaiZ_E>cP3
+I[9[;XD?L3KcQ7dAUnG02;3
 R3
 S1
 R4
-R10
 R11
 R12
-!i122 203
-L0 2726 59
+R13
+!i122 217
+L0 3009 59
 R6
 r1
 !s85 0
 31
-R13
 R14
 R15
+R16
 !i113 1
 R8
 R9
 vDFF
-Z22 !s110 1763495783
+R19
 !i10b 1
 !s100 FYjZci`k]9Wia8KB_h`<W2
 R2
@@ -418,21 +418,21 @@ R4
 Z23 w1763097758
 Z24 8E:/Programming/Verilog/CA3/1/src/mycells.v
 Z25 FE:/Programming/Verilog/CA3/1/src/mycells.v
-!i122 201
+!i122 215
 L0 32 9
 R6
 r1
 !s85 0
 31
-Z26 !s108 1763495783.000000
-Z27 !s107 E:/Programming/Verilog/CA3/1/src/mycells.v|
-Z28 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA3/1/src/mycells.v|
+R21
+Z26 !s107 E:/Programming/Verilog/CA3/1/src/mycells.v|
+Z27 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA3/1/src/mycells.v|
 !i113 1
-R19
+R22
 R9
 n@d@f@f
 vDFF_PP0
-R22
+R19
 !i10b 1
 !s100 :cLIjMGQ:mmk8UF:FaM1]3
 R2
@@ -442,21 +442,21 @@ R4
 R23
 R24
 R25
-!i122 201
+!i122 215
 L0 42 13
 R6
 r1
 !s85 0
 31
+R21
 R26
 R27
-R28
 !i113 1
-R19
+R22
 R9
 n@d@f@f_@p@p0
 vDFF_PP1
-R22
+R19
 !i10b 1
 !s100 zHkmTfd3lZHk=`4ZYU:QR0
 R2
@@ -466,22 +466,22 @@ R4
 R23
 R24
 R25
-!i122 201
+!i122 215
 L0 56 13
 R6
 r1
 !s85 0
 31
+R21
 R26
 R27
-R28
 !i113 1
-R19
+R22
 R9
 n@d@f@f_@p@p1
 vfull_adder_gate
 R0
-R20
+R19
 !i10b 1
 !s100 i>1hD249;4MlSdM@^?<G:1
 R2
@@ -492,7 +492,7 @@ R4
 w1763105120
 8E:/Programming/Verilog/CA3/2/src/full_adder_gate.sv
 FE:/Programming/Verilog/CA3/2/src/full_adder_gate.sv
-!i122 200
+!i122 214
 L0 1 18
 R6
 r1
@@ -506,31 +506,31 @@ R8
 R9
 vfull_adder_gate_netlist
 R0
-R1
+R10
 !i10b 1
-!s100 HR2G:o;SSgjPXBjZ5VO?m0
+!s100 H[5HDd=cPX@mEL9gfnhHV2
 R2
-I;Gi:V[:6Se]>oSbgYbda91
+IjX<3W>X;BcCGBFI2[MAME0
 R3
 S1
 R4
-R10
 R11
 R12
-!i122 203
-L0 2786 79
+R13
+!i122 217
+L0 3069 79
 R6
 r1
 !s85 0
 31
-R13
 R14
 R15
+R16
 !i113 1
 R8
 R9
 vNAND
-R22
+R19
 !i10b 1
 !s100 AmDYZ10UiXzBWX]Q@3HaF0
 R2
@@ -540,21 +540,21 @@ R4
 R23
 R24
 R25
-!i122 201
+!i122 215
 L0 12 9
 R6
 r1
 !s85 0
 31
+R21
 R26
 R27
-R28
 !i113 1
-R19
+R22
 R9
 n@n@a@n@d
 vNOR
-R22
+R19
 !i10b 1
 !s100 1CG>>JCX39il;b2I1S1F12
 R2
@@ -564,21 +564,21 @@ R4
 R23
 R24
 R25
-!i122 201
+!i122 215
 L0 22 9
 R6
 r1
 !s85 0
 31
+R21
 R26
 R27
-R28
 !i113 1
-R19
+R22
 R9
 n@n@o@r
 vNOT
-R22
+R19
 !i10b 1
 !s100 cNGCh55N[M>:eTCQJXJ?F1
 R2
@@ -588,16 +588,16 @@ R4
 R23
 R24
 R25
-!i122 201
+!i122 215
 L0 3 8
 R6
 r1
 !s85 0
 31
+R21
 R26
 R27
-R28
 !i113 1
-R19
+R22
 R9
 n@n@o@t

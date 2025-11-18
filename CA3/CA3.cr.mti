@@ -43,6 +43,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	comp_gate
 
+} {} {}} E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/1/tb/alu_behavioral_speed_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu_behavioral_speed_tb
+
+Top level modules:
+	alu_behavioral_speed_tb
+
 } {} {}} E:/Programming/Verilog/CA3/2/src/comp16_component.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA3/2/src/comp16_component.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module comp16_component
