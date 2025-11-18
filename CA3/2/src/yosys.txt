@@ -1,0 +1,1200 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2016  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.7 (git sha1 61f6811, i686-w64-mingw32.static-gcc 4.9.3 -Os)
+
+
+-- Running command `read_verilog -sv alu_structural.sv comp16_component.sv comp_gate.sv adder16_component.sv full_adder_gate.sv; synth -top alu_structural; dfflibmap -liberty mycells.lib; abc -liberty ./mycells.lib; clean; stat; write_verilog -noattr alu_structural_netlist.v' --
+
+1. Executing Verilog-2005 frontend.
+Parsing SystemVerilog input from `alu_structural.sv' to AST representation.
+Generating RTLIL representation for module `\alu_structural'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend.
+Parsing SystemVerilog input from `comp16_component.sv' to AST representation.
+Generating RTLIL representation for module `\comp16_component'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend.
+Parsing SystemVerilog input from `comp_gate.sv' to AST representation.
+Generating RTLIL representation for module `\comp_gate'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend.
+Parsing SystemVerilog input from `adder16_component.sv' to AST representation.
+Generating RTLIL representation for module `\adder16_component'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend.
+Parsing SystemVerilog input from `full_adder_gate.sv' to AST representation.
+Generating RTLIL representation for module `\full_adder_gate'.
+Successfully finished Verilog frontend.
+
+6. Executing SYNTH pass.
+
+6.1. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1.1. Analyzing design hierarchy..
+Top module:  \alu_structural
+Used module:     \comp16_component
+Used module:         \comp_gate
+Used module:     \adder16_component
+Used module:         \full_adder_gate
+
+6.1.2. Analyzing design hierarchy..
+Top module:  \alu_structural
+Used module:     \comp16_component
+Used module:         \comp_gate
+Used module:     \adder16_component
+Used module:         \full_adder_gate
+Removed 0 unused modules.
+Mapping positional arguments of cell adder16_component.fa15 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa14 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa13 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa12 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa11 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa10 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa9 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa8 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa7 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa6 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa5 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa4 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa3 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa2 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa1 (full_adder_gate).
+Mapping positional arguments of cell adder16_component.fa0 (full_adder_gate).
+
+6.2. Executing PROC pass (convert processes to netlists).
+
+6.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+6.2.3. Executing PROC_INIT pass (extract init attributes).
+
+6.2.4. Executing PROC_ARST pass (detect async resets in processes).
+
+6.2.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\alu_structural.$proc$alu_structural.sv:26$22'.
+     1/1: $0\zero[15:0]
+Creating decoders for process `\alu_structural.$proc$alu_structural.sv:25$21'.
+     1/1: $0\cary1[0:0]
+
+6.2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\alu_structural.\zero' from process `\alu_structural.$proc$alu_structural.sv:26$22'.
+No latch inferred for signal `\alu_structural.\cary1' from process `\alu_structural.$proc$alu_structural.sv:25$21'.
+
+6.2.7. Executing PROC_DFF pass (convert process syncs to FFs).
+
+6.2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `alu_structural.$proc$alu_structural.sv:26$22'.
+Removing empty process `alu_structural.$proc$alu_structural.sv:25$21'.
+Cleaned up 0 empty switches.
+
+6.3. Executing OPT_EXPR pass (perform const folding).
+Replacing $sshr cell `$sshr$alu_structural.sv:23$1' (B=1, SHR=1) in module `alu_structural' with fixed wiring: { \inB [15] \inB [15:1] }
+Replacing $eq cell `$eq$alu_structural.sv:65$2' in module `alu_structural' with $logic_not.
+Replacing $eq cell `$eq$alu_structural.sv:74$20' in module `alu_structural' with $logic_not.
+
+6.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder_gate..
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \comp_gate..
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \alu_structural..
+  removing unused non-port wire \zero.
+  removing unused non-port wire \cary1.
+  removed 2 unused temporary wires.
+
+6.5. Executing CHECK pass (checking for obvious problems).
+checking module adder16_component..
+checking module alu_structural..
+checking module comp16_component..
+checking module comp_gate..
+checking module full_adder_gate..
+found and reported 0 problems.
+
+6.6. Executing OPT pass (performing simple optimizations).
+
+6.6.1. Executing OPT_EXPR pass (perform const folding).
+
+6.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\adder16_component'.
+Finding identical cells in module `\alu_structural'.
+Finding identical cells in module `\comp16_component'.
+Finding identical cells in module `\comp_gate'.
+Finding identical cells in module `\full_adder_gate'.
+Removed a total of 0 cells.
+
+6.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \adder16_component..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \alu_structural..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+    Root of a mux tree: $ternary$alu_structural.sv:72$19 (pure)
+  Analyzing evaluation results.
+Running muxtree optimizer on module \comp16_component..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \comp_gate..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \full_adder_gate..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+6.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \adder16_component.
+  Optimizing cells in module \alu_structural.
+  Optimizing cells in module \comp16_component.
+  Optimizing cells in module \comp_gate.
+  Optimizing cells in module \full_adder_gate.
+Performed a total of 0 changes.
+
+6.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\adder16_component'.
+Finding identical cells in module `\alu_structural'.
+Finding identical cells in module `\comp16_component'.
+Finding identical cells in module `\comp_gate'.
+Finding identical cells in module `\full_adder_gate'.
+Removed a total of 0 cells.
+
+6.6.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+6.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \alu_structural..
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \comp_gate..
+Finding unused cells or wires in module \full_adder_gate..
+
+6.6.8. Executing OPT_EXPR pass (perform const folding).
+
+6.6.9. Finished OPT passes. (There is nothing left to do.)
+
+6.7. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 16) from wire adder16_component.c.
+Removed top 2 bits (of 3) from port B of cell alu_structural.$eq$alu_structural.sv:66$3 ($eq).
+Removed top 1 bits (of 3) from port B of cell alu_structural.$eq$alu_structural.sv:67$4 ($eq).
+Removed top 1 bits (of 3) from port B of cell alu_structural.$eq$alu_structural.sv:68$6 ($eq).
+Removed top 1 bits (of 17) from wire comp16_component.eqChain.
+Removed top 1 bits (of 17) from wire comp16_component.gtChain.
+
+6.8. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module adder16_component:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module alu_structural:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module comp16_component:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module comp_gate:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module full_adder_gate:
+  created 0 $alu and 0 $macc cells.
+
+6.9. Executing SHARE pass (SAT-based resource sharing).
+
+6.10. Executing OPT pass (performing simple optimizations).
+
+6.10.1. Executing OPT_EXPR pass (perform const folding).
+
+6.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\adder16_component'.
+Finding identical cells in module `\alu_structural'.
+Finding identical cells in module `\comp16_component'.
+Finding identical cells in module `\comp_gate'.
+Finding identical cells in module `\full_adder_gate'.
+Removed a total of 0 cells.
+
+6.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \adder16_component..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \alu_structural..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+    Root of a mux tree: $ternary$alu_structural.sv:72$19 (pure)
+  Analyzing evaluation results.
+Running muxtree optimizer on module \comp16_component..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \comp_gate..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \full_adder_gate..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+6.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \adder16_component.
+  Optimizing cells in module \alu_structural.
+  Optimizing cells in module \comp16_component.
+  Optimizing cells in module \comp_gate.
+  Optimizing cells in module \full_adder_gate.
+Performed a total of 0 changes.
+
+6.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\adder16_component'.
+Finding identical cells in module `\alu_structural'.
+Finding identical cells in module `\comp16_component'.
+Finding identical cells in module `\comp_gate'.
+Finding identical cells in module `\full_adder_gate'.
+Removed a total of 0 cells.
+
+6.10.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+6.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \alu_structural..
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \comp_gate..
+Finding unused cells or wires in module \full_adder_gate..
+
+6.10.8. Executing OPT_EXPR pass (perform const folding).
+
+6.10.9. Finished OPT passes. (There is nothing left to do.)
+
+6.11. Executing FSM pass (extract and optimize FSM).
+
+6.11.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+6.11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+6.11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \alu_structural..
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \comp_gate..
+Finding unused cells or wires in module \full_adder_gate..
+
+6.11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+6.11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+6.11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+6.12. Executing OPT pass (performing simple optimizations).
+
+6.12.1. Executing OPT_EXPR pass (perform const folding).
+
+6.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\adder16_component'.
+Finding identical cells in module `\alu_structural'.
+Finding identical cells in module `\comp16_component'.
+Finding identical cells in module `\comp_gate'.
+Finding identical cells in module `\full_adder_gate'.
+Removed a total of 0 cells.
+
+6.12.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+6.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \alu_structural..
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \comp_gate..
+Finding unused cells or wires in module \full_adder_gate..
+
+6.12.5. Finished fast OPT passes.
+
+6.13. Executing MEMORY pass.
+
+6.13.1. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+6.13.2. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \alu_structural..
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \comp_gate..
+Finding unused cells or wires in module \full_adder_gate..
+
+6.13.3. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+6.13.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \alu_structural..
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \comp_gate..
+Finding unused cells or wires in module \full_adder_gate..
+
+6.13.5. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \alu_structural..
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \comp_gate..
+Finding unused cells or wires in module \full_adder_gate..
+
+6.15. Executing OPT pass (performing simple optimizations).
+
+6.15.1. Executing OPT_EXPR pass (perform const folding).
+
+6.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\adder16_component'.
+Finding identical cells in module `\alu_structural'.
+Finding identical cells in module `\comp16_component'.
+Finding identical cells in module `\comp_gate'.
+Finding identical cells in module `\full_adder_gate'.
+Removed a total of 0 cells.
+
+6.15.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+6.15.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \alu_structural..
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \comp_gate..
+Finding unused cells or wires in module \full_adder_gate..
+
+6.15.5. Finished fast OPT passes.
+
+6.16. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+
+6.17. Executing OPT pass (performing simple optimizations).
+
+6.17.1. Executing OPT_EXPR pass (perform const folding).
+
+6.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\adder16_component'.
+Finding identical cells in module `\alu_structural'.
+Finding identical cells in module `\comp16_component'.
+Finding identical cells in module `\comp_gate'.
+Finding identical cells in module `\full_adder_gate'.
+Removed a total of 0 cells.
+
+6.17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \adder16_component..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \alu_structural..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+    Root of a mux tree: $ternary$alu_structural.sv:72$19 (pure)
+  Analyzing evaluation results.
+Running muxtree optimizer on module \comp16_component..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \comp_gate..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \full_adder_gate..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+6.17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \adder16_component.
+  Optimizing cells in module \alu_structural.
+  Optimizing cells in module \comp16_component.
+  Optimizing cells in module \comp_gate.
+  Optimizing cells in module \full_adder_gate.
+Performed a total of 0 changes.
+
+6.17.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\adder16_component'.
+Finding identical cells in module `\alu_structural'.
+Finding identical cells in module `\comp16_component'.
+Finding identical cells in module `\comp_gate'.
+Finding identical cells in module `\full_adder_gate'.
+Removed a total of 0 cells.
+
+6.17.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+6.17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \alu_structural..
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \comp_gate..
+Finding unused cells or wires in module \full_adder_gate..
+
+6.17.8. Executing OPT_EXPR pass (perform const folding).
+
+6.17.9. Finished OPT passes. (There is nothing left to do.)
+
+6.18. Executing TECHMAP pass (map to technology primitives).
+
+6.18.1. Executing Verilog-2005 frontend.
+Parsing Verilog input from `<techmap.v>' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+Mapping alu_structural.$eq$alu_structural.sv:65$2 ($logic_not) with simplemap.
+Mapping alu_structural.$eq$alu_structural.sv:66$3 ($eq) with simplemap.
+Mapping alu_structural.$eq$alu_structural.sv:67$4 ($eq) with simplemap.
+Mapping alu_structural.$ternary$alu_structural.sv:67$5 ($mux) with simplemap.
+Mapping alu_structural.$eq$alu_structural.sv:68$6 ($eq) with simplemap.
+Mapping alu_structural.$eq$alu_structural.sv:69$7 ($eq) with simplemap.
+Mapping alu_structural.$and$alu_structural.sv:69$8 ($and) with simplemap.
+Mapping alu_structural.$eq$alu_structural.sv:70$9 ($eq) with simplemap.
+Mapping alu_structural.$or$alu_structural.sv:70$10 ($or) with simplemap.
+Mapping alu_structural.$eq$alu_structural.sv:71$11 ($eq) with simplemap.
+Mapping alu_structural.$not$alu_structural.sv:71$12 ($not) with simplemap.
+Mapping alu_structural.$ternary$alu_structural.sv:72$13 ($mux) with simplemap.
+Mapping alu_structural.$ternary$alu_structural.sv:72$14 ($mux) with simplemap.
+Mapping alu_structural.$ternary$alu_structural.sv:72$15 ($mux) with simplemap.
+Mapping alu_structural.$ternary$alu_structural.sv:72$16 ($mux) with simplemap.
+Mapping alu_structural.$ternary$alu_structural.sv:72$17 ($mux) with simplemap.
+Mapping alu_structural.$ternary$alu_structural.sv:72$18 ($mux) with simplemap.
+Mapping alu_structural.$ternary$alu_structural.sv:72$19 ($mux) with simplemap.
+Mapping alu_structural.$eq$alu_structural.sv:74$20 ($logic_not) with simplemap.
+Mapping comp_gate.$xor$comp_gate.sv:17$23 ($xor) with simplemap.
+Mapping comp_gate.$not$comp_gate.sv:19$24 ($not) with simplemap.
+Mapping comp_gate.$not$comp_gate.sv:20$25 ($not) with simplemap.
+Mapping comp_gate.$and$comp_gate.sv:22$26 ($and) with simplemap.
+Mapping comp_gate.$and$comp_gate.sv:23$27 ($and) with simplemap.
+Mapping comp_gate.$and$comp_gate.sv:25$28 ($and) with simplemap.
+Mapping comp_gate.$or$comp_gate.sv:26$29 ($or) with simplemap.
+Mapping full_adder_gate.$xor$full_adder_gate.sv:10$30 ($xor) with simplemap.
+Mapping full_adder_gate.$xor$full_adder_gate.sv:11$31 ($xor) with simplemap.
+Mapping full_adder_gate.$and$full_adder_gate.sv:13$32 ($and) with simplemap.
+Mapping full_adder_gate.$and$full_adder_gate.sv:14$33 ($and) with simplemap.
+Mapping full_adder_gate.$and$full_adder_gate.sv:15$34 ($and) with simplemap.
+Mapping full_adder_gate.$or$full_adder_gate.sv:17$35 ($or) with simplemap.
+Mapping full_adder_gate.$or$full_adder_gate.sv:17$36 ($or) with simplemap.
+No more expansions possible.
+
+6.19. Executing OPT pass (performing simple optimizations).
+
+6.19.1. Executing OPT_EXPR pass (perform const folding).
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$92' (?0) in module `\alu_structural' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$89 [1] = \opc [1]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$93' (?0) in module `\alu_structural' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$89 [2] = \opc [2]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$104' (?0) in module `\alu_structural' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$102 [0] = \opc [0]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$106' (?0) in module `\alu_structural' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$102 [2] = \opc [2]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$135' (?0) in module `\alu_structural' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$131 [2] = \opc [2]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$146' (?0) in module `\alu_structural' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$144 [0] = \opc [0]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$147' (?0) in module `\alu_structural' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$144 [1] = \opc [1]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$176' (?0) in module `\alu_structural' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$173 [1] = \opc [1]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$204' (?0) in module `\alu_structural' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$202 [0] = \opc [0]'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$232' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$231' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$233' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$234' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$235' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$236' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$237' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$238' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$239' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$240' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$241' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$242' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$243' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$244' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$245' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$246' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$248' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$247' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$249' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$250' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$251' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$252' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$253' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$254' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$255' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$256' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$257' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$258' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$259' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$260' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$261' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$262' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$264' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$263' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$265' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$266' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$267' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$268' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$269' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$270' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$271' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$272' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$273' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$274' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$275' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$276' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$277' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$278' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$280' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$279' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$281' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$282' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$283' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$284' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$285' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$286' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$287' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$288' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$289' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$290' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$291' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$292' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$293' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$294' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$296' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$295' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$297' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$298' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$299' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$300' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$301' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$302' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$303' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$304' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$305' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$306' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$307' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$308' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$309' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$310' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$312' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$311' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$313' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$314' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$315' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$316' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$317' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$318' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$319' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$320' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$321' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$322' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$323' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$324' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$325' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$326' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$328' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$327' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$329' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$330' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$331' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$332' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$333' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$334' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$335' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$336' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$337' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$338' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$339' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$340' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$341' in module `alu_structural'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$342' in module `alu_structural'.
+
+6.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\adder16_component'.
+Finding identical cells in module `\alu_structural'.
+  Cell `$auto$simplemap.cc:85:simplemap_bitop$177' is identical to cell `$auto$simplemap.cc:85:simplemap_bitop$206'.
+    Redirecting output \Y: $auto$simplemap.cc:250:simplemap_eqne$173 [2] = $auto$simplemap.cc:250:simplemap_eqne$202 [2]
+    Removing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$177' from module `\alu_structural'.
+  Cell `$auto$simplemap.cc:85:simplemap_bitop$148' is identical to cell `$auto$simplemap.cc:85:simplemap_bitop$206'.
+    Redirecting output \Y: $auto$simplemap.cc:250:simplemap_eqne$144 [2] = $auto$simplemap.cc:250:simplemap_eqne$202 [2]
+    Removing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$148' from module `\alu_structural'.
+  Cell `$auto$simplemap.cc:85:simplemap_bitop$134' is identical to cell `$auto$simplemap.cc:85:simplemap_bitop$205'.
+    Redirecting output \Y: $auto$simplemap.cc:250:simplemap_eqne$131 [1] = $auto$simplemap.cc:250:simplemap_eqne$202 [1]
+    Removing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$134' from module `\alu_structural'.
+  Cell `$auto$simplemap.cc:85:simplemap_bitop$133' is identical to cell `$auto$simplemap.cc:85:simplemap_bitop$175'.
+    Redirecting output \Y: $auto$simplemap.cc:250:simplemap_eqne$131 [0] = $auto$simplemap.cc:250:simplemap_eqne$173 [0]
+    Removing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$133' from module `\alu_structural'.
+  Cell `$auto$simplemap.cc:85:simplemap_bitop$105' is identical to cell `$auto$simplemap.cc:85:simplemap_bitop$205'.
+    Redirecting output \Y: $auto$simplemap.cc:250:simplemap_eqne$102 [1] = $auto$simplemap.cc:250:simplemap_eqne$202 [1]
+    Removing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$105' from module `\alu_structural'.
+  Cell `$auto$simplemap.cc:85:simplemap_bitop$91' is identical to cell `$auto$simplemap.cc:85:simplemap_bitop$175'.
+    Redirecting output \Y: $auto$simplemap.cc:250:simplemap_eqne$89 [0] = $auto$simplemap.cc:250:simplemap_eqne$173 [0]
+    Removing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$91' from module `\alu_structural'.
+  Cell `$auto$simplemap.cc:177:logic_reduce$85' is identical to cell `$auto$simplemap.cc:136:simplemap_reduce$152'.
+    Redirecting output \Y: $auto$simplemap.cc:168:logic_reduce$84 = $auto$simplemap.cc:127:simplemap_reduce$151
+    Removing $_OR_ cell `$auto$simplemap.cc:177:logic_reduce$85' from module `\alu_structural'.
+  Cell `$auto$simplemap.cc:136:simplemap_reduce$110' is identical to cell `$auto$simplemap.cc:136:simplemap_reduce$210'.
+    Redirecting output \Y: $auto$simplemap.cc:127:simplemap_reduce$109 = $auto$simplemap.cc:127:simplemap_reduce$209
+    Removing $_OR_ cell `$auto$simplemap.cc:136:simplemap_reduce$110' from module `\alu_structural'.
+  Cell `$auto$simplemap.cc:136:simplemap_reduce$97' is identical to cell `$auto$simplemap.cc:136:simplemap_reduce$181'.
+    Redirecting output \Y: $auto$simplemap.cc:127:simplemap_reduce$96 = $auto$simplemap.cc:127:simplemap_reduce$180
+    Removing $_OR_ cell `$auto$simplemap.cc:136:simplemap_reduce$97' from module `\alu_structural'.
+Finding identical cells in module `\comp16_component'.
+Finding identical cells in module `\comp_gate'.
+Finding identical cells in module `\full_adder_gate'.
+Removed a total of 9 cells.
+
+6.19.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+6.19.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \alu_structural..
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:206:simplemap_lognot$88'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:206:simplemap_lognot$101'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:206:simplemap_lognot$114'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:206:simplemap_lognot$143'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:206:simplemap_lognot$156'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:206:simplemap_lognot$185'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:206:simplemap_lognot$214'.
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \comp_gate..
+Finding unused cells or wires in module \full_adder_gate..
+
+6.19.5. Finished fast OPT passes.
+
+6.20. Executing ABC pass (technology mapping using ABC).
+
+6.20.1. Extracting gate netlist of module `\adder16_component' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+6.20.2. Extracting gate netlist of module `\alu_structural' to `<abc-temp-dir>/input.blif'..
+Extracted 206 gates and 292 wires to a netlist network with 84 inputs and 17 outputs.
+
+6.20.2.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 15 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + retime -o 
+ABC: + map 
+ABC: Warning: The network was strashed and balanced before mapping.
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+6.20.2.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:              AOI3 cells:       16
+ABC RESULTS:              AOI4 cells:       16
+ABC RESULTS:               MUX cells:       80
+ABC RESULTS:              NAND cells:       38
+ABC RESULTS:               NOR cells:        8
+ABC RESULTS:               NOT cells:       50
+ABC RESULTS:              OAI3 cells:       16
+ABC RESULTS:                OR cells:       24
+ABC RESULTS:        internal signals:      191
+ABC RESULTS:           input signals:       84
+ABC RESULTS:          output signals:       17
+Removing temp directory.
+
+6.20.3. Extracting gate netlist of module `\comp16_component' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+6.20.4. Extracting gate netlist of module `\comp_gate' to `<abc-temp-dir>/input.blif'..
+Extracted 7 gates and 11 wires to a netlist network with 4 inputs and 2 outputs.
+
+6.20.4.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 15 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + retime -o 
+ABC: + map 
+ABC: Warning: The network was strashed and balanced before mapping.
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+6.20.4.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:              AOI3 cells:        1
+ABC RESULTS:               NOT cells:        3
+ABC RESULTS:              OAI3 cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:        internal signals:        5
+ABC RESULTS:           input signals:        4
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+6.20.5. Extracting gate netlist of module `\full_adder_gate' to `<abc-temp-dir>/input.blif'..
+Extracted 7 gates and 10 wires to a netlist network with 3 inputs and 2 outputs.
+
+6.20.5.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 15 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + retime -o 
+ABC: + map 
+ABC: Warning: The network was strashed and balanced before mapping.
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+6.20.5.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:              OAI3 cells:        1
+ABC RESULTS:              XNOR cells:        2
+ABC RESULTS:        internal signals:        5
+ABC RESULTS:           input signals:        3
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+6.21. Executing OPT pass (performing simple optimizations).
+
+6.21.1. Executing OPT_EXPR pass (perform const folding).
+
+6.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\adder16_component'.
+Finding identical cells in module `\alu_structural'.
+Finding identical cells in module `\comp16_component'.
+Finding identical cells in module `\comp_gate'.
+Finding identical cells in module `\full_adder_gate'.
+Removed a total of 0 cells.
+
+6.21.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+6.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \adder16_component..
+Finding unused cells or wires in module \alu_structural..
+Finding unused cells or wires in module \comp16_component..
+Finding unused cells or wires in module \comp_gate..
+  removing unused non-port wire \anb.
+  removing unused non-port wire \anb_eq.
+  removing unused non-port wire \axb.
+  removing unused non-port wire \n_axb.
+  removing unused non-port wire \nb.
+  removed 5 unused temporary wires.
+Finding unused cells or wires in module \full_adder_gate..
+  removing unused non-port wire \ab.
+  removing unused non-port wire \ac.
+  removing unused non-port wire \axb.
+  removing unused non-port wire \bc.
+  removed 4 unused temporary wires.
+
+6.21.5. Finished fast OPT passes.
+
+6.22. Executing HIERARCHY pass (managing design hierarchy).
+
+6.22.1. Analyzing design hierarchy..
+Top module:  \alu_structural
+Used module:     \adder16_component
+Used module:         \full_adder_gate
+Used module:     \comp16_component
+Used module:         \comp_gate
+
+6.22.2. Analyzing design hierarchy..
+Top module:  \alu_structural
+Used module:     \adder16_component
+Used module:         \full_adder_gate
+Used module:     \comp16_component
+Used module:         \comp_gate
+Removed 0 unused modules.
+
+6.23. Printing statistics.
+
+=== adder16_component ===
+
+   Number of wires:                  6
+   Number of wire bits:             65
+   Number of public wires:           6
+   Number of public wire bits:      65
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     full_adder_gate                16
+
+=== alu_structural ===
+
+   Number of wires:                251
+   Number of wire bits:            358
+   Number of public wires:          16
+   Number of public wire bits:     123
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                256
+     $_AND_                          4
+     $_AOI3_                        16
+     $_AOI4_                        16
+     $_MUX_                         80
+     $_NAND_                        38
+     $_NOR_                          8
+     $_NOT_                         50
+     $_OAI3_                        16
+     $_OR_                          24
+     adder16_component               3
+     comp16_component                1
+
+=== comp16_component ===
+
+   Number of wires:                  6
+   Number of wire bits:             66
+   Number of public wires:           6
+   Number of public wire bits:      66
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     comp_gate                      16
+
+=== comp_gate ===
+
+   Number of wires:                 11
+   Number of wire bits:             11
+   Number of public wires:           6
+   Number of public wire bits:       6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $_AND_                          1
+     $_AOI3_                         1
+     $_NOT_                          3
+     $_OAI3_                         1
+     $_OR_                           1
+
+=== full_adder_gate ===
+
+   Number of wires:                  8
+   Number of wire bits:              8
+   Number of public wires:           5
+   Number of public wire bits:       5
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $_NAND_                         2
+     $_OAI3_                         1
+     $_XNOR_                         2
+
+=== design hierarchy ===
+
+   alu_structural                    1
+     adder16_component               3
+       full_adder_gate              16
+     comp16_component                1
+       comp_gate                    16
+
+   Number of wires:                835
+   Number of wire bits:           1179
+   Number of public wires:         376
+   Number of public wire bits:     720
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                604
+     $_AND_                         20
+     $_AOI3_                        32
+     $_AOI4_                        16
+     $_MUX_                         80
+     $_NAND_                       134
+     $_NOR_                          8
+     $_NOT_                         98
+     $_OAI3_                        80
+     $_OR_                          40
+     $_XNOR_                        96
+
+6.24. Executing CHECK pass (checking for obvious problems).
+checking module adder16_component..
+checking module alu_structural..
+checking module comp16_component..
+checking module comp_gate..
+checking module full_adder_gate..
+found and reported 0 problems.
+
+7. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell DFF (noninv, pins=3, area=18.00) is a direct match for cell type $_DFF_P_.
+  cell DFF_PP0 (noninv, pins=4, area=0.00) is a direct match for cell type $_DFF_PP0_.
+  cell DFF_PP1 (noninv, pins=4, area=0.00) is a direct match for cell type $_DFF_PP1_.
+  create mapping for $_DFF_PN0_ from mapping for $_DFF_PP0_.
+  create mapping for $_DFF_PN1_ from mapping for $_DFF_PP1_.
+  create mapping for $_DFF_N_ from mapping for $_DFF_P_.
+  create mapping for $_DFF_NN0_ from mapping for $_DFF_PN0_.
+  create mapping for $_DFF_NP0_ from mapping for $_DFF_NN0_.
+  create mapping for $_DFF_NN1_ from mapping for $_DFF_NN0_.
+  create mapping for $_DFF_NP1_ from mapping for $_DFF_NN1_.
+  final dff cell mappings:
+    DFF _DFF_N_ (.C(~C), .D( D), .Q( Q));
+    DFF _DFF_P_ (.C( C), .D( D), .Q( Q));
+    DFF_PP0 _DFF_NN0_ (.C(~C), .D( D), .Q( Q), .R(~R));
+    DFF_PP0 _DFF_NN1_ (.C(~C), .D(~D), .Q(~Q), .R(~R));
+    DFF_PP0 _DFF_NP0_ (.C(~C), .D( D), .Q( Q), .R( R));
+    DFF_PP0 _DFF_NP1_ (.C(~C), .D(~D), .Q(~Q), .R( R));
+    DFF_PP0 _DFF_PN0_ (.C( C), .D( D), .Q( Q), .R(~R));
+    DFF_PP1 _DFF_PN1_ (.C( C), .D( D), .Q( Q), .R(~R));
+    DFF_PP0 _DFF_PP0_ (.C( C), .D( D), .Q( Q), .R( R));
+    DFF_PP1 _DFF_PP1_ (.C( C), .D( D), .Q( Q), .R( R));
+    unmapped dff cell: $_DFFSR_NNN_
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+Mapping DFF cells in module `\adder16_component':
+Mapping DFF cells in module `\alu_structural':
+Mapping DFF cells in module `\comp16_component':
+Mapping DFF cells in module `\comp_gate':
+Mapping DFF cells in module `\full_adder_gate':
+
+8. Executing ABC pass (technology mapping using ABC).
+
+8.1. Extracting gate netlist of module `\adder16_component' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+8.2. Extracting gate netlist of module `\alu_structural' to `<abc-temp-dir>/input.blif'..
+Extracted 252 gates and 336 wires to a netlist network with 84 inputs and 17 outputs.
+
+8.2.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w E:\Programming\Verilog\CA3\2\src/./mycells.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Warning: Templates are not defined.
+ABC: Libery parser cannot read "time_unit".  Assuming   time_unit : "1ns".
+ABC: Libery parser cannot read "capacitive_load_unit". Assuming   capacitive_load_unit(1, pf).
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_PP0".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_PP1".
+ABC: Library "demo" from "E:\Programming\Verilog\CA3\2\src/./mycells.lib" has 4 cells (3 skipped: 3 seq; 0 tri-state; 0 no func).  Time =     0.00 sec
+ABC: Memory =    0.00 MB. Time =     0.00 sec
+ABC: + strash 
+ABC: + dc2 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + ifraig 
+ABC: + retime -o 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+8.2.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:      136
+ABC RESULTS:               NOR cells:      230
+ABC RESULTS:               NOT cells:      100
+ABC RESULTS:        internal signals:      235
+ABC RESULTS:           input signals:       84
+ABC RESULTS:          output signals:       17
+Removing temp directory.
+
+8.3. Extracting gate netlist of module `\comp16_component' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+8.4. Extracting gate netlist of module `\comp_gate' to `<abc-temp-dir>/input.blif'..
+Extracted 7 gates and 11 wires to a netlist network with 4 inputs and 2 outputs.
+
+8.4.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w E:\Programming\Verilog\CA3\2\src/./mycells.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Warning: Templates are not defined.
+ABC: Libery parser cannot read "time_unit".  Assuming   time_unit : "1ns".
+ABC: Libery parser cannot read "capacitive_load_unit". Assuming   capacitive_load_unit(1, pf).
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_PP0".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_PP1".
+ABC: Library "demo" from "E:\Programming\Verilog\CA3\2\src/./mycells.lib" has 4 cells (3 skipped: 3 seq; 0 tri-state; 0 no func).  Time =     0.00 sec
+ABC: Memory =    0.00 MB. Time =     0.00 sec
+ABC: + strash 
+ABC: + dc2 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + ifraig 
+ABC: + retime -o 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+8.4.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:        4
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:               NOT cells:        2
+ABC RESULTS:        internal signals:        5
+ABC RESULTS:           input signals:        4
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+8.5. Extracting gate netlist of module `\full_adder_gate' to `<abc-temp-dir>/input.blif'..
+Extracted 5 gates and 8 wires to a netlist network with 3 inputs and 2 outputs.
+
+8.5.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w E:\Programming\Verilog\CA3\2\src/./mycells.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Warning: Templates are not defined.
+ABC: Libery parser cannot read "time_unit".  Assuming   time_unit : "1ns".
+ABC: Libery parser cannot read "capacitive_load_unit". Assuming   capacitive_load_unit(1, pf).
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_PP0".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_PP1".
+ABC: Library "demo" from "E:\Programming\Verilog\CA3\2\src/./mycells.lib" has 4 cells (3 skipped: 3 seq; 0 tri-state; 0 no func).  Time =     0.00 sec
+ABC: Memory =    0.00 MB. Time =     0.00 sec
+ABC: + strash 
+ABC: + dc2 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + ifraig 
+ABC: + retime -o 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+8.5.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:        4
+ABC RESULTS:               NOR cells:        4
+ABC RESULTS:               NOT cells:        4
+ABC RESULTS:        internal signals:        3
+ABC RESULTS:           input signals:        3
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+Removed 0 unused cells and 355 unused wires.
+
+9. Printing statistics.
+
+=== adder16_component ===
+
+   Number of wires:                  6
+   Number of wire bits:             65
+   Number of public wires:           6
+   Number of public wire bits:      65
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     full_adder_gate                16
+
+=== alu_structural ===
+
+   Number of wires:                465
+   Number of wire bits:            572
+   Number of public wires:          16
+   Number of public wire bits:     123
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                470
+     NAND                          136
+     NOR                           230
+     NOT                           100
+     adder16_component               3
+     comp16_component                1
+
+=== comp16_component ===
+
+   Number of wires:                  6
+   Number of wire bits:             66
+   Number of public wires:           6
+   Number of public wire bits:      66
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     comp_gate                      16
+
+=== comp_gate ===
+
+   Number of wires:                 12
+   Number of wire bits:             12
+   Number of public wires:           6
+   Number of public wire bits:       6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     NAND                            4
+     NOR                             2
+     NOT                             2
+
+=== full_adder_gate ===
+
+   Number of wires:                 15
+   Number of wire bits:             15
+   Number of public wires:           5
+   Number of public wire bits:       5
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 12
+     NAND                            4
+     NOR                             4
+     NOT                             4
+
+=== design hierarchy ===
+
+   alu_structural                    1
+     adder16_component               3
+       full_adder_gate              16
+     comp16_component                1
+       comp_gate                    16
+
+   Number of wires:               1401
+   Number of wire bits:           1745
+   Number of public wires:         376
+   Number of public wire bits:     720
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1170
+     NAND                          392
+     NOR                           454
+     NOT                           324
+
+10. Executing Verilog backend.
+Dumping module `\adder16_component'.
+Dumping module `\alu_structural'.
+Dumping module `\comp16_component'.
+Dumping module `\comp_gate'.
+Dumping module `\full_adder_gate'.
+
+End of script. Logfile hash: 8118de95e7
+Yosys 0.7 (git sha1 61f6811, i686-w64-mingw32.static-gcc 4.9.3 -Os)
+Time spent: 2% 12x opt_clean (0 sec), 2% 11x opt_expr (0 sec), ...

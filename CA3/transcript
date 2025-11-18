@@ -7,15 +7,9 @@
 # Compile of alu_structural_tb.sv was successful.
 # Compile of full_adder_gate.sv was successful.
 # Compile of mycells.v was successful.
-# Compile of alu_structural_speed_tb.sv was successful.
-# Compile of alu_structural_netlist.sv was successful.
-# Compile of adder16_component.sv was successful.
-# Compile of comp16_component.sv was successful.
-# Compile of comp_gate.sv was successful.
-# 14 compiles, 0 failed with no errors.
 vsim -gui work.alu_structural_speed_tb
 # vsim -gui work.alu_structural_speed_tb 
-# Start time: 13:35:22 on Nov 14,2025
+# Start time: 23:26:37 on Nov 18,2025
 # Loading sv_std.std
 # Loading work.alu_structural_speed_tb
 # Loading work.alu_structural
@@ -31,6 +25,12 @@ vsim -gui work.alu_structural_speed_tb
 # Loading work.comp16_component_netlist
 # Loading work.comp_gate_netlist
 # Loading work.comp_gate
+# Compile of alu_structural_speed_tb.sv was successful.
+# Compile of alu_structural_netlist.sv was successful.
+# Compile of adder16_component.sv was successful.
+# Compile of comp16_component.sv was successful.
+# Compile of comp_gate.sv was successful.
+# 14 compiles, 0 failed with no errors.
 add wave -position insertpoint  \
 sim:/alu_structural_speed_tb/inA \
 sim:/alu_structural_speed_tb/inB \
@@ -43,144 +43,6 @@ sim:/alu_structural_speed_tb/outW2 \
 sim:/alu_structural_speed_tb/zer2 \
 sim:/alu_structural_speed_tb/neg2
 run -all
-# ** Note: $stop    : E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv(57)
-#    Time: 400 ns  Iteration: 0  Instance: /alu_structural_speed_tb
-# Break in Module alu_structural_speed_tb at E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv line 57
-# Compile of alu_behavioral_netlist.sv was successful.
-# Compile of alu_behavioral.sv was successful.
-# Compile of alu_behavioral_netlist_tb.v was successful.
-# Compile of alu_behavioral_speed_tb.sv was successful.
-# Compile of alu_behavioral_tb.sv was successful.
-# Compile of alu_structural.sv was successful.
-# Compile of alu_structural_tb.sv was successful.
-# Compile of full_adder_gate.sv was successful.
-# Compile of mycells.v was successful.
-# Compile of alu_structural_speed_tb.sv was successful.
-# Compile of alu_structural_netlist.sv was successful.
-# Compile of adder16_component.sv was successful.
-# Compile of comp16_component.sv was successful.
-# Compile of comp_gate.sv was successful.
-# 14 compiles, 0 failed with no errors.
-vsim -gui work.alu_structural_speed_tb
-# End time: 13:37:37 on Nov 14,2025, Elapsed time: 0:02:15
-# Errors: 0, Warnings: 7
-# vsim -gui work.alu_structural_speed_tb 
-# Start time: 13:37:37 on Nov 14,2025
-# Loading sv_std.std
-# Loading work.alu_structural_speed_tb
-# Loading work.alu_structural
-# Loading work.adder16_component
-# Loading work.full_adder_gate
-# Loading work.comp16_component
-# Loading work.alu_structural_netlist
-# Loading work.NOT
-# Loading work.NOR
-# Loading work.NAND
-# Loading work.adder16_component_netlist
-# Loading work.full_adder_gate_netlist
-# Loading work.comp16_component_netlist
-# Loading work.comp_gate_netlist
-# Loading work.comp_gate
-add wave -position end  sim:/alu_structural_speed_tb/inA
-add wave -position end  sim:/alu_structural_speed_tb/inB
-add wave -position end  sim:/alu_structural_speed_tb/inC
-add wave -position end  sim:/alu_structural_speed_tb/opc
-add wave -position end  sim:/alu_structural_speed_tb/outW1
-add wave -position end  sim:/alu_structural_speed_tb/outW2
-run -all
-# ** Note: $stop    : E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv(48)
-#    Time: 200 ns  Iteration: 0  Instance: /alu_structural_speed_tb
-# Break in Module alu_structural_speed_tb at E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv line 48
-# Compile of alu_behavioral_netlist.sv was successful.
-# Compile of alu_behavioral.sv was successful.
-# Compile of alu_behavioral_netlist_tb.v was successful.
-# Compile of alu_behavioral_speed_tb.sv was successful.
-# Compile of alu_behavioral_tb.sv was successful.
-# Compile of alu_structural.sv was successful.
-# Compile of alu_structural_tb.sv was successful.
-# Compile of full_adder_gate.sv was successful.
-# Compile of mycells.v was successful.
-# Compile of alu_structural_speed_tb.sv was successful.
-# Compile of alu_structural_netlist.sv was successful.
-vsim -gui work.alu_structural_speed_tb
-# End time: 13:40:13 on Nov 14,2025, Elapsed time: 0:02:36
-# Errors: 0, Warnings: 1
-# vsim -gui work.alu_structural_speed_tb 
-# Start time: 13:40:13 on Nov 14,2025
-# Loading sv_std.std
-# Loading work.alu_structural_speed_tb
-# Loading work.alu_structural
-# Loading work.adder16_component
-# Loading work.full_adder_gate
-# Loading work.comp16_component
-# Loading work.alu_structural_netlist
-# Loading work.NOT
-# Loading work.NOR
-# Loading work.NAND
-# Loading work.adder16_component_netlist
-# Loading work.full_adder_gate_netlist
-# Loading work.comp16_component_netlist
-# Loading work.comp_gate_netlist
-# Loading work.comp_gate
-# Compile of adder16_component.sv was successful.
-# Compile of comp16_component.sv was successful.
-# Compile of comp_gate.sv was successful.
-# 14 compiles, 0 failed with no errors.
-add wave -position end  sim:/alu_structural_speed_tb/inA
-add wave -position end  sim:/alu_structural_speed_tb/inB
-add wave -position end  sim:/alu_structural_speed_tb/inC
-add wave -position end  sim:/alu_structural_speed_tb/opc
-add wave -position end  sim:/alu_structural_speed_tb/outW1
-add wave -position end  sim:/alu_structural_speed_tb/outW2
-run -all
-# ** Note: $stop    : E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv(48)
-#    Time: 400 ns  Iteration: 0  Instance: /alu_structural_speed_tb
-# Break in Module alu_structural_speed_tb at E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv line 48
-# Compile of alu_behavioral_netlist.sv was successful.
-# Compile of alu_behavioral.sv was successful.
-# Compile of alu_behavioral_netlist_tb.v was successful.
-# Compile of alu_behavioral_speed_tb.sv was successful.
-# Compile of alu_behavioral_tb.sv was successful.
-# Compile of alu_structural.sv was successful.
-# Compile of alu_structural_tb.sv was successful.
-# Compile of full_adder_gate.sv was successful.
-# Compile of mycells.v was successful.
-# Compile of alu_structural_speed_tb.sv was successful.
-# Compile of alu_structural_netlist.sv was successful.
-# Compile of adder16_component.sv was successful.
-# Compile of comp16_component.sv was successful.
-run -all
-# Compile of comp_gate.sv was successful.
-# 14 compiles, 0 failed with no errors.
-vsim -gui work.alu_structural_speed_tb
-# End time: 13:42:04 on Nov 14,2025, Elapsed time: 0:01:51
-# Errors: 0, Warnings: 3
-# vsim -gui work.alu_structural_speed_tb 
-# Start time: 13:42:04 on Nov 14,2025
-# Loading sv_std.std
-# Loading work.alu_structural_speed_tb
-# Loading work.alu_structural
-# Loading work.adder16_component
-# Loading work.full_adder_gate
-# Loading work.comp16_component
-# Loading work.alu_structural_netlist
-# Loading work.NOT
-# Loading work.NOR
-# Loading work.NAND
-# Loading work.adder16_component_netlist
-# Loading work.full_adder_gate_netlist
-# Loading work.comp16_component_netlist
-# Loading work.comp_gate_netlist
-# Loading work.comp_gate
-add wave -position end  sim:/alu_structural_speed_tb/inA
-add wave -position end  sim:/alu_structural_speed_tb/inB
-add wave -position end  sim:/alu_structural_speed_tb/inC
-add wave -position end  sim:/alu_structural_speed_tb/opc
-add wave -position end  sim:/alu_structural_speed_tb/outW1
-add wave -position end  sim:/alu_structural_speed_tb/outW2
-run -all
 # ** Note: $stop    : E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv(49)
 #    Time: 400 ns  Iteration: 0  Instance: /alu_structural_speed_tb
 # Break in Module alu_structural_speed_tb at E:/Programming/Verilog/CA3/2/tb/alu_structural_speed_tb.sv line 49
-# End time: 13:49:10 on Nov 14,2025, Elapsed time: 0:07:06
-# Errors: 0, Warnings: 1

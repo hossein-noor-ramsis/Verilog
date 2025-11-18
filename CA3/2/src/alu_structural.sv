@@ -62,26 +62,17 @@ module alu_structural (
       .isGt(isGt)
   );
 
-  always @(*) begin
-    outW = 16'b0;
-    zer  = 1'b0;
-    neg  = 1'b0;
+  assign outW = (opc == 3'b000) ? sum1_wire :
+                (opc == 3'b001) ? sum2_wire :
+                (opc == 3'b010) ? (isGt ? inA : inB) :
+                (opc == 3'b011) ? sum3_wire :
+                (opc == 3'b100) ? (inA & inB) :
+                (opc == 3'b101) ? (inA | inB) :
+                (opc == 3'b110) ? (~inA) :
+                16'b0;
 
-    case (opc)
-      3'b000:  outW = sum1_wire;
-      3'b001:  outW = sum2_wire;
-      3'b010:  outW = isGt ? inA : inB;
-      3'b011:  outW = sum3_wire;
-      3'b100:  outW = inA & inB;
-      3'b101:  outW = inA | inB;
-      3'b110:  outW = ~inA;
-      3'b111:  outW = 16'b0;
-      default: outW = 16'b0;
-    endcase
-
-    zer = (outW == 16'b0);
-    neg = outW[15];
-  end
+  assign zer = (outW == 16'b0);
+  assign neg = outW[15];
 
 endmodule
 
