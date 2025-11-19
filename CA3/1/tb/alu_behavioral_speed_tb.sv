@@ -46,6 +46,14 @@ module alu_behavioral_speed_tb;
     opc = 3'b000;
     #100;
 
+    repeat (20) begin
+      inA = $random;
+      inB = $random;
+      inC = $random & 1;
+      opc = $random % 8;  // opcode از 0 تا 7
+      #100;
+      print_result();
+      
     $stop;
   end
 
