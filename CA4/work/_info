@@ -1,0 +1,57 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/Programming/Verilog/CA3
+vd_latch_rst_clk
+Z0 !s110 1764848194
+!i10b 1
+!s100 GmRcYSi5U@9b:PDFEk@2Q3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8:dQG;eEADBZRf;h6=Y8]2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dE:/Programming/Verilog/CA4
+w1764847832
+8E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v
+FE:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v
+!i122 0
+L0 1 14
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1764848194.000000
+!s107 E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vtb_d_latch_rst_clk
+R0
+!i10b 1
+!s100 7UYYUN]=l?8:JHz^DAA@=1
+R1
+I=Q7nE3j@VBWLbfb1c[3=<3
+R2
+R3
+w1764848007
+8E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v
+FE:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v
+!i122 1
+L0 3 37
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v|
+!i113 1
+R6
+R7
