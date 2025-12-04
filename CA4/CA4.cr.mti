@@ -1,1 +1,17 @@
+E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module nand2
+-- Compiling module nand3
+-- Compiling module d_latch_rst_clk2
 
+Top level modules:
+	d_latch_rst_clk2
+
+} {} {}} E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module d_latch_rst_clk
+
+Top level modules:
+	d_latch_rst_clk
+
+} {} {}}

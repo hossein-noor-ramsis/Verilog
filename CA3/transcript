@@ -1,0 +1,33 @@
+vsim -gui work.alu_behavioral_netlist_tb
+# vsim -gui work.alu_behavioral_netlist_tb 
+# Start time: 16:14:42 on Dec 04,2025
+# Loading work.alu_behavioral_netlist_tb
+# Loading sv_std.std
+# Loading work.alu_behavioral_netlist
+# Loading work.NOR
+# Loading work.NOT
+# Loading work.NAND
+add wave -position insertpoint  \
+sim:/alu_behavioral_netlist_tb/inA \
+sim:/alu_behavioral_netlist_tb/inB \
+sim:/alu_behavioral_netlist_tb/inC \
+sim:/alu_behavioral_netlist_tb/opc \
+sim:/alu_behavioral_netlist_tb/outW \
+sim:/alu_behavioral_netlist_tb/zer \
+sim:/alu_behavioral_netlist_tb/neg
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Hossein  Hostname: RAMSIS-LEGION  ProcessID: 14124
+#           Attempting to use alternate WLF file "./wlfttfdk1a".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttfdk1a
+run
+#  time | opc |      inA |      inB | Cin |     outW | zer | neg 
+# ---------------------------------------------------------------
+#   100 |  0  |        5 |        3 |  0  |        8 |  x  |  0
+#   200 |  2  |        5 |        3 |  0  |        5 |  0  |  0
+#   300 |  3  |       -7 |        2 |  0  |       -6 |  0  |  1
+#   400 |  3  |    13604 |    24193 |  1  |    25700 |  0  |  0
+#   500 |  2  |    31501 |   -26227 |  1  |    31501 |  0  |  0
+# End time: 16:16:33 on Dec 04,2025, Elapsed time: 0:01:51
+# Errors: 0, Warnings: 3
+# Closing project E:/Programming/Verilog/CA3/CA3.mpf

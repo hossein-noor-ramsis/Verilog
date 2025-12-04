@@ -1,3 +1,5 @@
+`timescale 1ns / 1ns
+
 module d_latch_rst_clk (
     input wire clk,
     input wire D,

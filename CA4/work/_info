@@ -2,56 +2,124 @@ m255
 K4
 z2
 !s11f vlog 2020.1 2020.02, Feb 28 2020
-13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-dE:/Programming/Verilog/CA3
+Z0 dE:/Programming/Verilog/CA4
 vd_latch_rst_clk
-Z0 !s110 1764848194
+Z1 !s110 1764860723
 !i10b 1
-!s100 GmRcYSi5U@9b:PDFEk@2Q3
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I8:dQG;eEADBZRf;h6=Y8]2
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 dE:/Programming/Verilog/CA4
-w1764847832
+!s100 gc_`Gl0Z^9f@2CK=U`BmJ2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Id4d=k=C8U]X;O9oeYDST73
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1764853642
 8E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v
 FE:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v
-!i122 0
-L0 1 14
+!i122 38
+L0 3 16
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1764848194.000000
+Z5 !s108 1764860723.000000
 !s107 E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v|
 !i113 1
 Z6 o-work work
 Z7 tCvgOpt 0
-vtb_d_latch_rst_clk
-R0
-!i10b 1
-!s100 7UYYUN]=l?8:JHz^DAA@=1
+vd_latch_rst_clk2
 R1
-I=Q7nE3j@VBWLbfb1c[3=<3
+!i10b 1
+!s100 ZD12Ym77I<<VM3@UniIYQ3
 R2
+IQ165iom_iP_hcc5FOkAOP2
 R3
-w1764848007
-8E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v
-FE:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v
-!i122 1
-L0 3 37
+R0
+Z8 w1764859798
+Z9 8E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v
+Z10 FE:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v
+!i122 39
+L0 44 35
 R4
 r1
 !s85 0
 31
 R5
-!s107 E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v|
+Z11 !s107 E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v|
+!i113 1
+R6
+R7
+vd_latch_rst_clk_tb2
+R1
+!i10b 1
+!s100 kQ7cQ]RCj<M0gHPO]YKVK3
+R2
+I]nci480:HC^=_A`@Aib9N3
+R3
+R0
+w1764860702
+8E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v
+FE:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v
+!i122 40
+L0 3 47
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v|
+!i113 1
+R6
+R7
+vnand2
+R1
+!i10b 1
+!s100 OB0A?j8FkN6X_MT5>46iN3
+R2
+IZE0N5^kV=I6Xl5AJgYkJM0
+R3
+R0
+R8
+R9
+R10
+!i122 39
+L0 3 17
+R4
+r1
+!s85 0
+31
+R5
+R11
+R12
+!i113 1
+R6
+R7
+vnand3
+R1
+!i10b 1
+!s100 A914m0ceoI@BcOezmk]@72
+R2
+IaIHkOoU_coId_18`h5hhZ0
+R3
+R0
+R8
+R9
+R10
+!i122 39
+L0 21 22
+R4
+r1
+!s85 0
+31
+R5
+R11
+R12
 !i113 1
 R6
 R7

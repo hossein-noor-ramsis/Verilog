@@ -3,26 +3,656 @@
 # 2 compiles, 0 failed with no errors.
 vsim -gui work.tb_d_latch_rst_clk
 # vsim -gui work.tb_d_latch_rst_clk 
-# Start time: 15:06:51 on Dec 04,2025
+# Start time: 16:57:58 on Dec 04,2025
 # Loading work.tb_d_latch_rst_clk
 # Loading work.d_latch_rst_clk
-add dataflow  \
-sim:/tb_d_latch_rst_clk/clk \
-sim:/tb_d_latch_rst_clk/D \
-sim:/tb_d_latch_rst_clk/rst
-# WARNING: No extended dataflow license exists
 add wave -position insertpoint  \
 sim:/tb_d_latch_rst_clk/clk \
 sim:/tb_d_latch_rst_clk/D \
-sim:/tb_d_latch_rst_clk/rst
+sim:/tb_d_latch_rst_clk/rst \
+sim:/tb_d_latch_rst_clk/Q \
+sim:/tb_d_latch_rst_clk/Q_bar
 run
-# t=0 | clk=1 | D=1 | rst=0 | Q=1 | Q_bar=1
-# t=50 | clk=1 | D=0 | rst=0 | Q=0 | Q_bar=1
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# 0 compiles, 2 failed with no errors.
-# 0 compiles, 2 failed with no errors.
+run
+# ---- Transparency test ----
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 200 ns ###############
+#       Signal: /tb_d_latch_rst_clk/Q @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /tb_d_latch_rst_clk/Q_bar @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#16 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:16
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#17 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+#       Signal: /tb_d_latch_rst_clk/Q_bar @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /tb_d_latch_rst_clk/Q @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#17 @ sub-iteration 3
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 200 ns.
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.tb_d_latch_rst_clk
+# End time: 17:00:50 on Dec 04,2025, Elapsed time: 0:02:52
+# Errors: 1, Warnings: 8
+# vsim -gui work.tb_d_latch_rst_clk 
+# Start time: 17:00:50 on Dec 04,2025
+# Loading work.tb_d_latch_rst_clk
+# Loading work.d_latch_rst_clk
+run -continue
+run
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 150 ns ###############
+#       Signal: /tb_d_latch_rst_clk/Q @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /tb_d_latch_rst_clk/Q_bar @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#16 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:16
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#17 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+#       Signal: /tb_d_latch_rst_clk/Q_bar @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /tb_d_latch_rst_clk/Q @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#17 @ sub-iteration 3
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+add wave -position insertpoint  \
+sim:/tb_d_latch_rst_clk/clk \
+sim:/tb_d_latch_rst_clk/D \
+sim:/tb_d_latch_rst_clk/rst \
+sim:/tb_d_latch_rst_clk/Q \
+sim:/tb_d_latch_rst_clk/Q_bar
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.tb_d_latch_rst_clk
+# End time: 17:01:45 on Dec 04,2025, Elapsed time: 0:00:55
+# Errors: 7, Warnings: 2
+# vsim -gui work.tb_d_latch_rst_clk 
+# Start time: 17:01:45 on Dec 04,2025
+# Loading work.tb_d_latch_rst_clk
+# Loading work.d_latch_rst_clk
+add wave -position insertpoint  \
+sim:/tb_d_latch_rst_clk/clk \
+sim:/tb_d_latch_rst_clk/D \
+sim:/tb_d_latch_rst_clk/rst \
+sim:/tb_d_latch_rst_clk/Q \
+sim:/tb_d_latch_rst_clk/Q_bar
+run
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 150 ns ###############
+#       Signal: /tb_d_latch_rst_clk/Q @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /tb_d_latch_rst_clk/Q_bar @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#16 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:16
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#17 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+#       Signal: /tb_d_latch_rst_clk/Q_bar @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /tb_d_latch_rst_clk/Q @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#17 @ sub-iteration 3
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+vsim -gui work.tb_d_latch_rst_clk
+# End time: 17:06:44 on Dec 04,2025, Elapsed time: 0:04:59
+# Errors: 3, Warnings: 2
+# vsim -gui work.tb_d_latch_rst_clk 
+# Start time: 17:06:44 on Dec 04,2025
+# Loading work.tb_d_latch_rst_clk
+# Loading work.d_latch_rst_clk
+run
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 150 ns ###############
+#       Signal: /tb_d_latch_rst_clk/Q @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /tb_d_latch_rst_clk/Q_bar @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#16 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:16
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#17 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+#       Signal: /tb_d_latch_rst_clk/Q_bar @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /tb_d_latch_rst_clk/Q @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /tb_d_latch_rst_clk/uut/#NAND#17 @ sub-iteration 3
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+add wave -position insertpoint  \
+sim:/tb_d_latch_rst_clk/clk \
+sim:/tb_d_latch_rst_clk/D \
+sim:/tb_d_latch_rst_clk/rst \
+sim:/tb_d_latch_rst_clk/Q \
+sim:/tb_d_latch_rst_clk/Q_bar
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+add wave -position insertpoint  \
+sim:/tb_d_latch_rst_clk/clk \
+sim:/tb_d_latch_rst_clk/D \
+sim:/tb_d_latch_rst_clk/rst \
+sim:/tb_d_latch_rst_clk/Q \
+sim:/tb_d_latch_rst_clk/Q_bar
+vsim -gui work.d_latch_rst_clk_tb
+# End time: 17:08:33 on Dec 04,2025, Elapsed time: 0:01:49
+# Errors: 6, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb 
+# Start time: 17:08:33 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb
+# Loading work.d_latch_rst_clk
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb/clk \
+sim:/d_latch_rst_clk_tb/D \
+sim:/d_latch_rst_clk_tb/rst \
+sim:/d_latch_rst_clk_tb/Q \
+sim:/d_latch_rst_clk_tb/Q_bar
+run
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 150 ns ###############
+#       Signal: /d_latch_rst_clk_tb/Q @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /d_latch_rst_clk_tb/Q_bar @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#16 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:16
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#17 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+#       Signal: /d_latch_rst_clk_tb/Q_bar @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /d_latch_rst_clk_tb/Q @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#17 @ sub-iteration 3
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 150 ns.
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb
+# End time: 17:09:59 on Dec 04,2025, Elapsed time: 0:01:26
+# Errors: 2, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb 
+# Start time: 17:09:59 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb
+# Loading work.d_latch_rst_clk
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb/clk \
+sim:/d_latch_rst_clk_tb/D \
+sim:/d_latch_rst_clk_tb/rst \
+sim:/d_latch_rst_clk_tb/Q \
+sim:/d_latch_rst_clk_tb/Q_bar
+run
+run
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 200 ns ###############
+#       Signal: /d_latch_rst_clk_tb/Q @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /d_latch_rst_clk_tb/Q_bar @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#16 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:16
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#17 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+#       Signal: /d_latch_rst_clk_tb/Q_bar @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /d_latch_rst_clk_tb/Q @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#17 @ sub-iteration 3
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 200 ns.
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+# Saving layout as "Simulate"
+vsim -gui work.d_latch_rst_clk_tb
+# End time: 17:16:27 on Dec 04,2025, Elapsed time: 0:06:28
+# Errors: 1, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb 
+# Start time: 17:16:27 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb
+# Loading work.d_latch_rst_clk
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb/clk \
+sim:/d_latch_rst_clk_tb/D \
+sim:/d_latch_rst_clk_tb/rst \
+sim:/d_latch_rst_clk_tb/Q \
+sim:/d_latch_rst_clk_tb/Q_bar
+run
+run
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 200 ns ###############
+#       Signal: /d_latch_rst_clk_tb/Q @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /d_latch_rst_clk_tb/Q_bar @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#16 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:16
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#17 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+#       Signal: /d_latch_rst_clk_tb/Q_bar @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /d_latch_rst_clk_tb/Q @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#17 @ sub-iteration 3
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 200 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 200 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 200 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 200 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 200 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 200 ns.
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb
+# End time: 17:24:43 on Dec 04,2025, Elapsed time: 0:08:16
+# Errors: 6, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb 
+# Start time: 17:24:43 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb
+# Loading work.d_latch_rst_clk
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb/clk \
+sim:/d_latch_rst_clk_tb/D \
+sim:/d_latch_rst_clk_tb/rst \
+sim:/d_latch_rst_clk_tb/Q \
+sim:/d_latch_rst_clk_tb/Q_bar
+run
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 250 ns ###############
+#       Signal: /d_latch_rst_clk_tb/Q @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /d_latch_rst_clk_tb/Q_bar @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#16 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:16
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#17 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+#       Signal: /d_latch_rst_clk_tb/Q_bar @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#       Signal: /d_latch_rst_clk_tb/Q @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:6)
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#17 @ sub-iteration 3
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 250 ns.
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb
+# End time: 17:27:36 on Dec 04,2025, Elapsed time: 0:02:53
+# Errors: 1, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb 
+# Start time: 17:27:36 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb
+# Loading work.d_latch_rst_clk
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb/clk \
+sim:/d_latch_rst_clk_tb/D \
+sim:/d_latch_rst_clk_tb/rst \
+sim:/d_latch_rst_clk_tb/Q \
+sim:/d_latch_rst_clk_tb/Q_bar
+run
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 250 ns ###############
+#       Signal: /d_latch_rst_clk_tb/Q @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:5)
+#       Signal: /d_latch_rst_clk_tb/Q_bar @ sub-iteration 0 at Value St1 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:5)
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#16 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:16
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#17 @ sub-iteration 1
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+#       Signal: /d_latch_rst_clk_tb/Q_bar @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:5)
+#       Signal: /d_latch_rst_clk_tb/Q @ sub-iteration 2 at Value St0 (E:/Programming/Verilog/CA4/1/tb/d_latch_rst_clk_tb.v:5)
+#   Active process: /d_latch_rst_clk_tb/uut/#NAND#17 @ sub-iteration 3
+#     Source: E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v:17
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 250 ns.
+# Ctrl+D  ==>  Add to Dataflow
+# Ctrl+W  ==>  Add to Wave
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb
+# End time: 18:14:23 on Dec 04,2025, Elapsed time: 0:46:47
+# Errors: 1, Warnings: 6
+# vsim -gui work.d_latch_rst_clk_tb 
+# Start time: 18:14:24 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb
+# Loading work.d_latch_rst_clk2
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 56
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 58
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 60
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand3'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 62
+# Error loading design
+# End time: 18:14:24 on Dec 04,2025, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 1
+vsim -gui work.d_latch_rst_clk_tb
+# vsim -gui work.d_latch_rst_clk_tb 
+# Start time: 18:14:39 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb
+# Loading work.d_latch_rst_clk2
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 56
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 58
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 60
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand3'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 62
+# Error loading design
+# End time: 18:14:39 on Dec 04,2025, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 1
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# 2 compiles, 1 failed with no errors.
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:15:41 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 56
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 58
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 60
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand3'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 62
+# Error loading design
+# End time: 18:15:42 on Dec 04,2025, Elapsed time: 0:00:01
+# Errors: 4, Warnings: 5
+vsim -gui work.d_latch_rst_clk_tb2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:15:52 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 56
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 58
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 60
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand3'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 62
+# Error loading design
+# End time: 18:15:53 on Dec 04,2025, Elapsed time: 0:00:01
+# Errors: 4, Warnings: 1
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:17:03 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 56
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 58
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 60
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand3'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 62
+# Error loading design
+# End time: 18:17:03 on Dec 04,2025, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 2
+vsim -gui work.d_latch_rst_clk_tb2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:18:14 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 56
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 58
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 60
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand3'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 62
+# Error loading design
+# End time: 18:18:15 on Dec 04,2025, Elapsed time: 0:00:01
+# Errors: 4, Warnings: 1
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v failed with 1 errors.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 1 failed with 1 error.
+vsim -gui work.d_latch_rst_clk_tb2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:19:22 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 56
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 58
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand2'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 60
+# ** Error: (vsim-3037) Missing instance name in instantiation of 'nand3'.
+#    Time: 0 ps  Iteration: 0  Instance: /d_latch_rst_clk_tb2/uut File: E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v Line: 62
+# Error loading design
+# End time: 18:19:22 on Dec 04,2025, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 2
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v failed with 1 errors.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:20:07 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# Loading work.nand2
+# Loading work.nand3
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb2/clk \
+sim:/d_latch_rst_clk_tb2/D \
+sim:/d_latch_rst_clk_tb2/rst \
+sim:/d_latch_rst_clk_tb2/Q \
+sim:/d_latch_rst_clk_tb2/Q_bar
+run
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb2
+# End time: 18:20:56 on Dec 04,2025, Elapsed time: 0:00:49
+# Errors: 0, Warnings: 4
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:20:56 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# Loading work.nand2
+# Loading work.nand3
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb2/clk \
+sim:/d_latch_rst_clk_tb2/D \
+sim:/d_latch_rst_clk_tb2/rst \
+sim:/d_latch_rst_clk_tb2/Q \
+sim:/d_latch_rst_clk_tb2/Q_bar
+run
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb2
+# End time: 18:23:19 on Dec 04,2025, Elapsed time: 0:02:23
+# Errors: 0, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:23:19 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# Loading work.nand2
+# Loading work.nand3
+# Saving layout as "Simulate"
+# Saving layout as "Simulate"
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb2/clk \
+sim:/d_latch_rst_clk_tb2/D \
+sim:/d_latch_rst_clk_tb2/rst \
+sim:/d_latch_rst_clk_tb2/Q \
+sim:/d_latch_rst_clk_tb2/Q_bar
+run
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb2
+# End time: 18:25:09 on Dec 04,2025, Elapsed time: 0:01:50
+# Errors: 0, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:25:09 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# Loading work.nand2
+# Loading work.nand3
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb2/clk \
+sim:/d_latch_rst_clk_tb2/D \
+sim:/d_latch_rst_clk_tb2/rst \
+sim:/d_latch_rst_clk_tb2/Q \
+sim:/d_latch_rst_clk_tb2/Q_bar
+run
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb2
+# End time: 18:25:49 on Dec 04,2025, Elapsed time: 0:00:40
+# Errors: 0, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:25:49 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# Loading work.nand2
+# Loading work.nand3
+add wave -position insertpoint sim:/d_latch_rst_clk_tb2/*
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb2/clk \
+sim:/d_latch_rst_clk_tb2/D \
+sim:/d_latch_rst_clk_tb2/rst \
+sim:/d_latch_rst_clk_tb2/Q \
+sim:/d_latch_rst_clk_tb2/Q_bar
+run
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb2
+# End time: 18:30:42 on Dec 04,2025, Elapsed time: 0:04:53
+# Errors: 0, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:30:42 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# Loading work.nand2
+# Loading work.nand3
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb2/clk \
+sim:/d_latch_rst_clk_tb2/D \
+sim:/d_latch_rst_clk_tb2/rst \
+sim:/d_latch_rst_clk_tb2/Q \
+sim:/d_latch_rst_clk_tb2/Q_bar
+run
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb2
+# End time: 18:31:26 on Dec 04,2025, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:31:26 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# Loading work.nand2
+# Loading work.nand3
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb2/clk \
+sim:/d_latch_rst_clk_tb2/D \
+sim:/d_latch_rst_clk_tb2/rst \
+sim:/d_latch_rst_clk_tb2/Q \
+sim:/d_latch_rst_clk_tb2/Q_bar
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb2/clk \
+sim:/d_latch_rst_clk_tb2/D \
+sim:/d_latch_rst_clk_tb2/rst \
+sim:/d_latch_rst_clk_tb2/Q \
+sim:/d_latch_rst_clk_tb2/Q_bar
+run
+# Saving layout as "Simulate"
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb2
+# End time: 18:33:15 on Dec 04,2025, Elapsed time: 0:01:49
+# Errors: 0, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:33:15 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# Loading work.nand2
+# Loading work.nand3
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb2/clk \
+sim:/d_latch_rst_clk_tb2/D \
+sim:/d_latch_rst_clk_tb2/rst \
+sim:/d_latch_rst_clk_tb2/Q \
+sim:/d_latch_rst_clk_tb2/Q_bar
+run
+# Compile of d_latch_rst_clk.v was successful.
+# Compile of d_latch_rst_clk2.v was successful.
+# Compile of d_latch_rst_clk_tb2.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.d_latch_rst_clk_tb2
+# End time: 18:35:29 on Dec 04,2025, Elapsed time: 0:02:14
+# Errors: 0, Warnings: 2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 18:35:29 on Dec 04,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
+# Loading work.nand2
+# Loading work.nand3
+add wave -position insertpoint  \
+sim:/d_latch_rst_clk_tb2/clk \
+sim:/d_latch_rst_clk_tb2/D \
+sim:/d_latch_rst_clk_tb2/rst \
+sim:/d_latch_rst_clk_tb2/Q \
+sim:/d_latch_rst_clk_tb2/Q_bar
+run
+run
+# ** Note: $stop    : E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v(46)
+#    Time: 3 us  Iteration: 0  Instance: /d_latch_rst_clk_tb2
+# Break in Module d_latch_rst_clk_tb2 at E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v line 46
