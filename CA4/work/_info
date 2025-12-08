@@ -8,118 +8,368 @@ z2
 !i10f 100
 cModel Technology
 Z0 dE:/Programming/Verilog/CA4
+vcompare_tb
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1765219898
+!i10b 1
+!s100 3dCO9kkcE@<Vc6U8GCZa33
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I<W>fBgN83d82T8M^FUG;z0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1765219548
+8E:/Programming/Verilog/CA4/10/compare_tb.sv
+FE:/Programming/Verilog/CA4/10/compare_tb.sv
+!i122 530
+L0 3 83
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1765219898.000000
+!s107 E:/Programming/Verilog/CA4/10/compare_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA4/10/compare_tb.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
 vd_latch_rst_clk
-Z1 !s110 1764860723
+Z9 !s110 1765219888
 !i10b 1
 !s100 gc_`Gl0Z^9f@2CK=U`BmJ2
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+R3
 Id4d=k=C8U]X;O9oeYDST73
-Z3 VDg1SIo80bB@j0V0VzS_@n1
+R4
 R0
 w1764853642
 8E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v
 FE:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v
-!i122 38
+!i122 520
 L0 3 16
-Z4 OV;L;2020.1;71
+R5
 r1
 !s85 0
 31
-Z5 !s108 1764860723.000000
+Z10 !s108 1765219888.000000
 !s107 E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v|
 !i113 1
-Z6 o-work work
-Z7 tCvgOpt 0
+Z11 o-work work
+R8
 vd_latch_rst_clk2
-R1
+R9
 !i10b 1
-!s100 ZD12Ym77I<<VM3@UniIYQ3
-R2
-IQ165iom_iP_hcc5FOkAOP2
+!s100 W=RMm9HQ`1UgJ>8Mf[LlN0
 R3
-R0
-Z8 w1764859798
-Z9 8E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v
-Z10 FE:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v
-!i122 39
-L0 44 35
+IUR]5BZGnZl]P`R4JZVj6_2
 R4
+R0
+w1765210167
+Z12 8E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v
+Z13 FE:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v
+!i122 521
+L0 3 18
+R5
 r1
 !s85 0
 31
-R5
-Z11 !s107 E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v|
-Z12 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v|
+R10
+Z14 !s107 E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v|
+Z15 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v|
 !i113 1
-R6
-R7
-vd_latch_rst_clk_tb2
-R1
+R11
+R8
+vd_latch_rst_clk3
+Z16 !s110 1765219889
 !i10b 1
-!s100 kQ7cQ]RCj<M0gHPO]YKVK3
-R2
-I]nci480:HC^=_A`@Aib9N3
+!s100 ?;;I1n[]J_Oe=J@jOQRPX0
 R3
+I<BIl`NI:VSe`P2oj48cLM0
+R4
 R0
-w1764860702
+w1765218925
+8E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk3.v
+FE:/Programming/Verilog/CA4/3/src/d_latch_rst_clk3.v
+!i122 525
+L0 3 21
+R5
+r1
+!s85 0
+31
+Z17 !s108 1765219889.000000
+!s107 E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk3.v|
+!i113 1
+R11
+R8
+vd_latch_rst_clk_tb2
+R9
+!i10b 1
+!s100 @d;MA<JBc7_AeVCi`b6DY3
+R3
+I00>W4XC7iboMW46:KcUi33
+R4
+R0
+w1765210367
 8E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v
 FE:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v
-!i122 40
-L0 3 47
-R4
+!i122 522
+L0 3 41
+R5
 r1
 !s85 0
 31
-R5
+R10
 !s107 E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v|
 !i113 1
-R6
-R7
-vnand2
+R11
+R8
+vdff
 R1
+R2
+!i10b 1
+!s100 W[m::4mhhRAMzoJ6MIPdF1
+R3
+IfD8k`C1X4de>j9mRhdUbX2
+R4
+S1
+R0
+w1765219415
+8E:/Programming/Verilog/CA4/5/dff.sv
+FE:/Programming/Verilog/CA4/5/dff.sv
+!i122 531
+L0 3 36
+R5
+r1
+!s85 0
+31
+R6
+!s107 E:/Programming/Verilog/CA4/5/dff.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA4/5/dff.sv|
+!i113 1
+R7
+R8
+vmsrr8
+R1
+R16
+!i10b 1
+!s100 i74SKj;KEfG0VJ4Hd_Z2^1
+R3
+Ih`_EJCne]n8LMV<a:ZTY?1
+R4
+S1
+R0
+w1765219885
+8E:/Programming/Verilog/CA4/5/msrr8.sv
+FE:/Programming/Verilog/CA4/5/msrr8.sv
+!i122 523
+L0 3 96
+R5
+r1
+!s85 0
+31
+R17
+!s107 E:/Programming/Verilog/CA4/5/msrr8.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA4/5/msrr8.sv|
+!i113 1
+R7
+R8
+vmsrr8_tb
+R1
+R16
+!i10b 1
+!s100 8YV@YZFU8kL2dZfkR2CoM2
+R3
+I?R6Q]J3>ioV_9V8JGd63Q3
+R4
+S1
+R0
+w1765219510
+8E:/Programming/Verilog/CA4/5/msrr8_tb.sv
+FE:/Programming/Verilog/CA4/5/msrr8_tb.sv
+!i122 524
+L0 3 71
+R5
+r1
+!s85 0
+31
+R17
+!s107 E:/Programming/Verilog/CA4/5/msrr8_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA4/5/msrr8_tb.sv|
+!i113 1
+R7
+R8
+vmsrr8ff
+R1
+!s110 1765219890
+!i10b 1
+!s100 6g4n;Fl7LOMP?n;X3@5?O3
+R3
+Ic77XSRcIZ^R1zPI<heOSW1
+R4
+S1
+R0
+w1765219617
+8E:/Programming/Verilog/CA4/8/msrr8ff.sv
+FE:/Programming/Verilog/CA4/8/msrr8ff.sv
+!i122 526
+L0 3 34
+R5
+r1
+!s85 0
+31
+!s108 1765219890.000000
+!s107 E:/Programming/Verilog/CA4/8/msrr8ff.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA4/8/msrr8ff.sv|
+!i113 1
+R7
+R8
+vmsrr8ff_behavioral
+R1
+R2
+!i10b 1
+!s100 h>zfbz<48f=F?L>Ee6EEE2
+R3
+Iloz6LgBIfk5^<VS=g_g@a3
+R4
+S1
+R0
+w1765219686
+8E:/Programming/Verilog/CA4/9/msrr8ff_behavioral.sv
+FE:/Programming/Verilog/CA4/9/msrr8ff_behavioral.sv
+!i122 528
+L0 1 21
+R5
+r1
+!s85 0
+31
+!s108 1765219897.000000
+!s107 E:/Programming/Verilog/CA4/9/msrr8ff_behavioral.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA4/9/msrr8ff_behavioral.sv|
+!i113 1
+R7
+R8
+vmsrr8ff_behavioral_tb
+R1
+R2
+!i10b 1
+!s100 [N5Jo8zdI^;Pe6AnO2?4?3
+R3
+I:8TPW4:7<LaDkKkPo=Q0a0
+R4
+S1
+R0
+w1765219740
+8E:/Programming/Verilog/CA4/9/msrr8ff_behavioral_tb.sv
+FE:/Programming/Verilog/CA4/9/msrr8ff_behavioral_tb.sv
+!i122 529
+Z18 L0 3 72
+R5
+r1
+!s85 0
+31
+R6
+!s107 E:/Programming/Verilog/CA4/9/msrr8ff_behavioral_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA4/9/msrr8ff_behavioral_tb.sv|
+!i113 1
+R7
+R8
+vmsrr8ff_tb
+!s105 msrr8ff_tb_sv_unit
+DXx4 work 18 msrr8ff_tb_sv_unit 0 22 AI93H_D0EB@Vd7PADJ30e2
+R1
+Z19 !s110 1765219896
+!i10b 1
+!s100 L7UZC>9DVA<EhgB=RWXWK3
+R3
+IL2a]RTLak1IK?>[IgD@Cg0
+R4
+S1
+R0
+Z20 w1765218991
+Z21 8E:/Programming/Verilog/CA4/8/msrr8ff_tb.sv
+Z22 FE:/Programming/Verilog/CA4/8/msrr8ff_tb.sv
+!i122 527
+R18
+R5
+r1
+!s85 0
+31
+Z23 !s108 1765219896.000000
+Z24 !s107 E:/Programming/Verilog/CA4/8/msrr8ff_tb.sv|
+Z25 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA4/8/msrr8ff_tb.sv|
+!i113 1
+R7
+R8
+Xmsrr8ff_tb_sv_unit
+R1
+R19
+VAI93H_D0EB@Vd7PADJ30e2
+r1
+!s85 0
+!i10b 1
+!s100 UDIF@b9lOUDE5@W_h?@If1
+IAI93H_D0EB@Vd7PADJ30e2
+!i103 1
+S1
+R0
+R20
+R21
+R22
+!i122 527
+L0 75 0
+R5
+31
+R23
+R24
+R25
+!i113 1
+R7
+R8
+vnand2
+Z26 !s110 1764860723
 !i10b 1
 !s100 OB0A?j8FkN6X_MT5>46iN3
-R2
-IZE0N5^kV=I6Xl5AJgYkJM0
 R3
+IZE0N5^kV=I6Xl5AJgYkJM0
+R4
 R0
-R8
-R9
-R10
+Z27 w1764859798
+R12
+R13
 !i122 39
 L0 3 17
-R4
+R5
 r1
 !s85 0
 31
-R5
-R11
-R12
+Z28 !s108 1764860723.000000
+R14
+R15
 !i113 1
-R6
-R7
+R11
+R8
 vnand3
-R1
+R26
 !i10b 1
 !s100 A914m0ceoI@BcOezmk]@72
-R2
-IaIHkOoU_coId_18`h5hhZ0
 R3
+IaIHkOoU_coId_18`h5hhZ0
+R4
 R0
-R8
-R9
-R10
+R27
+R12
+R13
 !i122 39
 L0 21 22
-R4
+R5
 r1
 !s85 0
 31
-R5
-R11
-R12
+R28
+R14
+R15
 !i113 1
-R6
-R7
+R11
+R8

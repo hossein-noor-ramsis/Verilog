@@ -15,34 +15,28 @@ module d_latch_rst_clk_tb2;
 
   initial begin
     clk = 1;
-    forever #200 clk = ~clk;
+    forever #100 clk = ~clk;
   end
 
   initial begin
+    rst = 1'b0;
+    D   = 0;
+    #200;
+
     rst = 1'b1;
     #200;
 
-    rst = 1'b0;
-    D   = 0;
-    #400;
-
-    rst = 1'b1;
-    #400;
+    D = 1;
+    #200;
 
     D = 0;
-    #400;
+    #200;
 
     D = 1;
-    #400;
-
-    D = 0;
-    #400;
-
-    D = 1;
-    #400;
+    #200;
 
     rst = 0;
-    #400;
+    #200;
     $stop;
   end
 

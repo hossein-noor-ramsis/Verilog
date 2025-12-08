@@ -1,11 +1,68 @@
-E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v
+E:/Programming/Verilog/CA4/8/msrr8ff.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA4/8/msrr8ff.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module nand2
--- Compiling module nand3
+-- Compiling module msrr8ff
+
+Top level modules:
+	msrr8ff
+
+} {} {}} E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk2.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module d_latch_rst_clk2
 
 Top level modules:
 	d_latch_rst_clk2
+
+} {} {}} E:/Programming/Verilog/CA4/9/msrr8ff_behavioral_tb.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA4/9/msrr8ff_behavioral_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module msrr8ff_behavioral_tb
+
+Top level modules:
+	msrr8ff_behavioral_tb
+
+} {} {}} E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk3.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA4/3/src/d_latch_rst_clk3.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module d_latch_rst_clk3
+
+Top level modules:
+	d_latch_rst_clk3
+
+} {} {}} E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module d_latch_rst_clk_tb2
+
+Top level modules:
+	d_latch_rst_clk_tb2
+
+} {} {}} E:/Programming/Verilog/CA4/8/msrr8ff_tb.sv {2 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA4/8/msrr8ff_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module msrr8ff_tb
+** Warning: E:/Programming/Verilog/CA4/8/msrr8ff_tb.sv(75): (vlog-2283) Extra semicolon in $unit (global) scope.
+** Warning: E:/Programming/Verilog/CA4/8/msrr8ff_tb.sv(76): (vlog-2284) Empty $unit scope found.
+-- Compiling package msrr8ff_tb_sv_unit
+
+Top level modules:
+	msrr8ff_tb
+
+} {} {}} E:/Programming/Verilog/CA4/5/dff.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA4/5/dff.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module dff
+
+Top level modules:
+	dff
+
+} {} {}} E:/Programming/Verilog/CA4/10/compare_tb.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA4/10/compare_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module compare_tb
+
+Top level modules:
+	compare_tb
+
+} {} {}} E:/Programming/Verilog/CA4/9/msrr8ff_behavioral.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA4/9/msrr8ff_behavioral.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module msrr8ff_behavioral
+
+Top level modules:
+	msrr8ff_behavioral
 
 } {} {}} E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA4/1/src/d_latch_rst_clk.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -13,5 +70,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	d_latch_rst_clk
+
+} {} {}} E:/Programming/Verilog/CA4/5/msrr8_tb.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA4/5/msrr8_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module msrr8_tb
+
+Top level modules:
+	msrr8_tb
+
+} {} {}} E:/Programming/Verilog/CA4/5/msrr8.sv {1 {vlog -work work -sv -stats=none E:/Programming/Verilog/CA4/5/msrr8.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module msrr8
+
+Top level modules:
+	msrr8
 
 } {} {}}
