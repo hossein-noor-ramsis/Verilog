@@ -1,299 +1,23 @@
-vsim -gui work.compare_tb
-# vsim -gui work.compare_tb 
-# Start time: 22:09:23 on Dec 08,2025
-# Loading sv_std.std
-# Loading work.compare_tb
-# Loading work.msrr8ff
-# Loading work.msrr8ff_behavioral
-# Loading work.dff
-# Loading work.d_latch_rst_clk3
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut1'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1 File: E:/Programming/Verilog/CA4/10/compare_tb.sv Line: 13
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/10/compare_tb.sv(13): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[0]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[1]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[2]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[3]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[4]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[5]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[6]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[7]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut2 File: E:/Programming/Verilog/CA4/10/compare_tb.sv Line: 21
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/10/compare_tb.sv(21): [TFMPC] - Missing connection for port 'inz'.
+vsim -gui work.d_latch_rst_clk_tb2
+# vsim -gui work.d_latch_rst_clk_tb2 
+# Start time: 16:27:21 on Dec 09,2025
+# Loading work.d_latch_rst_clk_tb2
+# Loading work.d_latch_rst_clk2
 add wave -position insertpoint  \
-sim:/compare_tb/clk \
-sim:/compare_tb/rst \
-sim:/compare_tb/mode \
-sim:/compare_tb/sIn \
-sim:/compare_tb/Q1 \
-sim:/compare_tb/Q2
+sim:/d_latch_rst_clk_tb2/clk \
+sim:/d_latch_rst_clk_tb2/D \
+sim:/d_latch_rst_clk_tb2/rst \
+sim:/d_latch_rst_clk_tb2/Q \
+sim:/d_latch_rst_clk_tb2/Q_bar
 run
-# Starting simple testbench...
-# Finished simple tests.
-# ** Note: $stop    : E:/Programming/Verilog/CA4/10/compare_tb.sv(77)
-#    Time: 1100 ns  Iteration: 0  Instance: /compare_tb
-# Break in Module compare_tb at E:/Programming/Verilog/CA4/10/compare_tb.sv line 77
-# Compile of d_latch_rst_clk.v was successful.
-# Compile of d_latch_rst_clk2.v was successful.
-# Compile of d_latch_rst_clk_tb2.v was successful.
-# Compile of msrr8.sv was successful.
-# Compile of msrr8_tb.sv failed with 1 errors.
-# Compile of d_latch_rst_clk3.v was successful.
-# Compile of msrr8ff.sv was successful.
-vsim -gui work.compare_tb
-# End time: 22:10:42 on Dec 08,2025, Elapsed time: 0:01:19
-# Errors: 0, Warnings: 21
-# vsim -gui work.compare_tb 
-# Start time: 22:10:42 on Dec 08,2025
-# Loading sv_std.std
-# Loading work.compare_tb
-# Loading work.msrr8ff
-# Loading work.msrr8ff_behavioral
-# Loading work.dff
-# Loading work.d_latch_rst_clk3
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut1'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1 File: E:/Programming/Verilog/CA4/10/compare_tb.sv Line: 13
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/10/compare_tb.sv(13): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[0]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[1]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[2]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[3]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[4]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[5]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[6]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[7]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut2 File: E:/Programming/Verilog/CA4/10/compare_tb.sv Line: 21
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/10/compare_tb.sv(21): [TFMPC] - Missing connection for port 'inz'.
-# Compile of msrr8ff_tb.sv was successful with warnings.
-# Compile of msrr8ff_behavioral.sv was successful.
-# Compile of msrr8ff_behavioral_tb.sv failed with 1 errors.
-# Compile of compare_tb.sv failed with 1 errors.
-# Compile of dff.sv was successful.
-# 12 compiles, 3 failed with 3 errors.
-add wave -position insertpoint  \
-sim:/compare_tb/clk \
-sim:/compare_tb/rst \
-sim:/compare_tb/mode \
-sim:/compare_tb/sIn \
-sim:/compare_tb/Q1 \
-sim:/compare_tb/Q2
-run
-# Starting simple testbench...
-# Finished simple tests.
-# ** Note: $stop    : E:/Programming/Verilog/CA4/10/compare_tb.sv(77)
-#    Time: 1100 ns  Iteration: 0  Instance: /compare_tb
-# Break in Module compare_tb at E:/Programming/Verilog/CA4/10/compare_tb.sv line 77
-# Compile of d_latch_rst_clk.v was successful.
-# Compile of d_latch_rst_clk2.v was successful.
-# Compile of d_latch_rst_clk_tb2.v was successful.
-# Compile of msrr8.sv was successful.
-# Compile of msrr8_tb.sv failed with 1 errors.
-# Compile of d_latch_rst_clk3.v was successful.
-# Compile of msrr8ff.sv was successful.
-# Compile of msrr8ff_tb.sv was successful with warnings.
-vsim -gui work.compare_tb
-# End time: 22:13:46 on Dec 08,2025, Elapsed time: 0:03:04
-# Errors: 0, Warnings: 22
-# vsim -gui work.compare_tb 
-# Start time: 22:13:46 on Dec 08,2025
-# Loading sv_std.std
-# Loading work.compare_tb
-# Loading work.msrr8ff
-# Loading work.msrr8ff_behavioral
-# Loading work.dff
-# Loading work.d_latch_rst_clk3
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut1'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1 File: E:/Programming/Verilog/CA4/10/compare_tb.sv Line: 13
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/10/compare_tb.sv(13): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[0]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[1]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[2]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[3]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[4]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[5]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[6]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut1/ff_loop[7]/ff/slave File: E:/Programming/Verilog/CA4/5/dff.sv Line: 27
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/dff.sv(27): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut2'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /compare_tb/dut2 File: E:/Programming/Verilog/CA4/10/compare_tb.sv Line: 21
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/10/compare_tb.sv(21): [TFMPC] - Missing connection for port 'inz'.
-# Compile of msrr8ff_behavioral.sv was successful.
-# Compile of msrr8ff_behavioral_tb.sv failed with 1 errors.
-# Compile of compare_tb.sv failed with 1 errors.
-# Compile of dff.sv was successful.
-# 12 compiles, 3 failed with 3 errors.
-add wave -position insertpoint  \
-sim:/compare_tb/clk \
-sim:/compare_tb/rst \
-sim:/compare_tb/mode \
-sim:/compare_tb/sIn \
-sim:/compare_tb/Q1 \
-sim:/compare_tb/Q2
-run
-# Starting simple testbench...
-# Finished simple tests.
-# ** Note: $stop    : E:/Programming/Verilog/CA4/10/compare_tb.sv(77)
-#    Time: 1100 ns  Iteration: 0  Instance: /compare_tb
-# Break in Module compare_tb at E:/Programming/Verilog/CA4/10/compare_tb.sv line 77
-# Compile of d_latch_rst_clk.v was successful.
-# Compile of d_latch_rst_clk2.v was successful.
-# Compile of d_latch_rst_clk_tb2.v was successful.
-# Compile of msrr8.sv was successful.
-# Compile of msrr8_tb.sv failed with 1 errors.
-# Compile of d_latch_rst_clk3.v was successful.
-# Compile of msrr8ff.sv was successful.
-# Compile of msrr8ff_tb.sv was successful with warnings.
-# Compile of msrr8ff_behavioral.sv was successful.
-# Compile of msrr8ff_behavioral_tb.sv failed with 1 errors.
-# Compile of compare_tb.sv failed with 1 errors.
-# Compile of dff.sv was successful.
-# 12 compiles, 3 failed with 3 errors.
-# Compile of d_latch_rst_clk.v was successful.
-# Compile of d_latch_rst_clk2.v was successful.
-# Compile of d_latch_rst_clk_tb2.v was successful.
-# Compile of msrr8.sv was successful.
-# Compile of msrr8_tb.sv was successful.
-# Compile of d_latch_rst_clk3.v was successful.
-# Compile of msrr8ff.sv was successful.
-# Compile of msrr8ff_tb.sv was successful with warnings.
-# Compile of msrr8ff_behavioral.sv was successful.
-# Compile of msrr8ff_behavioral_tb.sv failed with 1 errors.
-# Compile of compare_tb.sv was successful.
-# Compile of dff.sv was successful.
-# 12 compiles, 1 failed with 1 error.
-# Compile of d_latch_rst_clk.v was successful.
-# Compile of d_latch_rst_clk2.v was successful.
-# Compile of d_latch_rst_clk_tb2.v was successful.
-# Compile of msrr8.sv was successful.
-# Compile of msrr8_tb.sv was successful.
-vsim -gui work.msrr8ff_tb
-# End time: 22:19:12 on Dec 08,2025, Elapsed time: 0:05:26
-# Errors: 0, Warnings: 24
-# vsim -gui work.msrr8ff_tb 
-# Start time: 22:19:12 on Dec 08,2025
-# Loading sv_std.std
-# Loading work.msrr8ff_tb
-# Loading work.msrr8ff
-# Loading work.dff
-# Loading work.d_latch_rst_clk3
-# Compile of d_latch_rst_clk3.v was successful.
-# Compile of msrr8ff.sv was successful.
-# Compile of msrr8ff_tb.sv was successful with warnings.
-# Compile of msrr8ff_behavioral.sv was successful.
-# Compile of msrr8ff_behavioral_tb.sv was successful.
-# Compile of compare_tb.sv was successful.
-# Compile of dff.sv was successful.
-# 12 compiles, 0 failed with no errors.
-add wave -position insertpoint  \
-sim:/msrr8ff_tb/clk \
-sim:/msrr8ff_tb/rst \
-sim:/msrr8ff_tb/mode \
-sim:/msrr8ff_tb/sIn \
-sim:/msrr8ff_tb/Q \
-sim:/msrr8ff_tb/inz
-run
-# Starting simple testbench...
-# Finished simple tests.
-# ** Note: $stop    : E:/Programming/Verilog/CA4/8/msrr8ff_tb.sv(71)
-#    Time: 1200 ns  Iteration: 0  Instance: /msrr8ff_tb
-# Break in Module msrr8ff_tb at E:/Programming/Verilog/CA4/8/msrr8ff_tb.sv line 71
+# ** Note: $stop    : E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v(40)
+#    Time: 1200 ns  Iteration: 0  Instance: /d_latch_rst_clk_tb2
+# Break in Module d_latch_rst_clk_tb2 at E:/Programming/Verilog/CA4/3/tb/d_latch_rst_clk_tb2.v line 40
 vsim -gui work.msrr8_tb
-# End time: 22:20:19 on Dec 08,2025, Elapsed time: 0:01:07
-# Errors: 0, Warnings: 2
+# End time: 16:34:10 on Dec 09,2025, Elapsed time: 0:06:49
+# Errors: 0, Warnings: 1
 # vsim -gui work.msrr8_tb 
-# Start time: 22:20:19 on Dec 08,2025
-# Loading sv_std.std
-# Loading work.msrr8_tb
-# Loading work.msrr8
-# Loading work.d_latch_rst_clk3
-# ** Error: (vsim-3063) Port 'inz' not found in the connected module (4th connection).
-#    Time: 0 ns  Iteration: 0  Instance: /msrr8_tb/dut File: E:/Programming/Verilog/CA4/5/msrr8_tb.sv Line: 12
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'l0'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /msrr8_tb/dut/l0 File: E:/Programming/Verilog/CA4/5/msrr8.sv Line: 25
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/msrr8.sv(25): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'l1'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /msrr8_tb/dut/l1 File: E:/Programming/Verilog/CA4/5/msrr8.sv Line: 33
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/msrr8.sv(33): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'l2'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /msrr8_tb/dut/l2 File: E:/Programming/Verilog/CA4/5/msrr8.sv Line: 41
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/msrr8.sv(41): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'l3'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /msrr8_tb/dut/l3 File: E:/Programming/Verilog/CA4/5/msrr8.sv Line: 49
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/msrr8.sv(49): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'l4'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /msrr8_tb/dut/l4 File: E:/Programming/Verilog/CA4/5/msrr8.sv Line: 57
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/msrr8.sv(57): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'l5'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /msrr8_tb/dut/l5 File: E:/Programming/Verilog/CA4/5/msrr8.sv Line: 65
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/msrr8.sv(65): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'l6'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /msrr8_tb/dut/l6 File: E:/Programming/Verilog/CA4/5/msrr8.sv Line: 73
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/msrr8.sv(73): [TFMPC] - Missing connection for port 'inz'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'l7'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /msrr8_tb/dut/l7 File: E:/Programming/Verilog/CA4/5/msrr8.sv Line: 81
-# ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/msrr8.sv(81): [TFMPC] - Missing connection for port 'inz'.
-# Error loading design
-# End time: 22:20:19 on Dec 08,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 17
-# Compile of d_latch_rst_clk.v was successful.
-# Compile of d_latch_rst_clk2.v was successful.
-# Compile of d_latch_rst_clk_tb2.v was successful.
-# Compile of msrr8.sv was successful.
-# Compile of msrr8_tb.sv was successful.
-# Compile of d_latch_rst_clk3.v was successful.
-# Compile of msrr8ff.sv was successful.
-vsim -gui work.msrr8_tb
-# vsim -gui work.msrr8_tb 
-# Start time: 22:21:36 on Dec 08,2025
+# Start time: 16:34:10 on Dec 09,2025
 # Loading sv_std.std
 # Loading work.msrr8_tb
 # Loading work.msrr8
@@ -301,12 +25,6 @@ vsim -gui work.msrr8_tb
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
 #    Time: 0 ns  Iteration: 0  Instance: /msrr8_tb/dut File: E:/Programming/Verilog/CA4/5/msrr8_tb.sv Line: 12
 # ** Warning: (vsim-3722) E:/Programming/Verilog/CA4/5/msrr8_tb.sv(12): [TFMPC] - Missing connection for port 'PI'.
-# Compile of msrr8ff_tb.sv was successful with warnings.
-# Compile of msrr8ff_behavioral.sv was successful.
-# Compile of msrr8ff_behavioral_tb.sv was successful.
-# Compile of compare_tb.sv was successful.
-# Compile of dff.sv was successful.
-# 12 compiles, 0 failed with no errors.
 add wave -position insertpoint  \
 sim:/msrr8_tb/clk \
 sim:/msrr8_tb/rst \
@@ -320,38 +38,42 @@ run
 # ** Note: $stop    : E:/Programming/Verilog/CA4/5/msrr8_tb.sv(70)
 #    Time: 1200 ns  Iteration: 0  Instance: /msrr8_tb
 # Break in Module msrr8_tb at E:/Programming/Verilog/CA4/5/msrr8_tb.sv line 70
-vsim -gui work.msrr8ff_behavioral_tb
-# End time: 22:23:53 on Dec 08,2025, Elapsed time: 0:02:17
-# Errors: 0, Warnings: 4
-# vsim -gui work.msrr8ff_behavioral_tb 
-# Start time: 22:23:53 on Dec 08,2025
+vsim -gui work.msrr8ff_tb
+# End time: 16:36:17 on Dec 09,2025, Elapsed time: 0:02:07
+# Errors: 0, Warnings: 3
+# vsim -gui work.msrr8ff_tb 
+# Start time: 16:36:17 on Dec 09,2025
 # Loading sv_std.std
-# Loading work.msrr8ff_behavioral_tb
-# Loading work.msrr8ff_behavioral
+# Loading work.msrr8ff_tb
+# Loading work.msrr8ff
+# Loading work.dff
+# Loading work.d_latch_rst_clk3
+add wave -position insertpoint sim:/msrr8ff_tb/*
 add wave -position insertpoint  \
-sim:/msrr8ff_behavioral_tb/clk \
-sim:/msrr8ff_behavioral_tb/rst \
-sim:/msrr8ff_behavioral_tb/mode \
-sim:/msrr8ff_behavioral_tb/sIn \
-sim:/msrr8ff_behavioral_tb/inz \
-sim:/msrr8ff_behavioral_tb/Q
+sim:/msrr8ff_tb/clk \
+sim:/msrr8ff_tb/rst \
+sim:/msrr8ff_tb/mode \
+sim:/msrr8ff_tb/sIn \
+sim:/msrr8ff_tb/Q \
+sim:/msrr8ff_tb/inz
 run
 # Starting simple testbench...
 # Finished simple tests.
-# ** Note: $stop    : E:/Programming/Verilog/CA4/9/msrr8ff_behavioral_tb.sv(71)
-#    Time: 1200 ns  Iteration: 0  Instance: /msrr8ff_behavioral_tb
-# Break in Module msrr8ff_behavioral_tb at E:/Programming/Verilog/CA4/9/msrr8ff_behavioral_tb.sv line 71
+# ** Note: $stop    : E:/Programming/Verilog/CA4/8/msrr8ff_tb.sv(71)
+#    Time: 1200 ns  Iteration: 0  Instance: /msrr8ff_tb
+# Break in Module msrr8ff_tb at E:/Programming/Verilog/CA4/8/msrr8ff_tb.sv line 71
 vsim -gui work.compare_tb
-# End time: 22:25:03 on Dec 08,2025, Elapsed time: 0:01:10
+# End time: 16:40:19 on Dec 09,2025, Elapsed time: 0:04:02
 # Errors: 0, Warnings: 1
 # vsim -gui work.compare_tb 
-# Start time: 22:25:03 on Dec 08,2025
+# Start time: 16:40:19 on Dec 09,2025
 # Loading sv_std.std
 # Loading work.compare_tb
 # Loading work.msrr8ff
 # Loading work.msrr8ff_behavioral
 # Loading work.dff
 # Loading work.d_latch_rst_clk3
+add wave -position insertpoint sim:/compare_tb/*
 add wave -position insertpoint  \
 sim:/compare_tb/clk \
 sim:/compare_tb/rst \
@@ -366,5 +88,3 @@ run
 # ** Note: $stop    : E:/Programming/Verilog/CA4/10/compare_tb.sv(82)
 #    Time: 1200 ns  Iteration: 0  Instance: /compare_tb
 # Break in Module compare_tb at E:/Programming/Verilog/CA4/10/compare_tb.sv line 82
-# End time: 22:31:35 on Dec 08,2025, Elapsed time: 0:06:32
-# Errors: 0, Warnings: 1
