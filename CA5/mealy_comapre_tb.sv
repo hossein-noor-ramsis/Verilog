@@ -24,7 +24,7 @@ module mealy_pre_post_tb;
   );
 
   /* Clock generator */
-  always #5 clk = ~clk;
+  always #20 clk = ~clk;
 
   /* Stimulus */
   initial begin
@@ -32,16 +32,16 @@ module mealy_pre_post_tb;
     reset_n = 0;
     serIn = 0;
 
-    #12 reset_n = 1;
+    #20 reset_n = 1;
 
     // Apply sequence: 10110
-    #10 serIn = 1;
-    #10 serIn = 0;
-    #10 serIn = 1;
-    #10 serIn = 1;
-    #10 serIn = 0;
+    #40 serIn = 1;
+    #40 serIn = 0;
+    #40 serIn = 1;
+    #40 serIn = 1;
+    #40 serIn = 0;
 
-    #50 $stop;
+    #100 $stop;
   end
 
 endmodule

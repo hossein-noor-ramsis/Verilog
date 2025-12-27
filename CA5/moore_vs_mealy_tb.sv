@@ -21,7 +21,7 @@ module moore_vs_mealy_tb;
       .detOut(det_mealy)
   );
 
-  always #5 clk = ~clk;
+  always #20 clk = ~clk;
 
   initial begin
     clk = 0;
@@ -30,11 +30,18 @@ module moore_vs_mealy_tb;
 
     #10 reset_n = 1;
 
-    #10 serIn = 1;
-    #10 serIn = 0;
-    #10 serIn = 1;
-    #10 serIn = 1;
-    #10 serIn = 0;
+    #40 serIn = 1;
+    #40 serIn = 0;
+    #40 serIn = 1;
+    #40 serIn = 1;
+    #40 serIn = 0;
+
+    #40 serIn = 1;
+    #40 serIn = 0;
+    #40 serIn = 1;
+    #25 serIn = 1;
+    #40 serIn = 0;
+
 
     #50 $stop;
   end

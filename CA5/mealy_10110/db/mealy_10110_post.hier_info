@@ -1,0 +1,20 @@
+|mealy_10110_post
+clk => current_state~1.DATAIN
+reset_n => current_state~3.DATAIN
+serIn => next_state.OUTPUTSELECT
+serIn => next_state.OUTPUTSELECT
+serIn => next_state.OUTPUTSELECT
+serIn => next_state.OUTPUTSELECT
+serIn => next_state.OUTPUTSELECT
+serIn => Selector1.IN3
+serIn => Selector3.IN3
+serIn => Selector4.IN3
+serIn => Selector1.IN4
+serIn => detOut.DATAB
+serIn => Selector0.IN2
+serIn => Selector0.IN3
+serIn => Selector2.IN2
+serIn => Selector2.IN3
+detOut << detOut.DB_MAX_OUTPUT_PORT_TYPE
+
+

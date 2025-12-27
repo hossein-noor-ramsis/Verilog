@@ -1,0 +1,281 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/intelFPGA/20.1
+vCA5
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1766839891
+!i10b 1
+!s100 U<MRKXGXUZ^A`Cg5G3f[o2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Iz9X8<`cJ:4ZBTEHhK<XI33
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z3 dE:/Programming/Verilog/CA5
+w1766835360
+8E:/Programming/Verilog/CA5/mealy_10110_post.sv
+FE:/Programming/Verilog/CA5/mealy_10110_post.sv
+!i122 1
+L0 32 360
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1766839890.000000
+!s107 E:/Programming/Verilog/CA5/mealy_10110_post.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA5/mealy_10110_post.sv|
+!i113 1
+Z5 o-work work -sv
+Z6 tCvgOpt 0
+n@c@a5
+vhard_block
+Z7 !s110 1766842040
+!i10b 1
+!s100 B;1AGe80]TDK`><EhU;i03
+R1
+I:jM8V>]8V_:cSzSf81m0E0
+R2
+R3
+Z8 w1766841063
+Z9 8E:/Programming/Verilog/CA5/mealy_10110_post.v
+Z10 FE:/Programming/Verilog/CA5/mealy_10110_post.v
+!i122 53
+L0 324 35
+R4
+r1
+!s85 0
+31
+Z11 !s108 1766842040.000000
+!s107 E:/Programming/Verilog/CA5/mealy_10110_post.v|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA5/mealy_10110_post.v|
+!i113 1
+Z13 o-work work
+R6
+vmealy_10110
+R0
+R7
+!i10b 1
+!s100 UIX[kKFR6h6FoKQf=]z5f2
+R1
+Ih5joHUIG;Eoj9FUfGX9SK2
+R2
+S1
+R3
+w1766750578
+8E:/Programming/Verilog/CA5/mealy_10110.sv
+FE:/Programming/Verilog/CA5/mealy_10110.sv
+!i122 45
+L0 1 53
+R4
+r1
+!s85 0
+31
+R11
+!s107 E:/Programming/Verilog/CA5/mealy_10110.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA5/mealy_10110.sv|
+!i113 1
+R5
+R6
+vmealy_10110_post
+R7
+!i10b 1
+!s100 `DNUCi5khGdDW7m2CUj6g3
+R1
+IUNP0EMKPcN;9VA;R?6bo90
+R2
+R3
+R8
+R9
+R10
+!i122 53
+L0 32 291
+R4
+r1
+!s85 0
+31
+R11
+Z14 !s107 E:/Programming/Verilog/CA5/mealy_10110_post.v|
+R12
+!i113 1
+R13
+R6
+vmealy_10110_tb
+R0
+R7
+!i10b 1
+!s100 mC:Rld?[0_g7QLko`12k]1
+R1
+I>B2E;5g3IzE3XLz?I:4BJ0
+R2
+S1
+R3
+w1766770766
+8E:\Programming\Verilog\CA5\mealy_10110_tb.sv
+FE:\Programming\Verilog\CA5\mealy_10110_tb.sv
+!i122 46
+L0 3 31
+R4
+r1
+!s85 0
+31
+R11
+!s107 E:\Programming\Verilog\CA5\mealy_10110_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:\Programming\Verilog\CA5\mealy_10110_tb.sv|
+!i113 1
+R5
+R6
+vmealy_pre_post_tb
+R0
+R7
+!i10b 1
+!s100 1Q8j4bz83E@m>O5`mT?KH1
+R1
+IEfXHT9Z<F=zNj9dTK]^^73
+R2
+S1
+R3
+w1766841716
+8E:/Programming/Verilog/CA5/mealy_comapre_tb.sv
+FE:/Programming/Verilog/CA5/mealy_comapre_tb.sv
+!i122 47
+L0 3 45
+R4
+r1
+!s85 0
+31
+R11
+!s107 E:/Programming/Verilog/CA5/mealy_comapre_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA5/mealy_comapre_tb.sv|
+!i113 1
+R5
+R6
+vmoore_10110
+R0
+R7
+!i10b 1
+!s100 g2ee6QD2b;<NV1Hlkcj^93
+R1
+I19K:3[m_keI3I]EVfhla53
+R2
+S1
+R3
+w1766750376
+8E:/Programming/Verilog/CA5/moore_10110.sv
+FE:/Programming/Verilog/CA5/moore_10110.sv
+!i122 48
+L0 1 56
+R4
+r1
+!s85 0
+31
+R11
+!s107 E:/Programming/Verilog/CA5/moore_10110.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA5/moore_10110.sv|
+!i113 1
+R5
+R6
+vmoore_10110_post
+R7
+!i10b 1
+!s100 kN]WVOgzBa>5j<R93Zi`<1
+R1
+ISOQJ<c:gg]CD:1:@DEK^=3
+R2
+R3
+w1766840535
+8E:/Programming/Verilog/CA5/moore_10110_post.v
+FE:/Programming/Verilog/CA5/moore_10110_post.v
+!i122 49
+L0 32 311
+R4
+r1
+!s85 0
+31
+R11
+!s107 E:/Programming/Verilog/CA5/moore_10110_post.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Programming/Verilog/CA5/moore_10110_post.v|
+!i113 1
+R13
+R6
+vmoore_10110_tb
+R0
+R7
+!i10b 1
+!s100 ZNfRTW0K3khTK@:SUaEgj3
+R1
+I9dAflGTnc6FfCRCH=J6[N1
+R2
+S1
+R3
+w1766770772
+8E:/Programming/Verilog/CA5/moore_10110_tb.sv
+FE:/Programming/Verilog/CA5/moore_10110_tb.sv
+!i122 50
+L0 3 37
+R4
+r1
+!s85 0
+31
+R11
+!s107 E:/Programming/Verilog/CA5/moore_10110_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA5/moore_10110_tb.sv|
+!i113 1
+R5
+R6
+vmoore_compare_tb
+R0
+R7
+!i10b 1
+!s100 MYkZcUh;_FXWIaBSf?OYP1
+R1
+IzIGLXKChV5J]_@:87235S3
+R2
+S1
+R3
+w1766837832
+8E:/Programming/Verilog/CA5/moore_compare_tb.sv
+FE:/Programming/Verilog/CA5/moore_compare_tb.sv
+!i122 51
+L0 3 39
+R4
+r1
+!s85 0
+31
+R11
+!s107 E:/Programming/Verilog/CA5/moore_compare_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA5/moore_compare_tb.sv|
+!i113 1
+R5
+R6
+vmoore_vs_mealy_tb
+R0
+R7
+!i10b 1
+!s100 VOnQB9z`H=;ZJACdh7[4[1
+R1
+IfYD0QPHgnke;98Dh29AEH2
+R2
+S1
+R3
+w1766842033
+8E:/Programming/Verilog/CA5/moore_vs_mealy_tb.sv
+FE:/Programming/Verilog/CA5/moore_vs_mealy_tb.sv
+!i122 52
+L0 3 47
+R4
+r1
+!s85 0
+31
+R11
+!s107 E:/Programming/Verilog/CA5/moore_vs_mealy_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/Programming/Verilog/CA5/moore_vs_mealy_tb.sv|
+!i113 1
+R5
+R6
