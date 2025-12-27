@@ -1,4 +1,6 @@
-module tb_moore_vs_mealy;
+`timescale 1ns / 1ns
+
+module moore_vs_mealy_tb;
 
   logic clk, reset_n, serIn;
   logic det_moore, det_mealy;

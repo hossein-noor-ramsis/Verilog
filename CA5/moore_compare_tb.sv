@@ -1,5 +1,6 @@
-module moore_compare_tb;
+`timescale 1ns / 1ns
 
+module moore_compare_tb;
   logic clk, reset_n, serIn;
   logic det_pre, det_post;
 

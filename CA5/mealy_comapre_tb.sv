@@ -1,6 +1,6 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 1ns
 
-module tb_mealy_pre_post;
+module mealy_pre_post_tb;
 
   logic clk;
   logic reset_n;
@@ -9,9 +9,6 @@ module tb_mealy_pre_post;
   logic det_pre;  // pre-synthesis output
   logic det_post;  // post-synthesis output
 
-  /* =====================================================
-   Pre-synthesis Mealy FSM (behavioral)
-   ===================================================== */
   mealy_10110 u_pre (
       .clk(clk),
       .reset_n(reset_n),
@@ -19,10 +16,6 @@ module tb_mealy_pre_post;
       .detOut(det_pre)
   );
 
-  /* =====================================================
-   Post-synthesis Mealy FSM (Quartus .vo)
-   Module name comes from Quartus
-   ===================================================== */
   mealy_10110_post u_post (
       .clk(clk),
       .reset_n(reset_n),

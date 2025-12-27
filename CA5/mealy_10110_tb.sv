@@ -1,4 +1,6 @@
-module tb_mealy_10110;
+`timescale 1ns / 1ns
+
+module mealy_10110_tb;
 
   logic clk, reset_n, serIn;
   logic detOut;

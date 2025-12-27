@@ -1,3 +1,5 @@
+`timescale 1ns / 1ns
+
 module moore_10110_tb;
 
   logic clk;
