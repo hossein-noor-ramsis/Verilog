@@ -101,11 +101,10 @@ module DataPath (
   );
 
   // Mux for result (write back to register file)
-  Mux4To1 result_mux (
+  Mux3To1 result_mux (
       .input_a(alu_result),
       .input_b(mem_read_data),
       .input_c(pc_plus4),
-      .input_d(imm_extended),
       .select(result_src),
       .mux_output(reg_write_data)
   );
@@ -119,6 +118,13 @@ module DataPath (
       .mux_output(pc_next)
   );
 
+  // Immediate Extension
+  ImmediateExt immediate_ext (
+      .instruction (instruction_imm),
+      .imm_src     (imm_src),
+      .imm_extended(imm_extended)
+  );
+  
   // PC + 4 Adder
   Adder pc_plus4_adder (
       .operand_a   (pc_current),
@@ -133,11 +139,6 @@ module DataPath (
       .adder_result(pc_target)
   );
 
-  // Immediate Extension
-  ImmediateExt immediate_ext (
-      .instruction (instruction_imm),
-      .imm_src     (imm_src),
-      .imm_extended(imm_extended)
-  );
+
 
 endmodule

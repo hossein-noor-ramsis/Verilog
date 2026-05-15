@@ -1,0 +1,1160 @@
+# Compile of Adder.v was successful.
+# Compile of All.sv was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+vsim -gui work.TB
+# vsim -gui work.TB 
+# Start time: 15:05:28 on May 15,2026
+# Loading work.TB
+# Loading sv_std.std
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading work.Adder
+# Loading work.ImmediateExt
+# Loading work.Controller
+# Trace back: Error QStructure::sort: invalid command name ""
+#   <6:D:/mtitcl/vsim/qstructure.tc_:2478: ::QStructure::sort .main_pane.structure 0 ascending
+#   <5:eval:1: ::QStructure::structsort .main_pane.structure 0 ascending
+#   <4:eval:1: ::namespace inscope ::QStructure {structsort .main_pane.structure} 0 ascending
+#   >3:proc:26: ::.main_pane.structure.interior.cs.body.struct sort 0 ascending
+#   >2:proc:10: ::.main_pane.structure.interior.cs.body.struct _initializeSortColumn
+#   <1:eval:1: ::namespace inscope ::vsimwidgets::Hierarchy {::.main_pane.structure.interior.cs.body.struct _initializeSortColumn}
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of Mux4To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 16 compiles, 0 failed with no errors.
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "inst.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/InstMemory.v(15)
+#    Time: 0 ns  Iteration: 0  Instance: /TB/risc_v/datapath/instruction_memory
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/DataMemory.v(19)
+#    Time: 0 ns  Iteration: 0  Instance: /TB/risc_v/datapath/data_memory
+# ============================================
+#   RISC-V Complete Instruction Test
+# ============================================
+# 
+# 1. Arithmetic Instructions
+# --------------------------
+#   PASS:                                                                   x0 always zero
+#   FAIL:                                                                    ADDI: x1 = 10 - Expected         10, Got          0
+#   FAIL:                                                           ADDI negative: x2 = -5 - Expected 4294967291, Got          0
+#   FAIL:                                                              ADD: x3 = x1+x2 = 5 - Expected          5, Got          0
+#   FAIL:                                                             SUB: x4 = x1-x2 = 15 - Expected         15, Got          0
+# 
+# 2. Logical Instructions
+# --------------------------
+#   FAIL:                                                                 ANDI: 10 & 3 = 2 - Expected          2, Got          0
+#   FAIL:                                                                ORI: 10 | 12 = 14 - Expected         14, Got          0
+#   FAIL:                                                                XORI: 10 ^ 15 = 5 - Expected          5, Got          0
+# 
+# 3. Comparison Instructions
+# --------------------------
+#   FAIL:                                                          SLTI: -5 < 0 = 1 (true) - Expected          1, Got          0
+#   PASS:                                                         SLTI: 10 < 0 = 0 (false)
+# 
+# 4. Memory Instructions
+# --------------------------
+#   FAIL:                                                                  SW: mem[0] = 10 - Expected         10, Got          0
+#   FAIL:                                                            LW: x10 = mem[0] = 10 - Expected         10, Got          0
+# 
+# 5. Branch Instructions
+# --------------------------
+#   FAIL:                                                              BEQ taken: x11 = 20 - Expected         20, Got          0
+#   FAIL:                                                              BNE taken: x12 = 30 - Expected         30, Got          0
+#   FAIL:                                                              BLT taken: x13 = 40 - Expected         40, Got          0
+#   FAIL:                                                              BGE taken: x14 = 50 - Expected         50, Got          0
+# 
+# 6. Jump Instructions
+# --------------------------
+#   FAIL:                                                 JAL: x31 = return address (PC+4) - Expected        116, Got          0
+#   FAIL:                                                      JAL target reached: x2 = 15 - Expected         15, Got          0
+#   FAIL:                                                       JALR: x30 = return address - Expected        156, Got          0
+#   FAIL:                                                     JALR target reached: x3 = 20 - Expected         20, Got          0
+#   FAIL:                                                                JALR x0: x29 = 25 - Expected         25, Got          0
+# 
+# ============================================
+#   Results: Passed=          2 / Failed=         19
+# ============================================
+#            19 TESTS FAILED!
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TB.v(118)
+#    Time: 262 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at E:/Programming/Verilog/CA/CA1/tb/TB.v line 118
+add wave -position insertpoint  \
+sim:/TB/clk \
+sim:/TB/rst \
+sim:/TB/passed \
+sim:/TB/failed
+run
+add wave -position end sim:/TB/risc_v/datapath/program_counter/#ALWAYS#423/*
+add wave -position end sim:/TB/risc_v/datapath/instruction_memory/#ASSIGN#9/*
+# ** UI-Msg: (vish-4014) No objects found matching '/TB/risc_v/datapath/instruction_memory/#ASSIGN#9/*'.
+add wave -position end sim:/TB/risc_v/datapath/instruction_memory/#ASSIGN#18/*
+# ** UI-Msg: (vish-4014) No objects found matching '/TB/risc_v/datapath/instruction_memory/#ASSIGN#18/*'.
+add wave -position end sim:/TB/risc_v/datapath/program_counter/#ALWAYS#423/*
+run
+run -all
+# TIMEOUT!
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TB.v(124)
+#    Time: 1 us  Iteration: 0  Instance: /TB
+# Break in Module TB at E:/Programming/Verilog/CA/CA1/tb/TB.v line 124
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex /TB/risc_v/datapath/data_memory/data_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format hex -update_properties /TB/risc_v/datapath/instruction_memory/inst_mem
+run
+add wave -position insertpoint  \
+sim:/TB/risc_v/datapath/data_memory/address \
+sim:/TB/risc_v/datapath/data_memory/write_data \
+sim:/TB/risc_v/datapath/data_memory/write_enable \
+sim:/TB/risc_v/datapath/data_memory/clk \
+sim:/TB/risc_v/datapath/data_memory/read_data \
+sim:/TB/risc_v/datapath/data_memory/data_mem \
+sim:/TB/risc_v/datapath/data_memory/i \
+sim:/TB/risc_v/datapath/data_memory/word_index
+run
+run
+vsim -gui work.TestBench
+# End time: 15:14:13 on May 15,2026, Elapsed time: 0:08:45
+# Errors: 0, Warnings: 4
+# vsim -gui work.TestBench 
+# Start time: 15:14:13 on May 15,2026
+# Loading work.TestBench
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading sv_std.std
+# Loading work.Adder
+# Loading work.ImmediateExt
+# Loading work.Controller
+add wave -position insertpoint  \
+sim:/TestBench/risc_v/datapath/data_memory/address \
+sim:/TestBench/risc_v/datapath/data_memory/write_data \
+sim:/TestBench/risc_v/datapath/data_memory/write_enable \
+sim:/TestBench/risc_v/datapath/data_memory/clk \
+sim:/TestBench/risc_v/datapath/data_memory/read_data \
+sim:/TestBench/risc_v/datapath/data_memory/data_mem \
+sim:/TestBench/risc_v/datapath/data_memory/i \
+sim:/TestBench/risc_v/datapath/data_memory/word_index
+run
+# ** Warning: (vsim-7) Failed to open readmem file "inst.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/InstMemory.v(15)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/instruction_memory
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/DataMemory.v(19)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/data_memory
+# ========================================
+#     RISC-V Sorting Test
+# ========================================
+# 
+# Resetting processor...
+# Reset completed
+# 
+# 
+# Executing...
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format hex /TestBench/risc_v/datapath/instruction_memory/inst_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex /TestBench/risc_v/datapath/data_memory/data_mem
+run
+run
+# Compile of Adder.v was successful.
+# Compile of All.sv was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Load canceled
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of Mux4To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 16 compiles, 0 failed with no errors.
+run
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex /TestBench/risc_v/datapath/data_memory/data_mem
+run
+# 
+# Sorted array:
+#   array[0] = 2 (expected 1)
+#   array[1] = 1 (expected 2)
+#   array[2] = 3 (expected 3)
+#   array[3] = 4 (expected 4)
+#   array[4] = 5 (expected 5)
+#   array[5] = 6 (expected 6)
+#   array[6] = 7 (expected 7)
+#   array[7] = 8 (expected 8)
+#   array[8] = 9 (expected 9)
+#   array[9] = 10 (expected 10)
+# 
+# ========================================
+#     Test Results Summary
+# ========================================
+# Array Elements Tested: 10
+# Passed: 8
+# Failed: 2
+# ========================================
+# SOME TESTS FAILED!
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TestBench.v(94)
+#    Time: 409 ns  Iteration: 1  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 94
+run
+add wave -position end  sim:/TestBench/risc_v/datapath/program_counter/clk
+add wave -position end  sim:/TestBench/risc_v/datapath/program_counter/rst
+add wave -position end  sim:/TestBench/risc_v/datapath/program_counter/pc_next
+add wave -position end  sim:/TestBench/risc_v/datapath/program_counter/pc_current
+run
+run
+run
+# Compile of Adder.v was successful.
+# Compile of All.sv was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of Mux4To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 16 compiles, 0 failed with no errors.
+run
+run
+add wave -position insertpoint  \
+sim:/TestBench/risc_v/datapath/program_counter/clk \
+sim:/TestBench/risc_v/datapath/program_counter/rst
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of Mux4To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 15 compiles, 1 failed with no errors.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of Mux4To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+vsim -gui work.TestBench
+# End time: 17:38:02 on May 15,2026, Elapsed time: 2:23:49
+# Errors: 0, Warnings: 7
+# vsim -gui work.TestBench 
+# Start time: 17:38:02 on May 15,2026
+# Loading work.TestBench
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading work.Adder
+# Loading work.ImmediateExt
+# Loading work.Controller
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 15 compiles, 0 failed with no errors.
+add wave -position end  sim:/TestBench/risc_v/datapath/program_counter/pc_current
+run
+# ** Warning: (vsim-7) Failed to open readmem file "inst.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/InstMemory.v(16)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/instruction_memory
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/DataMemory.v(20)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/data_memory
+# ========================================
+#     RISC-V Sorting Test
+# ========================================
+# 
+# Resetting processor...
+# Reset completed
+# 
+# Initial array:
+#   array[0] = 0
+#   array[1] = 0
+#   array[2] = 0
+#   array[3] = 0
+#   array[4] = 0
+#   array[5] = 0
+#   array[6] = 0
+#   array[7] = 0
+#   array[8] = 0
+#   array[9] = 0
+# 
+# Executing...
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of Mux4To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 15 compiles, 0 failed with no errors.
+run
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex /TestBench/risc_v/datapath/data_memory/data_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex /TestBench/risc_v/datapath/instruction_memory/inst_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format binary /TestBench/risc_v/datapath/instruction_memory/inst_mem
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+run -all
+# 
+# Sorted array:
+#   array[0] = 2 (expected 1)
+#   array[1] = 1 (expected 2)
+#   array[2] = 3 (expected 3)
+#   array[3] = 4 (expected 4)
+#   array[4] = 5 (expected 5)
+#   array[5] = 6 (expected 6)
+#   array[6] = 7 (expected 7)
+#   array[7] = 8 (expected 8)
+#   array[8] = 9 (expected 9)
+#   array[9] = 10 (expected 10)
+# 
+# ========================================
+#     Test Results Summary
+# ========================================
+# Array Elements Tested: 10
+# Passed: 8
+# Failed: 2
+# ========================================
+# SOME TESTS FAILED!
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TestBench.v(102)
+#    Time: 409 ns  Iteration: 1  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 102
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+add wave -position end  sim:/TestBench/risc_v/datapath/data_memory/data_mem
+run -all
+# 
+# TIMEOUT: Simulation stopped
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TestBench.v(110)
+#    Time: 1 us  Iteration: 0  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 110
+# WARNING: No extended dataflow license exists
+run -all
+add wave -position end  sim:/TestBench/risc_v/datapath/data_memory/word_index
+# Break key hit
+# Simulation stop requested.
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+run -all
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+# Break key hit
+# Simulation stop requested.
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TestBench
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading work.ImmediateExt
+# Loading work.Adder
+# Loading work.Controller
+vsim -gui work.TestBench
+# End time: 19:00:55 on May 15,2026, Elapsed time: 1:22:53
+# Errors: 0, Warnings: 1
+# vsim -gui work.TestBench 
+# Start time: 19:00:55 on May 15,2026
+# Loading work.TestBench
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading work.ImmediateExt
+# Loading work.Adder
+# Loading work.Controller
+add wave -position end  sim:/TestBench/risc_v/datapath/data_memory/data_mem
+run
+# ** Warning: (vsim-7) Failed to open readmem file "inst.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/InstMemory.v(16)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/instruction_memory
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/DataMemory.v(20)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/data_memory
+# ========================================
+#     RISC-V Sorting Test
+# ========================================
+# 
+# Resetting processor...
+# Reset completed
+# 
+# Initial array:
+#   array[0] = 0
+#   array[1] = 0
+#   array[2] = 0
+#   array[3] = 0
+#   array[4] = 0
+#   array[5] = 0
+#   array[6] = 0
+#   array[7] = 0
+#   array[8] = 0
+#   array[9] = 0
+# 
+# Executing...
+run -all
+# 
+# Sorted array:
+#   array[0] = 0 (expected 1)
+#   array[1] = 0 (expected 2)
+#   array[2] = 0 (expected 3)
+#   array[3] = 0 (expected 4)
+#   array[4] = 0 (expected 5)
+#   array[5] = 0 (expected 6)
+#   array[6] = 0 (expected 7)
+#   array[7] = 0 (expected 8)
+#   array[8] = 0 (expected 9)
+#   array[9] = 0 (expected 10)
+# 
+# ========================================
+#     Test Results Summary
+# ========================================
+# Array Elements Tested: 10
+# Passed: 0
+# Failed: 10
+# ========================================
+# SOME TESTS FAILED!
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TestBench.v(102)
+#    Time: 2010 ns  Iteration: 0  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 102
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format hex /TestBench/risc_v/datapath/data_memory/data_mem
+# (vsim-3659) Too many digits (32) in data on line 1 of file "E:/Programming/Verilog/CA/CA1/tb/inst.mem". (Max is 8.)
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format binary /TestBench/risc_v/datapath/instruction_memory/inst_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format binary -update_properties /TestBench/risc_v/datapath/instruction_memory/inst_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex -update_properties /TestBench/risc_v/datapath/data_memory/data_mem
+run -all
+# Break key hit
+# Break in Module RegisterFile at E:/Programming/Verilog/CA/CA1/src/RegisterFile.v line 29
+
+
+
+
+run
+restart
+run -all
+# Break key hit
+# Break in Module InstMemory at E:/Programming/Verilog/CA/CA1/src/InstMemory.v line 19
+add wave -position 0  sim:/TestBench/clk
+add wave -position 1  sim:/TestBench/rst
+run -all
+# Break key hit
+# Break in Module InstMemory at E:/Programming/Verilog/CA/CA1/src/InstMemory.v line 19
+# Break key hit
+run -continue
+run -all
+# Break key hit
+# Break in Module Mux3To1 at E:/Programming/Verilog/CA/CA1/src/Mux3To1.v line 10
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+run -all
+# Break key hit
+# Break in Module InstMemory at E:/Programming/Verilog/CA/CA1/src/InstMemory.v line 19
+# Compile of ImmediateExt.v was successful.
+# Compile canceled.
+# 6 out of 14 compiles, 0 failed with no errors.
+run -all
+# Break key hit
+# Simulation stop requested.
+run -all
+# Break key hit
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 34
+add wave -position 2  sim:/TestBench/risc_v/datapath/program_counter/pc_current
+run -all
+# Break key hit
+# Simulation stop requested.
+run -all
+# Break key hit
+# Break in Module RegisterFile at E:/Programming/Verilog/CA/CA1/src/RegisterFile.v line 29
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Load canceled
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui work.TestBench
+# End time: 19:08:34 on May 15,2026, Elapsed time: 0:07:39
+# Errors: 0, Warnings: 6
+# vsim -gui work.TestBench 
+# Start time: 19:08:34 on May 15,2026
+# Loading work.TestBench
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading work.ImmediateExt
+# Loading work.Adder
+# Loading work.Controller
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format binary -update_properties /TestBench/risc_v/datapath/instruction_memory/inst_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex -update_properties /TestBench/risc_v/datapath/data_memory/data_mem
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "inst.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/InstMemory.v(16)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/instruction_memory
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/DataMemory.v(20)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/data_memory
+# ========================================
+#     RISC-V Sorting Test
+# ========================================
+# 
+# Resetting processor...
+# Reset completed
+# 
+# Initial array:
+#   array[0] = 0
+#   array[1] = 0
+#   array[2] = 0
+#   array[3] = 0
+#   array[4] = 0
+#   array[5] = 0
+#   array[6] = 0
+#   array[7] = 0
+#   array[8] = 0
+#   array[9] = 0
+# 
+# Executing...
+# 
+# TIMEOUT: Simulation stopped
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TestBench.v(110)
+#    Time: 2 us  Iteration: 0  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 110
+add wave -position insertpoint  \
+sim:/TestBench/clk \
+sim:/TestBench/rst \
+sim:/TestBench/test_number \
+sim:/TestBench/passed_tests \
+sim:/TestBench/failed_tests \
+sim:/TestBench/i \
+sim:/TestBench/actual_value \
+sim:/TestBench/expected
+add wave -position end  sim:/TestBench/clk
+add wave -position end  sim:/TestBench/rst
+add wave -position end  sim:/TestBench/risc_v/datapath/program_counter/pc_current
+add wave -position end  sim:/TestBench/risc_v/datapath/data_memory/data_mem
+run -all
+# 
+# Sorted array:
+#   array[0] = 0 (expected 1)
+#   array[1] = 0 (expected 2)
+#   array[2] = 0 (expected 3)
+#   array[3] = 0 (expected 4)
+#   array[4] = 0 (expected 5)
+#   array[5] = 0 (expected 6)
+#   array[6] = 0 (expected 7)
+#   array[7] = 0 (expected 8)
+#   array[8] = 0 (expected 9)
+#   array[9] = 0 (expected 10)
+# 
+# ========================================
+#     Test Results Summary
+# ========================================
+# Array Elements Tested: 10
+# Passed: 0
+# Failed: 10
+# ========================================
+# SOME TESTS FAILED!
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TestBench.v(102)
+#    Time: 4009 ns  Iteration: 1  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 102
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui work.TestBench
+# End time: 19:11:54 on May 15,2026, Elapsed time: 0:03:20
+# Errors: 0, Warnings: 4
+# vsim -gui work.TestBench 
+# Start time: 19:11:54 on May 15,2026
+# Loading work.TestBench
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading work.ImmediateExt
+# Loading work.Adder
+# Loading work.Controller
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui work.TB
+# End time: 19:13:12 on May 15,2026, Elapsed time: 0:01:18
+# Errors: 0, Warnings: 2
+# vsim -gui work.TB 
+# Start time: 19:13:12 on May 15,2026
+# Loading work.TB
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading work.ImmediateExt
+# Loading work.Adder
+# Loading work.Controller
+add wave -position end  sim:/TB/risc/datapath/program_counter/pc_next
+add wave -position 0  sim:/TB/clk
+add wave -position 1  sim:/TB/rst
+add wave -position end  sim:/TB/risc/datapath/data_memory/data_mem
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "inst.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/InstMemory.v(16)
+#    Time: 0 ns  Iteration: 0  Instance: /TB/risc/datapath/instruction_memory
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/DataMemory.v(20)
+#    Time: 0 ns  Iteration: 0  Instance: /TB/risc/datapath/data_memory
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TB.v(16)
+#    Time: 1020 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at E:/Programming/Verilog/CA/CA1/tb/TB.v line 16
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex -update_properties /TB/risc/datapath/data_memory/data_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format binary -update_properties /TB/risc/datapath/instruction_memory/inst_mem
+run
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+run
+run
+vsim -gui work.TB
+# End time: 19:18:13 on May 15,2026, Elapsed time: 0:05:01
+# Errors: 0, Warnings: 4
+# vsim -gui work.TB 
+# Start time: 19:18:13 on May 15,2026
+# Loading work.TB
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading work.ImmediateExt
+# Loading work.Adder
+# Loading work.Controller
+add wave -position end  sim:/TB/clk
+add wave -position end  sim:/TB/rst
+add wave -position end  sim:/TB/risc/datapath/program_counter/pc_next
+add wave -position end  sim:/TB/risc/datapath/data_memory/data_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex -update_properties /TB/risc/datapath/data_memory/data_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format binary -update_properties /TB/risc/datapath/instruction_memory/inst_mem
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "inst.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/InstMemory.v(16)
+#    Time: 0 ns  Iteration: 0  Instance: /TB/risc/datapath/instruction_memory
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/DataMemory.v(20)
+#    Time: 0 ns  Iteration: 0  Instance: /TB/risc/datapath/data_memory
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TB.v(17)
+#    Time: 3020 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at E:/Programming/Verilog/CA/CA1/tb/TB.v line 17
+run -all
+# Break key hit
+# Simulation stop requested.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+run -all
+# Break key hit
+# Simulation stop requested.
+vsim -gui work.TestBench
+# End time: 19:20:25 on May 15,2026, Elapsed time: 0:02:12
+# Errors: 0, Warnings: 4
+# vsim -gui work.TestBench 
+# Start time: 19:20:25 on May 15,2026
+# Loading work.TestBench
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading work.ImmediateExt
+# Loading work.Adder
+# Loading work.Controller
+add wave -position end  sim:/TestBench/clk
+add wave -position end  sim:/TestBench/rst
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex /TestBench/risc_v/datapath/data_memory/data_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format binary -update_properties /TestBench/risc_v/datapath/instruction_memory/inst_mem
+add wave -position end  sim:/TestBench/risc_v/datapath/program_counter/pc_current
+add wave -position end  sim:/TestBench/risc_v/datapath/data_memory/data_mem
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "inst.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/InstMemory.v(16)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/instruction_memory
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/DataMemory.v(20)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/data_memory
+# ========================================
+#     RISC-V Sorting Test
+# ========================================
+# 
+# Resetting processor...
+# Reset completed
+# 
+# Initial array:
+#   array[0] = 0
+#   array[1] = 0
+#   array[2] = 0
+#   array[3] = 0
+#   array[4] = 0
+#   array[5] = 0
+#   array[6] = 0
+#   array[7] = 0
+#   array[8] = 0
+#   array[9] = 0
+# 
+# Executing...
+# 
+# TIMEOUT: Simulation stopped
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TestBench.v(110)
+#    Time: 2 us  Iteration: 0  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 110
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format binary -update_properties /TestBench/risc_v/datapath/instruction_memory/inst_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex -update_properties /TestBench/risc_v/datapath/data_memory/data_mem
+run
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+run -all
+# 
+# Sorted array:
+#   array[0] = 2 (expected 1)
+#   array[1] = 1 (expected 2)
+#   array[2] = 3 (expected 3)
+#   array[3] = 4 (expected 4)
+#   array[4] = 5 (expected 5)
+#   array[5] = 6 (expected 6)
+#   array[6] = 7 (expected 7)
+#   array[7] = 8 (expected 8)
+#   array[8] = 9 (expected 9)
+#   array[9] = 10 (expected 10)
+# 
+# ========================================
+#     Test Results Summary
+# ========================================
+# Array Elements Tested: 10
+# Passed: 8
+# Failed: 2
+# ========================================
+# SOME TESTS FAILED!
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TestBench.v(102)
+#    Time: 4009 ns  Iteration: 1  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 102
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+run -all
+# Break key hit
+# Simulation stop requested.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+run -all
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Load canceled
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui work.TestBench
+# End time: 19:26:44 on May 15,2026, Elapsed time: 0:06:19
+# Errors: 0, Warnings: 6
+# vsim -gui work.TestBench 
+# Start time: 19:26:44 on May 15,2026
+# Loading work.TestBench
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading work.ImmediateExt
+# Loading work.Adder
+# Loading work.Controller
+add wave -position end  sim:/TestBench/clk
+add wave -position end  sim:/TestBench/rst
+vsim -gui work.TestBench
+# End time: 19:27:25 on May 15,2026, Elapsed time: 0:00:41
+# Errors: 0, Warnings: 1
+# vsim -gui work.TestBench 
+# Start time: 19:27:25 on May 15,2026
+# Loading work.TestBench
+# Loading work.RISC_V
+# Loading work.DataPath
+# Loading work.PC
+# Loading work.InstMemory
+# Loading work.RegisterFile
+# Loading work.Mux2To1
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.Mux3To1
+# Loading work.ImmediateExt
+# Loading work.Adder
+# Loading work.Controller
+add wave -position end  sim:/TestBench/clk
+add wave -position end  sim:/TestBench/rst
+add wave -position end  sim:/TestBench/risc_v/datapath/program_counter/pc_current
+add wave -position end  sim:/TestBench/risc_v/datapath/data_memory/data_mem
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "inst.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/InstMemory.v(16)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/instruction_memory
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA1/src/DataMemory.v(20)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/datapath/data_memory
+# ========================================
+#     RISC-V Sorting Test
+# ========================================
+# 
+# Resetting processor...
+# Reset completed
+# 
+# Initial array:
+#   array[0] = 0
+#   array[1] = 0
+#   array[2] = 0
+#   array[3] = 0
+#   array[4] = 0
+#   array[5] = 0
+#   array[6] = 0
+#   array[7] = 0
+#   array[8] = 0
+#   array[9] = 0
+# 
+# Executing...
+# 
+# Sorted array:
+#   array[0] = 0 (expected 1)
+#   array[1] = 0 (expected 2)
+#   array[2] = 0 (expected 3)
+#   array[3] = 0 (expected 4)
+#   array[4] = 0 (expected 5)
+#   array[5] = 0 (expected 6)
+#   array[6] = 0 (expected 7)
+#   array[7] = 0 (expected 8)
+#   array[8] = 0 (expected 9)
+#   array[9] = 0 (expected 10)
+# 
+# ========================================
+#     Test Results Summary
+# ========================================
+# Array Elements Tested: 10
+# Passed: 0
+# Failed: 10
+# ========================================
+# SOME TESTS FAILED!
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TestBench.v(102)
+#    Time: 409 ns  Iteration: 1  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 102
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format binary -update_properties /TestBench/risc_v/datapath/instruction_memory/inst_mem
+mem load -i E:/Programming/Verilog/CA/CA1/tb/data.mem -format hex -update_properties /TestBench/risc_v/datapath/data_memory/data_mem
+run
+mem load -i E:/Programming/Verilog/CA/CA1/tb/inst.mem -format hex -update_properties /TestBench/risc_v/datapath/instruction_memory/inst_mem
+# (vsim-3659) Too many digits (32) in data on line 2 of file "E:/Programming/Verilog/CA/CA1/tb/inst.mem". (Max is 8.)
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataMemory.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of ImmediateExt.v was successful.
+# Compile of InstMemory.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Mux3To1.v was successful.
+# Compile of PC.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TB.v was successful.
+# Compile of TestBench.v was successful.
+# 14 compiles, 0 failed with no errors.
+run -all
+# 
+# TIMEOUT: Simulation stopped
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA1/tb/TestBench.v(110)
+#    Time: 10 us  Iteration: 0  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 110
+# WARNING: No extended dataflow license exists

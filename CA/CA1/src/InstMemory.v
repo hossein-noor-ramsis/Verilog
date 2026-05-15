@@ -7,6 +7,7 @@ module InstMemory (
 
   wire [9:0] word_index;
   assign word_index = pc[11:2];
+  // pc is 4x of word index so we shift it to the left by to to divide it to 4
 
   initial begin
     for (i = 0; i < 2 ** 10; i = i + 1) begin

@@ -11,6 +11,7 @@ module DataMemory (
 
   wire [9:0] word_index;
   assign word_index = address[11:2];  // Byte address to word index
+  // pc is 4x of word index so we shift it to the left by to to divide it to 4
 
   initial begin
     for (i = 0; i < 2 ** 10; i = i + 1) begin

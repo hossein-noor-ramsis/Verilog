@@ -14,7 +14,7 @@ module Controller (
     output reg [2:0] imm_src,
     output reg       reg_write
 );
-  always @(opcode, funct3, funct7, zero_flag, sign_flag) begin
+  always @(*) begin
     // Default values
     reg_write = 0;
     imm_src = 3'b000;
@@ -27,10 +27,12 @@ module Controller (
     case (opcode)
       // R-type
       7'b0110011: begin
-        reg_write = 1;
+        pc_src = 2'b00;
         result_src = 2'b00;
+        mem_write = 0;
         alu_src = 0;
         imm_src = 3'b000;
+        reg_write = 1;
 
         case ({
           funct7, funct3
@@ -46,10 +48,12 @@ module Controller (
 
       // I-type (ALU immediate)
       7'b0010011: begin
-        reg_write = 1;
-        alu_src = 1;
+        pc_src = 2'b00;
         result_src = 2'b00;
+        mem_write = 0;
+        alu_src = 1;
         imm_src = 3'b000;
+        reg_write = 1;
 
         case (funct3)
           3'b000:  alu_control = 3'b010;  // ADDI
@@ -62,23 +66,39 @@ module Controller (
 
       // Load
       7'b0000011: begin
-        reg_write = 1;
-        alu_src = 1;
+        pc_src = 2'b00;
         result_src = 2'b01;
+        mem_write = 0;
+        alu_control = 3'b010;
+        alu_src = 1;
         imm_src = 3'b000;
-        alu_control = 3'b010;  // ADD for address
+        reg_write = 1;
       end
 
       // Store
       7'b0100011: begin
+        pc_src = 2'b00;
+        result_src = 2'b00;
         mem_write = 1;
+        alu_control = 3'b010;
         alu_src = 1;
         imm_src = 3'b001;
-        alu_control = 3'b010;  // ADD for address
+        reg_write = 0;
       end
 
       // Branch
       7'b1100011: begin
+        pc_src = 2'b00;
+
+        result_src = 2'b00;
+        mem_write = 0;
+
+        alu_control = 3'b010;
+
+        alu_src = 0;
+        imm_src = 3'b001;
+        reg_write = 0;
+
         imm_src = 3'b010;
         alu_control = 3'b110;  // SUB for comparison
 
@@ -86,27 +106,31 @@ module Controller (
           3'b000:  pc_src = zero_flag ? 2'b01 : 2'b00;  // BEQ
           3'b001:  pc_src = ~zero_flag ? 2'b01 : 2'b00;  // BNE
           3'b100:  pc_src = sign_flag ? 2'b01 : 2'b00;  // BLT
-          3'b101:  pc_src = (~sign_flag | zero_flag) ? 2'b01 : 2'b00;  // BGE
+          3'b101:  pc_src = ~sign_flag ? 2'b01 : 2'b00;  // BGE
           default: pc_src = 2'b00;  // Default no branch
         endcase
       end
 
       // JAL
       7'b1101111: begin
-        reg_write = 1;
-        imm_src = 3'b011;
-        result_src = 2'b10;
         pc_src = 2'b01;
-        alu_src = 0;
+        result_src = 2'b10;
+        mem_write = 0;
+        alu_control = 3'b010;
+        alu_src = 1;
+        imm_src = 3'b010;
+        reg_write = 1;
       end
 
       // JALR
       7'b1100111: begin
-        reg_write = 1;
+        pc_src = 2'b10;
+        result_src = 2'b10;
+        mem_write = 0;
+        alu_control = 3'b000;
         alu_src = 1;
         imm_src = 3'b000;
-        result_src = 2'b10;
-        pc_src = 2'b10;
+        reg_write = 1;
       end
     endcase
   end
