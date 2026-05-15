@@ -19,13 +19,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Mux3To1
 
-} {} {}} E:/Programming/Verilog/CA/CA1/src/PC.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/src/PC.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module PC
-
-Top level modules:
-	PC
-
 } {} {}} E:/Programming/Verilog/CA/CA1/src/DataMemory.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/src/DataMemory.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module DataMemory
@@ -33,12 +26,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	DataMemory
 
-} {} {}} E:/Programming/Verilog/CA/CA1/tb/TB.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/tb/TB.v
+} {} {}} E:/Programming/Verilog/CA/CA1/src/PC.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/src/PC.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module TB
+-- Compiling module PC
 
 Top level modules:
-	TB
+	PC
 
 } {} {}} E:/Programming/Verilog/CA/CA1/src/Controller.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/src/Controller.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -47,12 +40,26 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Controller
 
+} {} {}} E:/Programming/Verilog/CA/CA1/tb/TB.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/tb/TB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB
+
+Top level modules:
+	TB
+
 } {} {}} E:/Programming/Verilog/CA/CA1/src/RISC_V.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/src/RISC_V.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module RISC_V
 
 Top level modules:
 	RISC_V
+
+} {} {}} E:/Programming/Verilog/CA/CA1/src/InstMemory.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/src/InstMemory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module InstMemory
+
+Top level modules:
+	InstMemory
 
 } {} {}} E:/Programming/Verilog/CA/CA1/src/DataPath.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/src/DataPath.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -68,18 +75,25 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Mux2To1
 
-} {} {}} E:/Programming/Verilog/CA/CA1/src/ALU.v {1 {vlog -work work -stats=none {E:\Programming\Verilog\CA\CA1\src\ALU.v}
+} {} {}} E:/Programming/Verilog/CA/CA1/src/ALU.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/src/ALU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ALU
 
 Top level modules:
 	ALU
 
-} {} {}} E:/Programming/Verilog/CA/CA1/src/RegisterFile.v {1 {vlog -work work -stats=none {E:\Programming\Verilog\CA\CA1\src\RegisterFile.v}
+} {} {}} E:/Programming/Verilog/CA/CA1/src/RegisterFile.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/src/RegisterFile.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module RegisterFile
 
 Top level modules:
 	RegisterFile
+
+} {} {}} E:/Programming/Verilog/CA/CA1/tb/TestBench.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/tb/TestBench.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TestBench
+
+Top level modules:
+	TestBench
 
 } {} {}}
