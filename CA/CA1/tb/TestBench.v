@@ -52,17 +52,6 @@ module TestBench ();
     $display("Reset completed");
     $display("");
 
-    // Debug: Show first 40 instructions
-    // $display("First 40 instructions:");
-    // repeat (40) begin
-    //   @(negedge clk);
-    //   $display("PC=%h Inst=%h RS1=%d RS2=%d RegWrite=%b MemWrite=%b Branch=%b",
-    //            risc_v.datapath.program_counter.pc_current, risc_v.datapath.instruction,
-    //            risc_v.datapath.rs1_addr, risc_v.datapath.rs2_addr, risc_v.datapath.reg_write,
-    //            risc_v.datapath.mem_write, (risc_v.datapath.pc_src != 0));
-    // end
-    // $stop;
-
     // Print initial array
     $display("Initial array:");
     for (i = 0; i < 10; i = i + 1) begin
