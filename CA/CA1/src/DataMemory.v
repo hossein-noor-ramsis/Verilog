@@ -1,8 +1,9 @@
 module DataMemory (
-    input  [31:0] address,
+    input [31:0] address,
     write_data,
-    input         write_enable,
+    input        write_enable,
     clk,
+
     output [31:0] read_data
 );
   reg [31:0] data_mem[0:(2**10 - 1)];  // 1K words = 4KB

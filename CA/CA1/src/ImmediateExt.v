@@ -21,7 +21,12 @@ module ImmediateExt (
       // J-type
       3'b011:
       imm_extended = {
-        {12{instruction[31]}}, instruction[19:12], instruction[20], instruction[30:21], 1'b0
+        {11{instruction[31]}},
+        instruction[31],
+        instruction[19:12],
+        instruction[20],
+        instruction[30:21],
+        1'b0
       };
 
       // U-type

@@ -22,12 +22,12 @@ module RegisterFile (
   end
 
   // Read operations (combinational)
-  assign rs1_data = (rs1_addr == 5'd0) ? 32'd0 : reg_file[rs1_addr];
-  assign rs2_data = (rs2_addr == 5'd0) ? 32'd0 : reg_file[rs2_addr];
+  assign rs1_data = reg_file[rs1_addr];
+  assign rs2_data = reg_file[rs2_addr];
 
   // Write operation (sequential)
   always @(posedge clk) begin
-    if (write_enable && (rd_addr != 5'd0)) reg_file[rd_addr] <= write_data;
+    if (write_enable) reg_file[rd_addr] <= write_data;
   end
 endmodule
 

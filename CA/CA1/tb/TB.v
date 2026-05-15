@@ -16,6 +16,7 @@ module TB ();
     input [4:0] reg_num;
     input [31:0] expected;
     input [80*8:1] test_name;
+
     begin
       #2;
       if (risc_v.datapath.register_file.reg_file[reg_num] === expected) begin

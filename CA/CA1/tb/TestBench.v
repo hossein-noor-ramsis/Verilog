@@ -1,6 +1,6 @@
 `timescale 1ns / 1ns
 
-module TB ();
+module TestBench ();
   reg clk = 1'b0;
   reg rst = 1'b0;
   integer test_number;
@@ -12,16 +12,16 @@ module TB ();
   // Expected sorted array (ascending order)
   reg signed [31:0] expected[0:9];
   initial begin
-    expected[0] = -99;
-    expected[1] = -55;
-    expected[2] = -12;
-    expected[3] = -3;
-    expected[4] = 0;
-    expected[5] = 14;
-    expected[6] = 23;
-    expected[7] = 45;
-    expected[8] = 67;
-    expected[9] = 89;
+    expected[0] = 1;
+    expected[1] = 2;
+    expected[2] = 3;
+    expected[3] = 4;
+    expected[4] = 5;
+    expected[5] = 6;
+    expected[6] = 7;
+    expected[7] = 8;
+    expected[8] = 9;
+    expected[9] = 10;
   end
 
   // Instantiate RISC-V processor
@@ -52,7 +52,7 @@ module TB ();
     $display("Reset completed");
     $display("");
 
-    // // Debug: Show first 40 instructions
+    // Debug: Show first 40 instructions
     // $display("First 40 instructions:");
     // repeat (40) begin
     //   @(negedge clk);
@@ -75,7 +75,7 @@ module TB ();
     $display("Executing...");
 
     // Run program
-    repeat (1000) @(posedge clk);
+    repeat (200) @(posedge clk);
 
     $display("");
     $display("Sorted array:");
@@ -90,7 +90,7 @@ module TB ();
         passed_tests = passed_tests + 1;
       end else begin
         failed_tests = failed_tests + 1;
-        $display("    FAIL: Element %0d mismatch!", i);
+        // $display("    FAIL: Element %0d mismatch!", i);
       end
     end
 

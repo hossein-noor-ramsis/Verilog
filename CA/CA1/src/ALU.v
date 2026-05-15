@@ -1,11 +1,9 @@
 module ALU (
     input signed [31:0] operand_a,
     operand_b,
-
-    input  [2:0] alu_control,
-    output       zero_flag,
+    input [2:0] alu_control,
+    output zero_flag,
     sign_flag,
-
     output reg signed [31:0] alu_result
 );
   assign zero_flag = ~|alu_result;
@@ -18,8 +16,8 @@ module ALU (
       3'b010:  alu_result = operand_a + operand_b;  // ADD
       3'b110:  alu_result = operand_a - operand_b;  // SUB
       3'b011:  alu_result = operand_a ^ operand_b;  // XOR
-      3'b111:  alu_result = (operand_a < operand_b) ? 1 : 0;  // SLT
-      default: alu_result = 0;
+      3'b111:  alu_result = operand_a < operand_b ? 32'd1 : 32'd0;  // SLT
+      default: alu_result = {32{1'b0}};
     endcase
   end
 endmodule

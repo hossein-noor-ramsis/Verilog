@@ -54,7 +54,7 @@ module DataPath (
 
   // Instruction Memory
   InstMemory instruction_memory (
-      .address    (pc_current),
+      .pc         (pc_current),
       .instruction(instruction)
   );
 
