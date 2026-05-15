@@ -1158,3 +1158,5 @@ run -all
 #    Time: 10 us  Iteration: 0  Instance: /TestBench
 # Break in Module TestBench at E:/Programming/Verilog/CA/CA1/tb/TestBench.v line 110
 # WARNING: No extended dataflow license exists
+# End time: 19:43:08 on May 15,2026, Elapsed time: 0:15:43
+# Errors: 0, Warnings: 4
