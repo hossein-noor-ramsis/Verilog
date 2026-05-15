@@ -89,18 +89,12 @@ module Controller (
       // Branch
       7'b1100011: begin
         pc_src = 2'b00;
-
         result_src = 2'b00;
         mem_write = 0;
-
-        alu_control = 3'b010;
-
+        alu_control = 3'b110;
         alu_src = 0;
-        imm_src = 3'b001;
+        imm_src = 3'b011;
         reg_write = 0;
-
-        imm_src = 3'b010;
-        alu_control = 3'b110;  // SUB for comparison
 
         case (funct3)
           3'b000:  pc_src = zero_flag ? 2'b01 : 2'b00;  // BEQ
@@ -127,7 +121,7 @@ module Controller (
         pc_src = 2'b10;
         result_src = 2'b10;
         mem_write = 0;
-        alu_control = 3'b000;
+        alu_control = 3'b010;
         alu_src = 1;
         imm_src = 3'b000;
         reg_write = 1;

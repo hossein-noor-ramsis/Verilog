@@ -10,9 +10,6 @@ module InstMemory (
   // pc is 4x of word index so we shift it to the left by to to divide it to 4
 
   initial begin
-    for (i = 0; i < 2 ** 10; i = i + 1) begin
-      inst_mem[i] = 32'd0;
-    end
     $readmemh("inst.mem", inst_mem);
   end
 
