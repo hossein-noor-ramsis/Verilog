@@ -1,16 +1,15 @@
 module Memory (
-    input [31:0] address,
-    write_data,
-    input        write_enable,
-    clk,
+    input [31:0] addr,
+    input [31:0] write_data,
+    input        mem_write,
+    input        clk,
 
     output [31:0] read_data
 );
   reg [31:0] mem[0:(2**10 - 1)];  // 1K words = 4KB
-  integer i;
 
   wire [9:0] word_index;
-  assign word_index = address[11:2];  // Byte address to word index
+  assign word_index = addr[11:2];  // Byte addr to word index
   // pc is 4x of word index so we shift it to the left by to to divide it to 4
 
   initial begin
@@ -18,8 +17,8 @@ module Memory (
   end
 
   always @(posedge clk) begin
-    if (write_enable) mem[word_index] <= write_data;
+    if (mem_write) mem[word_index] <= write_data;
   end
 
-  assign read_data = mem[word_index];  // Asynchronous read
+  assign read_data = mem[word_index];
 endmodule

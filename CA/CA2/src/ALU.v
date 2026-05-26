@@ -2,7 +2,7 @@ module ALU (
     input signed [31:0] operand_a,
     input signed [31:0] operand_b,
     input [2:0] alu_control,
-
+    
     output zero_flag,
     output sign_flag,
     output reg signed [31:0] alu_result
