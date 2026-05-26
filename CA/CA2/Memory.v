@@ -21,5 +21,5 @@ module Memory (
     if (write_enable) mem[word_index] <= write_data;
   end
 
-  assign read_data = mem[word_index];
+  assign read_data = mem[word_index];  // Asynchronous read
 endmodule
