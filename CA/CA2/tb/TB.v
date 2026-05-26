@@ -67,7 +67,7 @@ module TestBench ();
     // Print initial array
     $display("Initial array:");
     for (i = 0; i < 10; i = i + 1) begin
-      actual_value = processor.datapath.memory.mem[i];
+      actual_value = processor.datapath.memory.mem[64+i];
 
       $display("  array[%0d] = %0d", i, actual_value);
     end
@@ -83,7 +83,7 @@ module TestBench ();
 
     // Check sorted array
     for (i = 0; i < 10; i = i + 1) begin
-      actual_value = processor.datapath.memory.mem[i];
+      actual_value = processor.datapath.memory.mem[64+i];
 
       $display("  array[%0d] = %0d (expected %0d)", i, actual_value, expected[i]);
 
