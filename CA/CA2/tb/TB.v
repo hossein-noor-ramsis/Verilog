@@ -1,98 +1,121 @@
-module TB_Processor;
-  reg clk;
-  reg rst;
+`timescale 1ns / 1ns
 
-  // Clock generation
-  always #5 clk = ~clk;
+module TestBench ();
+  reg clk = 1'b0;
+  reg rst = 1'b0;
+  integer test_number;
+  integer passed_tests;
+  integer failed_tests;
+  integer i;
+  reg signed [31:0] actual_value;
 
-  // Processor top module
+  // Expected sorted array (ascending order)
+  reg signed [31:0] expected[0:9];
+  initial begin
+    expected[0] = 1;
+    expected[1] = 2;
+    expected[2] = 3;
+    expected[3] = 4;
+    expected[4] = 5;
+    expected[5] = 6;
+    expected[6] = 7;
+    expected[7] = 8;
+    expected[8] = 9;
+    expected[9] = 10;
+  end
+
+  // Instantiate the multicycle Processor
   Processor processor (
       .clk(clk),
       .rst(rst)
   );
 
-  integer cycle_count;
+  // Clock generation (slower for multicycle - 10ns period)
+  always #5 clk = ~clk;
 
   // Test sequence
   initial begin
-    clk = 0;
-    rst = 1;
-    cycle_count = 0;
+    test_number  = 0;
+    passed_tests = 0;
+    failed_tests = 0;
 
-    // Reset for a few cycles
-    repeat (5) @(posedge clk);
-    rst = 0;
-
-    // Run for many cycles
-    repeat (400) @(posedge clk);
-
-    // Check results
-    $display("\n===========================================");
-    $display("         RISC-V Processor Test Results");
-    $display("===========================================");
-    $display("Total cycles: %d", cycle_count);
+    $display("========================================");
+    $display("    RISC-V Multicycle Sorting Test");
+    $display("========================================");
     $display("");
 
-    // Display register values directly
-    $display("Register values:");
-    $display("x1  (ADDI 10)    = %d", processor.datapath.RF.regs[1]);
-    $display("x2  (ADDI 20)    = %d", processor.datapath.RF.regs[2]);
-    $display("x3  (ADD)        = %d", processor.datapath.RF.regs[3]);
-    $display("x4  (SUB)        = %d", processor.datapath.RF.regs[4]);
-    $display("x5  (AND)        = %d", processor.datapath.RF.regs[5]);
-    $display("x6  (OR)         = %d", processor.datapath.RF.regs[6]);
-    $display("x7  (XOR)        = %d", processor.datapath.RF.regs[7]);
-    $display("x8  (SLT 10<20)  = %d", processor.datapath.RF.regs[8]);
-    $display("x9  (SLT 20<10)  = %d", processor.datapath.RF.regs[9]);
-    $display("x10 (SLTI 10<15) = %d", processor.datapath.RF.regs[10]);
-    $display("x11 (ORI 0xFF)   = %d", processor.datapath.RF.regs[11]);
+    // Reset the processor
+    $display("Resetting processor...");
+    rst = 1'b1;
+    #20;
+    rst = 1'b0;
+    $display("Reset completed");
     $display("");
 
-    // Check pass/fail
-    check_reg(1, 10);
-    check_reg(2, 20);
-    check_reg(3, 30);
-    check_reg(4, 10);
-    check_reg(5, 0);
-    check_reg(6, 30);
-    check_reg(7, 30);
-    check_reg(8, 1);
-    check_reg(9, 0);
-    check_reg(10, 1);
-    check_reg(11, 255);
+    // Wait for initial fetch
+    #10;
 
-    $display("\n===========================================");
-    $finish;
-  end
+    // Print initial array (data is at word addresses 256-265 to separate from code)
+    $display("Initial array (at word addresses 256-265):");
+    for (i = 0; i < 10; i = i + 1) begin
+      // Access memory at data section (word address 256 + i)
+      actual_value = processor.datapath.memory.mem[256 + i];
 
-  task check_reg;
-    input [4:0] reg_num;
-    input [31:0] expected;
-    begin
-      if (processor.datapath.RF.regs[reg_num] == expected)
-        $display("PASS: x%0d = %d", reg_num, expected);
-      else
-        $display(
-            "FAIL: x%0d = %d (expected %d)", reg_num, processor.datapath.RF.regs[reg_num], expected
-        );
+      $display("  array[%0d] = %0d (at mem[%0d])", i, actual_value, 256 + i);
     end
-  endtask
 
-  // Cycle counter
-  always @(posedge clk) begin
-    if (!rst) begin
-      cycle_count <= cycle_count + 1;
-      // Print every 5 cycles
-      if (cycle_count % 5 == 0) begin
-        $display("[Cycle %0d] PC=%h", cycle_count, processor.datapath.program_counter.pc);
+    $display("");
+    $display("Executing sorting program...");
+    $display("(Each instruction takes 3-5 clock cycles in multicycle)");
+    $display("");
+
+    // Run program - multicycle needs more cycles per instruction
+    // 14 instructions × ~4 cycles = ~56 cycles, use 500 to be safe
+    repeat (500) @(posedge clk);
+
+    $display("");
+    $display("Sorted array:");
+
+    // Check sorted array
+    for (i = 0; i < 10; i = i + 1) begin
+      actual_value = processor.datapath.memory.mem[256+i];
+
+      $display("  array[%0d] = %0d (expected %0d)", i, actual_value, expected[i]);
+
+      if (actual_value === expected[i]) begin
+        passed_tests = passed_tests + 1;
+      end else begin
+        failed_tests = failed_tests + 1;
+        $display("    FAIL: Element %0d mismatch!", i);
       end
     end
+
+    // Final results
+    $display("");
+    $display("========================================");
+    $display("    Test Results Summary");
+    $display("========================================");
+    $display("Array Elements Tested: 10");
+    $display("Passed: %0d", passed_tests);
+    $display("Failed: %0d", failed_tests);
+    $display("========================================");
+
+    if (failed_tests == 0) begin
+      $display("ALL TESTS PASSED!");
+    end else begin
+      $display("SOME TESTS FAILED!");
+    end
+
+    $stop;
   end
 
-  // // Waveform dump
-  // initial begin
-  //   $dumpfile("processor_tb.vcd");
-  //   $dumpvars(0, TB_Processor);
-  // end
+  // Watchdog timer (longer for multicycle)
+  initial begin
+    #100000;
+    $display("");
+    $display("TIMEOUT: Simulation stopped (check for infinite loops)");
+    $display("PC = 0x%h", processor.datapath.program_counter.pc);
+    $stop;
+  end
 
 endmodule

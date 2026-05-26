@@ -1,25 +1,25 @@
 module ImmediateExtend (
     input [31:7] instruction,
-    input [ 2:0] imm_src,
+    input [ 1:0] imm_src,
 
     output reg [31:0] imm_extended
 );
   always @(instruction, imm_src) begin
     case (imm_src)
       // I-type
-      3'b000: imm_extended = {{20{instruction[31]}}, instruction[31:20]};
+      2'b00: imm_extended = {{20{instruction[31]}}, instruction[31:20]};
 
       // S-type
-      3'b001: imm_extended = {{20{instruction[31]}}, instruction[31:25], instruction[11:7]};
+      2'b01: imm_extended = {{20{instruction[31]}}, instruction[31:25], instruction[11:7]};
 
       // B-type
-      3'b011:
+      2'b10:
       imm_extended = {
         {20{instruction[31]}}, instruction[7], instruction[30:25], instruction[11:8], 1'b0
       };
 
       // J-type
-      3'b010:
+      2'b11:
       imm_extended = {
         {11{instruction[31]}},
         instruction[31],

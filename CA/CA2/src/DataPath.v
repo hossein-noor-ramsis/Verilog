@@ -14,7 +14,7 @@ module DataPath (
     input [1:0] ALUSrcB,
 
     input [2:0] ALUControl,
-    input [2:0] ImmSrc,
+    input [1:0] ImmSrc,
 
     output zero,
     output sign,
@@ -25,7 +25,6 @@ module DataPath (
 );
   // Instruction signals
   wire [31:0] Instruction;
-  wire [31:7] InstructionImm;
 
   // Register file signals
   wire [31:0] RD1, RD2;
@@ -41,7 +40,7 @@ module DataPath (
 
   // Intermediate registers outputs
   wire [31:0] AOut, BOut;
-  wire [31:0] MDROut;  // Memory Data Register output
+  wire [31:0] MDROut;
   wire [31:0] Result;
 
   // Instruction decoding
@@ -52,16 +51,14 @@ module DataPath (
   assign rs2 = Instruction[24:20];
   assign rd = Instruction[11:7];
 
-  // PC Write logic
-  wire PCWriteCond_and_zero, PCWrite_final;
-  and (PCWriteCond_and_zero, PCWriteCond, zero);
-  or (PCWrite_final, PCWriteCond_and_zero, PCWrite);
+  // PC Write logic with conditional branch support
+  wire PCWriteFinal;
+  assign PCWriteFinal = PCWrite | (PCWriteCond & (zero | sign));
 
-  // Instantiate PC
   PC program_counter (
       .clk(clk),
       .rst(rst),
-      .we(PCWrite_final),  // Fixed: was w2
+      .we(PCWrite_final),
       .next_pc(Result),
       .pc(PCOut)
   );
@@ -74,7 +71,7 @@ module DataPath (
       .out(Address)
   );
 
-  // Memory (unified instruction/data memory for simplicity)
+  // Memory (unified instruction/data memory)
   Memory memory (
       .addr(Address),
       .write_data(BOut),     // From B register
@@ -87,7 +84,7 @@ module DataPath (
   RegisterWithEnable old_pc_reg (
       .clk(clk),
       .we (OldPCWrite),
-      .d  (PCOut),       // Was missing input
+      .d  (PCOut + 32'd4),  // Store PC+4 for return address
       .q  (OldPCOut)
   );
 
@@ -113,14 +110,14 @@ module DataPath (
       .rs1(rs1),
       .rs2(rs2),
       .rd(rd),
-      .write_data(Result),  // Added write data
+      .write_data(Result),
       .rd1(RD1),
       .rd2(RD2)
   );
 
   // Immediate Extension
   ImmediateExtend ImmExt (
-      .instruction(InstructionImm),
+      .instruction(Instruction[31:7]),
       .imm_src(ImmSrc),
       .imm_extended(ImmExtended)
   );
@@ -148,7 +145,7 @@ module DataPath (
       .out(ALUOperandA)
   );
 
-  // ALU Operand B Mux (3-to-1) - Fixed: was named same as previous mux
+  // ALU Operand B Mux (3-to-1)
   Mux3To1 alu_b_mux (
       .in0(BOut),         // From register file
       .in1(ImmExtended),  // Immediate value
@@ -176,10 +173,10 @@ module DataPath (
 
   // Result Mux (4-to-1) for writeback
   Mux4To1 ResultMux (
-      .in0(ALUOut),         // ALU result
-      .in1(MDROut),         // Memory data
-      .in2(ALUResult),      // Direct ALU result (for branches)
-      .in3(PCOut + 32'd4),  // PC+4 for JAL
+      .in0(ALUOut),
+      .in1(MDROut),
+      .in2(ALUResult),
+      .in3(PCOut),
       .sel(ResultSrc),
       .out(Result)
   );

@@ -3,8 +3,8 @@ module Processor (
     input rst
 );
   wire PCWrite, OldPCWrite, AdrSrc, MemWrite, IRWrite, RegWrite;
-  wire [1:0] ResultSrc, ALUSrcA, ALUSrcB;
-  wire [2:0] ALUControl, ImmSrc;
+  wire [1:0] ResultSrc, ALUSrcA, ALUSrcB, ImmSrc;
+  wire [2:0] ALUControl;
   wire zero, sign;
   wire [6:0] func7, opcode;
   wire [2:0] func3;
@@ -13,7 +13,7 @@ module Processor (
   Controller controller (
       .opcode(opcode),
       .funct3(func3),
-      .funct7_5(func7[5]),
+      .funct7(func7),
       .zero_flag(zero),
       .sign_flag(sign),
       .clk(clk),
@@ -36,7 +36,7 @@ module Processor (
       .clk(clk),
       .rst(rst),
       .PCWrite(PCWrite),
-      .PCWriteCond(1'b0),  // Not used in this implementation
+      .PCWriteCond(PCWriteCond),
       .OldPCWrite(OldPCWrite),
       .AdrSrc(AdrSrc),
       .MemWrite(MemWrite),
