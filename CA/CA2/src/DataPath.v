@@ -186,7 +186,7 @@ module DataPath (
       .in0(ALUOut),
       .in1(ALUResult),
       .in2(MDROut),
-      .in3(OldPCOut),
+      .in3(PCOut),
       .sel(ResultSrc),
       .out(Result)
   );

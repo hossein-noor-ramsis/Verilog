@@ -96,30 +96,25 @@ module Controller (
         ALUSrcA    = 2'b01;  // OldPC (PC+4 from fetch)
         ALUSrcB    = 2'b01;  // Immediate
         ALUControl = ALU_ADD;  // Pre-compute branch target
+        ImmSrc     = 2'b10;  // B-type
 
         case (opcode)
           OP_R_TYPE: begin
-            ImmSrc     = 2'b00;  // Not used but set default
             next_state = R1;
           end
           OP_I_TYPE, OP_JALR: begin
-            ImmSrc     = 2'b00;  // I-type
             next_state = I1;
           end
           OP_LOAD: begin
-            ImmSrc     = 2'b00;  // I-type
             next_state = L1;
           end
           OP_S_TYPE: begin
-            ImmSrc     = 2'b01;  // S-type
             next_state = S1;
           end
           OP_B_TYPE: begin
-            ImmSrc     = 2'b10;  // B-type
             next_state = B1;
           end
           OP_JAL: begin
-            ImmSrc     = 2'b11;  // J-type
             next_state = J1;
           end
           default: next_state = FETCH;
@@ -264,7 +259,7 @@ module Controller (
         RegWrite   = 1'b1;
 
         // Compute jump target
-        ALUSrcA    = 2'b01;  // OldPC
+        ALUSrcA    = 2'b00;  // OldPC
         ALUSrcB    = 2'b01;  // Immediate
         ImmSrc     = 2'b11;  // J-type
         ALUControl = ALU_ADD;
