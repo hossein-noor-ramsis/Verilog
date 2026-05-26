@@ -31,19 +31,11 @@ module TestBench ();
   );
 
   // Clock generation (slower for multicycle - 10ns period)
-  always #5 clk = ~clk;
+  always #10 clk = ~clk;
 
   // ============================================
   // DEBUG: Track controller state and PC
   // ============================================
-  always @(posedge clk) begin
-    if (!rst) begin
-      $display("[%0t] PC=0x%h  State=%0d  IR=0x%h  zero=%b sign=%b  A=0x%h B=0x%h ALUOut=0x%h",
-               $time, processor.datapath.program_counter.pc, processor.controller.state,
-               processor.datapath.Instruction, processor.datapath.zero, processor.datapath.sign,
-               processor.datapath.AOut, processor.datapath.BOut, processor.datapath.ALUOut);
-    end
-  end
 
   // ============================================
   // DEBUG: Track PC values over time
@@ -100,7 +92,7 @@ module TestBench ();
     $display("Initial array (at word addresses 256-265):");
     for (i = 0; i < 10; i = i + 1) begin
       // Access memory at data section (word address 256 + i)
-      actual_value = processor.datapath.memory.mem[256+i];
+      actual_value = processor.datapath.memory.mem[i];
       $display("  array[%0d] = %0d (at mem[%0d])", i, actual_value, 256 + i);
     end
 
@@ -117,8 +109,8 @@ module TestBench ();
     // DEBUG: Print PC trace
     // ============================================
     $display("");
-    $display("PC trace (first 30 values):");
-    for (i = 0; i < 30 && i < pc_count; i = i + 1) begin
+    $display("PC trace (first 1000 values):");
+    for (i = 0; i < 1000; i = i + 1) begin
       $display("  [%0d] PC = 0x%h", i, pc_log[i]);
     end
     $display("Total PC changes: %0d", pc_count);
@@ -128,7 +120,7 @@ module TestBench ();
 
     // Check sorted array
     for (i = 0; i < 10; i = i + 1) begin
-      actual_value = processor.datapath.memory.mem[256+i];
+      actual_value = processor.datapath.memory.mem[i];
       $display("  array[%0d] = %0d (expected %0d)", i, actual_value, expected[i]);
 
       if (actual_value === expected[i]) begin

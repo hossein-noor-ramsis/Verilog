@@ -38,6 +38,7 @@ module Controller (
   localparam S2 = 4'd11;
   localparam J1 = 4'd12;
   localparam J2 = 4'd13;
+  localparam J3 = 4'd15;
 
   // Opcode definitions
   localparam OP_R_TYPE = 7'b0110011;
@@ -152,8 +153,13 @@ module Controller (
         ImmSrc  = 2'b00;  // I-type immediate
 
         case (opcode)
-          OP_JALR: ALUControl = ALU_ADD;  // RS1 + imm
-          default: begin  // OP_I_TYPE
+          OP_JALR: begin
+            ALUSrcA = 2'b01;
+            ALUSrcB = 2'b10;
+            ALUControl = ALU_ADD;
+          end
+
+          default: begin
             case (funct3)
               3'b000:  ALUControl = ALU_ADD;
               3'b010:  ALUControl = ALU_SLT;
@@ -172,10 +178,11 @@ module Controller (
       I2: begin
         case (opcode)
           OP_JALR: begin
-            ResultSrc  = 2'b11;  // OldPCOut (PC+4) → return address
+            ResultSrc  = 2'b00;  // OldPCOut (PC+4) → return address
             RegWrite   = 1'b1;  // Write return address to rd
             next_state = I3;  // Go to jump state
           end
+
           default: begin
             ResultSrc = 2'b00;  // ALUOut
             RegWrite  = 1'b1;
@@ -185,32 +192,29 @@ module Controller (
         next_state = FETCH;
       end
 
-      // I3: Jump to target address
       I3: begin
-        ResultSrc = 2'b00;  // ALUOut (has RS1+imm from I1)
-        PCWrite = 1'b1;  // Jump!
+        // Target was already computed and stored in ALUOut during I1
+        PCWrite = 1'b1;
+        ResultSrc = 2'b00;  // Use ALUOut (has target from I1)
         next_state = FETCH;
       end
 
-      // B1: Branch Execute
       B1: begin
-        ALUSrcA    = 2'b10;  // Register A
-        ALUSrcB    = 2'b00;  // Register B
-        ALUControl = ALU_SUB;  // A - B for comparison
+        ALUSrcA = 2'b10;  // Register A
+        ALUSrcB = 2'b00;  // Register B
+        ALUControl = ALU_SUB;  // Compare
+        ResultSrc = 2'b00;
 
-        // Branch condition (branch target is still in ALUOut from DECODE)
         case (funct3)
-          3'b000:  PCWriteCond = zero_flag;  // BEQ
-          3'b001:  PCWriteCond = ~zero_flag;  // BNE
-          3'b100:  PCWriteCond = sign_flag;  // BLT
-          3'b101:  PCWriteCond = ~sign_flag;  // BGE
+          3'b000:  PCWriteCond = zero_flag;
+          3'b001:  PCWriteCond = ~zero_flag;
+          3'b100:  PCWriteCond = sign_flag;
+          3'b101:  PCWriteCond = ~sign_flag;
           default: PCWriteCond = 1'b0;
         endcase
 
-        // If branch taken, PC gets ALUOut (branch target from DECODE)
-        // But ALUOut will be overwritten by SUB result!
-        // SOLUTION: Don't write ALU result to ALUOut in this cycle
-
+        // Need to set ResultSrc to use branch target (in ALUOut from DECODE)
+        ResultSrc  = 2'b00;  // But ALUOut now has A-B, not target!
         next_state = FETCH;
       end
 
@@ -225,20 +229,21 @@ module Controller (
 
       // L2: Load Memory Access
       L2: begin
+        ResultSrc  = 2'b00;
         AdrSrc     = 1'b1;  // Use ALU result as address
         next_state = L3;
       end
 
       // L3: Load Write Back
       L3: begin
-        ResultSrc  = 2'b10;  // Memory data (MDR)
+        ResultSrc  = 2'b01;  // Memory data (MDR)
         RegWrite   = 1'b1;
         next_state = FETCH;
       end
 
       // S1: Store Execute (address calculation)
       S1: begin
-        ALUSrcA    = 2'b10;  // Register A
+        ALUSrcA    = 2'b01;  // Register A
         ALUSrcB    = 2'b01;  // Immediate
         ImmSrc     = 2'b01;  // S-type
         ALUControl = ALU_ADD;
@@ -249,33 +254,33 @@ module Controller (
       S2: begin
         AdrSrc     = 1'b1;  // ALU result as address
         MemWrite   = 1'b1;  // Write BOut to memory
+        ResultSrc  = 2'b00;
         next_state = FETCH;
       end
 
-      // J1: JAL - Write return address, compute target
+      // J1: Compute jump target (OldPC + Immediate)
       J1: begin
-        // Write return address (OldPCOut) to rd
-        ResultSrc  = 2'b11;  // Should be OldPCOut (PC+4)
-        RegWrite   = 1'b1;
-
-        // Compute jump target
-        ALUSrcA    = 2'b00;  // OldPC
-        ALUSrcB    = 2'b01;  // Immediate
-        ImmSrc     = 2'b11;  // J-type
+        ALUSrcA    = 2'b01;  // OldPCOut
+        ALUSrcB    = 2'b01;  // Immediate (should be J-type format)
         ALUControl = ALU_ADD;
-
+        ImmSrc     = 2'b11;  // J-type immediate (need to add this)
         next_state = J2;
       end
 
-      // J2: JAL - Jump to target
+      // J2: Save return address first
       J2: begin
-        ResultSrc  = 2'b00;  // ALUOut (has jump target from J1)
-        PCWrite    = 1'b1;
-        next_state = FETCH;
+        ResultSrc  = 2'b11;  // Need to add OldPCOut path or use another approach
+        RegWrite   = 1'b1;  // Write OldPCOut (return address) to rd
+        next_state = J3;
       end
 
+      // J3: Jump to target
+      J3: begin
+        PCWrite    = 1'b1;
+        ResultSrc  = 2'b00;  // ALUOut has the jump target
+        next_state = FETCH;
+      end
       default: next_state = FETCH;
     endcase
   end
-
 endmodule
