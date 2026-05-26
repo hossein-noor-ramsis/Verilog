@@ -14,7 +14,7 @@ module Memory (
   // pc is 4x of word index so we shift it to the left by to to divide it to 4
 
   initial begin
-    $readmemh("data.mem", mem);
+    $readmemh("memory.mem", mem);
   end
 
   always @(posedge clk) begin

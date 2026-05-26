@@ -1,20 +1,35 @@
+module RegisterFile (
+    input clk,
+    input write_enable,
 
-module RegisterFile (input [4:0] A1 , A2,A3,input[31:0] WD3, input WE3 , clk , output[31:0] RD1 , RD2);
+    input [4:0] rs1_addr,
+    input [4:0] rs2_addr,
+    input [4:0] rd_addr,
 
+    input [31:0] write_data,
 
-    reg [31:0] regFile [0:31];
+    output [31:0] rs1_data,
+    output [31:0] rs2_data
+);
+  reg [31:0] reg_file[0:31];
 
-    assign RD1 = regFile[A1];
-    assign RD2 = regFile[A2];
-    assign regFile[0] = 32'b0000000000000000000000000000000;
+  integer i;
 
-
-
-    always @(posedge clk ) begin
-        if (WE3)
-            if (A3 != {5{1'b0}}) 
-                regFile[A3] <= WD3;
+  initial begin
+    for (i = 0; i < 32; i = i + 1) begin
+      reg_file[i] = 32'd0;
     end
+  end
+
+  // Read operations (combinational)
+  // x0 always reads as 0
+  assign rs1_data = (rs1_addr == 5'd0) ? 32'd0 : reg_file[rs1_addr];
+  assign rs2_data = (rs2_addr == 5'd0) ? 32'd0 : reg_file[rs2_addr];
+
+  // Write operation (sequential)
+  always @(posedge clk) begin
+    if (write_enable && (rd_addr != 5'd0)) begin
+      reg_file[rd_addr] <= write_data;
+    end
+  end
 endmodule
-
-

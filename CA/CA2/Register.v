@@ -1,6 +1,10 @@
-module Reg(input [31:0] in, input clk  , output reg [31:0]out);
+module Register (
+    input clk,
+    input [31:0] next_state,
 
-    always @(posedge clk) begin
-            out <= in;
-    end
+    output reg [31:0] present_state
+);
+  always @(posedge clk) begin
+    present_state <= next_state;
+  end
 endmodule
