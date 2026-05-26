@@ -8,10 +8,11 @@ module Mux4To1 (
 );
   always @(*) begin
     case (sel)
-      2'b00: out = in0;
-      2'b01: out = in1;
-      2'b10: out = in2;
-      2'b11: out = in3;
+      2'b00:   out = in0;
+      2'b01:   out = in1;
+      2'b10:   out = in2;
+      2'b11:   out = in3;
+      default: out = 32'd0;  // Safe fallback for X/Z states
     endcase
   end
 endmodule

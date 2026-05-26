@@ -1,9 +1,12 @@
 module Register (
-    input clk,
-    input [31:0] d,
+    input             clk,
+    input             rst,
+    input             we,   // write enable
+    input      [31:0] d,
     output reg [31:0] q
 );
   always @(posedge clk) begin
-    q <= d;
+    if (rst) q <= 32'd0;
+    else if (we) q <= d;
   end
 endmodule

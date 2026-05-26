@@ -4,7 +4,7 @@ module PC (
     input we,
 
     input      [31:0] next_pc,
-    output reg [31:0] pc
+    output reg [31:0] pc = 32'd0
 );
   always @(posedge clk) begin
     if (rst) pc <= 32'd0;

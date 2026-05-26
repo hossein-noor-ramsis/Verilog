@@ -8,6 +8,7 @@ module Mux2To1 (
     case (sel)
       1'b0: out = in0;
       1'b1: out = in1;
+      default: out = 32'd0;
     endcase
   end
 endmodule

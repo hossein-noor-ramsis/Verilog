@@ -21,43 +21,50 @@ module Controller (
     output reg [1:0] ImmSrc,
     output reg [2:0] ALUControl
 );
-  // State encoding (4-bit binary: 0-11 for 12 states)
   reg [3:0] state, next_state;
 
-  localparam FETCH = 4'd0;  // IF
-  localparam DECODE = 4'd1;  // ID
-  localparam R1 = 4'd2;  // R1
-  localparam R2 = 4'd3;  // R2
-  localparam I1 = 4'd4;  // I1
-  localparam I2 = 4'd5;  // I2
-  localparam B1 = 4'd6;  // B1
-  localparam L1 = 4'd7;  // L1
-  localparam L2 = 4'd8;  // L2
-  localparam L3 = 4'd9;  // L3
-  localparam S1 = 4'd10;  // S1
-  localparam S2 = 4'd11;  // S2
+  localparam FETCH = 4'd0;
+  localparam DECODE = 4'd1;
+  localparam R1 = 4'd2;
+  localparam R2 = 4'd3;
+  localparam I1 = 4'd4;
+  localparam I2 = 4'd5;
+  localparam I3 = 4'd14;
+  localparam B1 = 4'd6;
+  localparam L1 = 4'd7;
+  localparam L2 = 4'd8;
+  localparam L3 = 4'd9;
+  localparam S1 = 4'd10;
+  localparam S2 = 4'd11;
   localparam J1 = 4'd12;
   localparam J2 = 4'd13;
 
   // Opcode definitions
   localparam OP_R_TYPE = 7'b0110011;
-  localparam OP_I_TYPE = 7'b0010011;  // addi, xori, ori, slti
-  localparam OP_LOAD = 7'b0000011;  // lw
-  localparam OP_JALR = 7'b1100111;  // jalr
-  localparam OP_S_TYPE = 7'b0100011;  // sw
-  localparam OP_B_TYPE = 7'b1100011;  // beq, bne, blt, bge
-  localparam OP_JAL = 7'b1101111;  // jal
+  localparam OP_I_TYPE = 7'b0010011;
+  localparam OP_LOAD = 7'b0000011;
+  localparam OP_JALR = 7'b1100111;
+  localparam OP_S_TYPE = 7'b0100011;
+  localparam OP_B_TYPE = 7'b1100011;
+  localparam OP_JAL = 7'b1101111;
 
-  // State machine
+  // ALU Control
+  localparam ALU_ADD = 3'b000;
+  localparam ALU_SUB = 3'b001;
+  localparam ALU_AND = 3'b010;
+  localparam ALU_OR = 3'b011;
+  localparam ALU_XOR = 3'b100;
+  localparam ALU_SLT = 3'b101;
+
   always @(posedge clk or posedge rst) begin
     if (rst) state <= FETCH;
     else state <= next_state;
   end
 
-  // Next state and control logic
   always @(*) begin
-    // Default values (all inactive)
+    // Default values
     PCWrite     = 1'b0;
+    PCWriteCond = 1'b0;
     OldPCWrite  = 1'b0;
     AdrSrc      = 1'b0;
     MemWrite    = 1'b0;
@@ -67,104 +74,98 @@ module Controller (
     ALUSrcA     = 2'b00;
     ALUSrcB     = 2'b00;
     ImmSrc      = 2'b00;
-    ALUControl  = 3'b000;
-    PCWriteCond = 1'b0;
+    ALUControl  = ALU_ADD;
     next_state  = FETCH;
 
     case (state)
-      //////////////////////////////////////////////////////////////////
-      // IF: Instruction Fetch
-      // AdrSrc=0, IRWrite=1, OldPC=1, ALUSrcA=00, ALUSrcB=10
-      // ALUControl=000, ResultSrc=01, PCWrite=1
-      //////////////////////////////////////////////////////////////////
+      // FETCH: Read instruction from memory, PC += 4
       FETCH: begin
-        AdrSrc     = 1'b0;
-        IRWrite    = 1'b1;
-        OldPCWrite = 1'b1;
-        ALUSrcA    = 2'b00;
-        ALUSrcB    = 2'b10;
-        ALUControl = 3'b000;
-        ResultSrc  = 2'b01;
-        PCWrite    = 1'b1;
+        AdrSrc     = 1'b0;  // Use PC for memory address
+        IRWrite    = 1'b1;  // Save instruction to IR
+        OldPCWrite = 1'b1;  // Save PC+4 for later
+        ALUSrcA    = 2'b00;  // PC
+        ALUSrcB    = 2'b10;  // 4
+        ALUControl = ALU_ADD;  // PC + 4
+        ResultSrc  = 2'b01;  // ALUResult (not registered) to PC
+        PCWrite    = 1'b1;  // Update PC
         next_state = DECODE;
       end
 
-      //////////////////////////////////////////////////////////////////
-      // ID: Instruction Decode
-      // ALUSrcA=01, ALUSrcB=01, ImmSrc=10, ALUControl=000
-      //////////////////////////////////////////////////////////////////
+      // DECODE: Read registers, pre-compute branch target
       DECODE: begin
-        ALUSrcA    = 2'b01;
-        ALUSrcB    = 2'b01;
-        ImmSrc     = 2'b10;
-        ALUControl = 3'b000;
+        ALUSrcA    = 2'b01;  // OldPC (PC+4 from fetch)
+        ALUSrcB    = 2'b01;  // Immediate
+        ALUControl = ALU_ADD;  // Pre-compute branch target
 
         case (opcode)
-          OP_R_TYPE: next_state = R1;
-          OP_I_TYPE: next_state = I1;
-          OP_LOAD:   next_state = L1;
-          OP_JALR:   next_state = I1;
-          OP_S_TYPE: next_state = S1;
-          OP_B_TYPE: next_state = B1;
-          OP_JAL:    next_state = I1;
-          default:   next_state = FETCH;
+          OP_R_TYPE: begin
+            ImmSrc     = 2'b00;  // Not used but set default
+            next_state = R1;
+          end
+          OP_I_TYPE, OP_JALR: begin
+            ImmSrc     = 2'b00;  // I-type
+            next_state = I1;
+          end
+          OP_LOAD: begin
+            ImmSrc     = 2'b00;  // I-type
+            next_state = L1;
+          end
+          OP_S_TYPE: begin
+            ImmSrc     = 2'b01;  // S-type
+            next_state = S1;
+          end
+          OP_B_TYPE: begin
+            ImmSrc     = 2'b10;  // B-type
+            next_state = B1;
+          end
+          OP_JAL: begin
+            ImmSrc     = 2'b11;  // J-type
+            next_state = J1;
+          end
+          default: next_state = FETCH;
         endcase
       end
 
-      //////////////////////////////////////////////////////////////////
       // R1: R-Type Execute
-      // ALUSrcA=10, ALUSrcB=00
-      //////////////////////////////////////////////////////////////////
       R1: begin
-        ALUSrcA = 2'b10;
-        ALUSrcB = 2'b00;
+        ALUSrcA = 2'b10;  // Register A
+        ALUSrcB = 2'b00;  // Register B
 
         case (funct3)
-          3'b000:  ALUControl = funct7[5] ? 3'b001 : 3'b000;  // SUB/ADD
-          3'b010:  ALUControl = 3'b101;  // SLT
-          3'b100:  ALUControl = 3'b100;  // XOR
-          3'b111:  ALUControl = 3'b010;  // AND
-          3'b110:  ALUControl = 3'b011;  // OR
-          default: ALUControl = 3'b000;
+          3'b000:  ALUControl = funct7[5] ? ALU_SUB : ALU_ADD;
+          3'b010:  ALUControl = ALU_SLT;
+          3'b100:  ALUControl = ALU_XOR;
+          3'b110:  ALUControl = ALU_OR;
+          3'b111:  ALUControl = ALU_AND;
+          default: ALUControl = ALU_ADD;
         endcase
 
         next_state = R2;
       end
 
-      //////////////////////////////////////////////////////////////////
       // R2: R-Type Write Back
-      // ResultSrc=00, RegWrite=1
-      //////////////////////////////////////////////////////////////////
       R2: begin
-        ResultSrc  = 2'b00;
+        ResultSrc  = 2'b00;  // ALUOut (registered)
         RegWrite   = 1'b1;
         next_state = FETCH;
       end
 
-      //////////////////////////////////////////////////////////////////
-      // I1: I-Type/Jump Execute
-      //////////////////////////////////////////////////////////////////
+      // I1: I-Type Execute
       I1: begin
+        ALUSrcA = 2'b10;  // Register A
+        ALUSrcB = 2'b01;  // Immediate
+        ImmSrc  = 2'b00;  // I-type immediate
+
         case (opcode)
-          OP_JALR: begin
-            ALUSrcA    = 2'b10;
-            ALUSrcB    = 2'b01;
-            ImmSrc     = 2'b00;
-            ALUControl = 3'b000;
-          end
-
-          default: begin
-            ALUSrcA = 2'b10;
-            ALUSrcB = 2'b01;
-            ImmSrc  = 2'b00;
-
+          OP_JALR: ALUControl = ALU_ADD;  // RS1 + imm
+          default: begin  // OP_I_TYPE
             case (funct3)
-              3'b000:  ALUControl = 3'b000;
-              3'b010:  ALUControl = 3'b101;
-              3'b100:  ALUControl = 3'b100;
-              3'b111:  ALUControl = 3'b010;
-              3'b110:  ALUControl = 3'b011;
-              default: ALUControl = 3'b000;
+              3'b000:  ALUControl = ALU_ADD;
+              3'b010:  ALUControl = ALU_SLT;
+              3'b100:  ALUControl = ALU_XOR;
+              3'b110:  ALUControl = ALU_OR;
+              3'b111:  ALUControl = ALU_AND;
+              default: ALUControl = ALU_ADD;
             endcase
           end
         endcase
@@ -172,19 +173,16 @@ module Controller (
         next_state = I2;
       end
 
-      //////////////////////////////////////////////////////////////////
-      // I2: I-Type/Jump Write Back
-      //////////////////////////////////////////////////////////////////
+      // I2: I-Type Write Back
       I2: begin
         case (opcode)
           OP_JALR: begin
-            ResultSrc = 2'b01;
-            PCWrite   = 1'b1;
-            RegWrite  = 1'b1;
+            ResultSrc  = 2'b11;  // OldPCOut (PC+4) → return address
+            RegWrite   = 1'b1;  // Write return address to rd
+            next_state = I3;  // Go to jump state
           end
-
           default: begin
-            ResultSrc = 2'b00;
+            ResultSrc = 2'b00;  // ALUOut
             RegWrite  = 1'b1;
           end
         endcase
@@ -192,72 +190,92 @@ module Controller (
         next_state = FETCH;
       end
 
-      //////////////////////////////////////////////////////////////////
-      // B1: Branch Execute
-      // ALUSrcA=10, ALUSrcB=00, ALUControl=001, PCWriteCond=1, ResultSrc = 00
-      //////////////////////////////////////////////////////////////////
-      B1: begin
-        ALUSrcA     = 2'b10;
-        ALUSrcB     = 2'b00;
-        ALUControl  = 3'b001;
-        PCWriteCond = 1'b1;
-        ResultSrc   = 2'b00;
-
-        next_state  = FETCH;
+      // I3: Jump to target address
+      I3: begin
+        ResultSrc = 2'b00;  // ALUOut (has RS1+imm from I1)
+        PCWrite = 1'b1;  // Jump!
+        next_state = FETCH;
       end
 
-      //////////////////////////////////////////////////////////////////
-      // L1: Load Execute
-      // ALUSrcA=10, ALUSrcB=00, ImmSrc=00, ALUControl=000
-      //////////////////////////////////////////////////////////////////
+      // B1: Branch Execute
+      B1: begin
+        ALUSrcA    = 2'b10;  // Register A
+        ALUSrcB    = 2'b00;  // Register B
+        ALUControl = ALU_SUB;  // A - B for comparison
+
+        // Branch condition (branch target is still in ALUOut from DECODE)
+        case (funct3)
+          3'b000:  PCWriteCond = zero_flag;  // BEQ
+          3'b001:  PCWriteCond = ~zero_flag;  // BNE
+          3'b100:  PCWriteCond = sign_flag;  // BLT
+          3'b101:  PCWriteCond = ~sign_flag;  // BGE
+          default: PCWriteCond = 1'b0;
+        endcase
+
+        // If branch taken, PC gets ALUOut (branch target from DECODE)
+        // But ALUOut will be overwritten by SUB result!
+        // SOLUTION: Don't write ALU result to ALUOut in this cycle
+
+        next_state = FETCH;
+      end
+
+      // L1: Load Execute (address calculation)
       L1: begin
-        ALUSrcA    = 2'b10;
-        ALUSrcB    = 2'b00;
-        ImmSrc     = 2'b00;
-        ALUControl = 3'b000;
+        ALUSrcA    = 2'b10;  // Register A
+        ALUSrcB    = 2'b01;  // Immediate
+        ImmSrc     = 2'b00;  // I-type
+        ALUControl = ALU_ADD;
         next_state = L2;
       end
 
-      //////////////////////////////////////////////////////////////////
       // L2: Load Memory Access
-      // ResultSrc=00, AdrSrc=1
-      //////////////////////////////////////////////////////////////////
       L2: begin
-        ResultSrc  = 2'b00;
-        AdrSrc     = 1'b1;
+        AdrSrc     = 1'b1;  // Use ALU result as address
         next_state = L3;
       end
 
-      //////////////////////////////////////////////////////////////////
       // L3: Load Write Back
-      // ResultSrc=10, RegWrite=1
-      //////////////////////////////////////////////////////////////////
       L3: begin
-        ResultSrc  = 2'b10;
+        ResultSrc  = 2'b10;  // Memory data (MDR)
         RegWrite   = 1'b1;
         next_state = FETCH;
       end
 
-      //////////////////////////////////////////////////////////////////
-      // S1: Store Execute
-      // ALUSrcA=10, ALUSrcB=01, ImmSrc=01, ALUControl=000
-      //////////////////////////////////////////////////////////////////
+      // S1: Store Execute (address calculation)
       S1: begin
-        ALUSrcA    = 2'b10;
-        ALUSrcB    = 2'b01;
-        ImmSrc     = 2'b01;
-        ALUControl = 3'b000;
+        ALUSrcA    = 2'b10;  // Register A
+        ALUSrcB    = 2'b01;  // Immediate
+        ImmSrc     = 2'b01;  // S-type
+        ALUControl = ALU_ADD;
         next_state = S2;
       end
 
-      //////////////////////////////////////////////////////////////////
-      // S2: Store Write Back
-      // ResultSrc=00, AdrSrc=0, MemWrite=1
-      //////////////////////////////////////////////////////////////////
+      // S2: Store Memory Access
       S2: begin
-        ResultSrc  = 2'b00;
-        AdrSrc     = 1'b1;
-        MemWrite   = 1'b1;
+        AdrSrc     = 1'b1;  // ALU result as address
+        MemWrite   = 1'b1;  // Write BOut to memory
+        next_state = FETCH;
+      end
+
+      // J1: JAL - Write return address, compute target
+      J1: begin
+        // Write return address (OldPCOut) to rd
+        ResultSrc  = 2'b11;  // Should be OldPCOut (PC+4)
+        RegWrite   = 1'b1;
+
+        // Compute jump target
+        ALUSrcA    = 2'b01;  // OldPC
+        ALUSrcB    = 2'b01;  // Immediate
+        ImmSrc     = 2'b11;  // J-type
+        ALUControl = ALU_ADD;
+
+        next_state = J2;
+      end
+
+      // J2: JAL - Jump to target
+      J2: begin
+        ResultSrc  = 2'b00;  // ALUOut (has jump target from J1)
+        PCWrite    = 1'b1;
         next_state = FETCH;
       end
 

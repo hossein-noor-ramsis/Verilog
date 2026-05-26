@@ -4,7 +4,7 @@ module ImmediateExtend (
 
     output reg [31:0] imm_extended
 );
-  always @(instruction, imm_src) begin
+  always @(*) begin
     case (imm_src)
       // I-type
       2'b00: imm_extended = {{20{instruction[31]}}, instruction[31:20]};
@@ -21,12 +21,7 @@ module ImmediateExtend (
       // J-type
       2'b11:
       imm_extended = {
-        {11{instruction[31]}},
-        instruction[31],
-        instruction[19:12],
-        instruction[20],
-        instruction[30:21],
-        1'b0
+        {12{instruction[31]}}, instruction[19:12], instruction[20], instruction[30:21], 1'b0
       };
 
       default: imm_extended = 32'd0;

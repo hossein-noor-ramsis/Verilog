@@ -59,7 +59,7 @@ module TestBench ();
     $display("Initial array (at word addresses 256-265):");
     for (i = 0; i < 10; i = i + 1) begin
       // Access memory at data section (word address 256 + i)
-      actual_value = processor.datapath.memory.mem[256 + i];
+      actual_value = processor.datapath.memory.mem[256+i];
 
       $display("  array[%0d] = %0d (at mem[%0d])", i, actual_value, 256 + i);
     end

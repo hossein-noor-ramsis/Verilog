@@ -51,14 +51,14 @@ module DataPath (
   assign rs2 = Instruction[24:20];
   assign rd = Instruction[11:7];
 
-  // PC Write logic with conditional branch support
+  // PC Write logic
   wire PCWriteFinal;
-  assign PCWriteFinal = PCWrite | (PCWriteCond & (zero | sign));
+  assign PCWriteFinal = PCWrite | PCWriteCond;
 
   PC program_counter (
       .clk(clk),
       .rst(rst),
-      .we(PCWrite_final),
+      .we(PCWriteFinal),
       .next_pc(Result),
       .pc(PCOut)
   );
@@ -81,16 +81,18 @@ module DataPath (
   );
 
   // Old PC Register (for JAL return address)
-  RegisterWithEnable old_pc_reg (
+  Register old_pc_reg (
       .clk(clk),
+      .rst(rst),
       .we (OldPCWrite),
       .d  (PCOut + 32'd4),  // Store PC+4 for return address
       .q  (OldPCOut)
   );
 
   // Instruction Register
-  RegisterWithEnable IReg (
+  Register IReg (
       .clk(clk),
+      .rst(rst),
       .we (IRWrite),
       .d  (MemOut),      // Get instruction from memory
       .q  (Instruction)
@@ -99,6 +101,8 @@ module DataPath (
   // Memory Data Register
   Register MDReg (
       .clk(clk),
+      .rst(rst),
+      .we (MemWrite),  // Or dedicated enable from controller
       .d  (MemOut),
       .q  (MDROut)
   );
@@ -122,16 +126,20 @@ module DataPath (
       .imm_extended(ImmExtended)
   );
 
-  // A Register (holds RD1)
+  // A Register (holds RD1) - loaded during decode
   Register AReg (
       .clk(clk),
+      .rst(rst),
+      .we (1'b1),  // Always loaded, or controlled by state machine
       .d  (RD1),
       .q  (AOut)
   );
 
-  // B Register (holds RD2)
+  // B Register (holds RD2) - loaded during decode
   Register BReg (
       .clk(clk),
+      .rst(rst),
+      .we (1'b1),  // Always loaded, or controlled by state machine
       .d  (RD2),
       .q  (BOut)
   );
@@ -167,16 +175,18 @@ module DataPath (
   // ALU Output Register
   Register ALUOutReg (
       .clk(clk),
-      .d  (ALUResult),
-      .q  (ALUOut)
+      .rst(rst),
+      .we(1'b1),  // Or controlled by state machine
+      .d(ALUResult),
+      .q(ALUOut)
   );
 
   // Result Mux (4-to-1) for writeback
   Mux4To1 ResultMux (
       .in0(ALUOut),
-      .in1(MDROut),
-      .in2(ALUResult),
-      .in3(PCOut),
+      .in1(ALUResult),
+      .in2(MDROut),
+      .in3(OldPCOut),
       .sel(ResultSrc),
       .out(Result)
   );

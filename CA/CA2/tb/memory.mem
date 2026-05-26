@@ -1,12 +1,7 @@
-// RISC-V Bubble Sort Program
-// Instructions at word addresses 0-13
-// Data array at word addresses starting at 256 (byte address 1024)
-// Note: Each line represents one 32-bit word in hexadecimal
-
-00000433
-02800E93
+40000413
+02840E93
 01D45A63
-000004B3
+000404B3
 01D4DA63
 00042283
 0004A303
@@ -14,9 +9,14 @@
 00642023
 0054A023
 00448493
-01000067
+FE5FF06F
 00440413
-00800067
+FD5FF06F
+0000006F
+00000000
+00000000
+00000000
+00000000
 00000000
 00000000
 00000000

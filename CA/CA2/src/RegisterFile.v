@@ -10,6 +10,14 @@ module RegisterFile (
 );
   reg [31:0] regs[0:31];
 
+  // Initialize all registers to 0
+  integer i;
+  initial begin
+    for (i = 0; i < 32; i = i + 1) begin
+      regs[i] = 32'd0;
+    end
+  end
+
   // Read (combinational)
   assign rd1 = (rs1 == 5'd0) ? 32'd0 : regs[rs1];
   assign rd2 = (rs2 == 5'd0) ? 32'd0 : regs[rs2];

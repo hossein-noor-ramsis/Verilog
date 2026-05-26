@@ -2,7 +2,7 @@ module Processor (
     input clk,
     input rst
 );
-  wire PCWrite, OldPCWrite, AdrSrc, MemWrite, IRWrite, RegWrite;
+  wire PCWrite, PCWriteCond, OldPCWrite, AdrSrc, MemWrite, IRWrite, RegWrite;
   wire [1:0] ResultSrc, ALUSrcA, ALUSrcB, ImmSrc;
   wire [2:0] ALUControl;
   wire zero, sign;
@@ -19,6 +19,7 @@ module Processor (
       .clk(clk),
       .rst(rst),
       .PCWrite(PCWrite),
+      .PCWriteCond(PCWriteCond),
       .OldPCWrite(OldPCWrite),
       .AdrSrc(AdrSrc),
       .MemWrite(MemWrite),
