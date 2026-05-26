@@ -6485,3 +6485,5 @@ run -all
 # ** Note: $stop    : E:/Programming/Verilog/CA/CA2/tb/TB.v(150)
 #    Time: 10070 ns  Iteration: 1  Instance: /TestBench
 # Break in Module TestBench at E:/Programming/Verilog/CA/CA2/tb/TB.v line 150
+# End time: 21:52:17 on May 26,2026, Elapsed time: 1:16:23
+# Errors: 0, Warnings: 2
