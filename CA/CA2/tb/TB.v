@@ -24,38 +24,25 @@ module TestBench ();
     expected[9] = 10;
   end
 
-  // Instantiate the multicycle Processor
+  // Instantiate RISC-V processor
   Processor processor (
       .clk(clk),
       .rst(rst)
   );
 
-  // Clock generation (slower for multicycle - 10ns period)
-  always #10 clk = ~clk;
+  // Clock generation
+  always #50 clk = ~clk;
 
   // ============================================
-  // DEBUG: Track controller state and PC
+  // Waveform Dumping - VCD File Generation
   // ============================================
-
-  // ============================================
-  // DEBUG: Track PC values over time
-  // ============================================
-  reg [31:0] pc_log[0:99];
-  integer pc_count = 0;
-  reg prev_pc_valid = 0;
-  reg [31:0] prev_pc;
-
-  always @(posedge clk) begin
-    if (!rst) begin
-      if (!prev_pc_valid || processor.datapath.program_counter.pc != prev_pc) begin
-        if (pc_count < 100) begin
-          pc_log[pc_count] = processor.datapath.program_counter.pc;
-          pc_count = pc_count + 1;
-        end
-        prev_pc = processor.datapath.program_counter.pc;
-        prev_pc_valid = 1;
-      end
-    end
+  initial begin
+    $dumpfile("riscv_waveform.vcd");  // Name of the VCD file
+    $dumpvars(0, TestBench);  // Dump all signals in TestBench
+    // Alternative: Dump specific hierarchy levels
+    // $dumpvars(1, risc_v);             // Dump only the processor and below
+    // $dumpvars(2, risc_v.dp);          // Dump datapath and below
+    $display("Waveform dumping to 'riscv_waveform.vcd'");
   end
 
   // Test sequence
@@ -65,69 +52,46 @@ module TestBench ();
     failed_tests = 0;
 
     $display("========================================");
-    $display("    RISC-V Multicycle Sorting Test");
+    $display("    RISC-V Sorting Test");
     $display("========================================");
     $display("");
 
     // Reset the processor
     $display("Resetting processor...");
-    rst = 1'b1;
-    #20;
-    rst = 1'b0;
+    rst = 1;
+    #100;
+    rst = 0;
     $display("Reset completed");
     $display("");
 
-    // Quick check after reset
-    #10;
-    $display("PC after first fetch: 0x%h", processor.datapath.program_counter.pc);
-    $display("IR after first fetch: 0x%h", processor.datapath.Instruction);
-    #50;
-    $display("PC after a few cycles: 0x%h", processor.datapath.program_counter.pc);
-    $display("IR after a few cycles: 0x%h", processor.datapath.Instruction);
-
-    // Wait for initial fetch
-    #10;
-
-    // Print initial array (data is at word addresses 256-265 to separate from code)
-    $display("Initial array (at word addresses 256-265):");
+    // Print initial array
+    $display("Initial array:");
     for (i = 0; i < 10; i = i + 1) begin
-      // Access memory at data section (word address 256 + i)
       actual_value = processor.datapath.memory.mem[i];
-      $display("  array[%0d] = %0d (at mem[%0d])", i, actual_value, 256 + i);
+
+      $display("  array[%0d] = %0d", i, actual_value);
     end
 
     $display("");
-    $display("Executing sorting program...");
-    $display("(Each instruction takes 3-5 clock cycles in multicycle)");
-    $display("");
+    $display("Executing...");
 
-    // Run program - multicycle needs more cycles per instruction
-    // 14 instructions × ~4 cycles = ~56 cycles, use 500 to be safe
+    // Run program
     repeat (500) @(posedge clk);
 
-    // ============================================
-    // DEBUG: Print PC trace
-    // ============================================
     $display("");
-    $display("PC trace (first 1000 values):");
-    for (i = 0; i < 1000; i = i + 1) begin
-      $display("  [%0d] PC = 0x%h", i, pc_log[i]);
-    end
-    $display("Total PC changes: %0d", pc_count);
-    $display("");
-
     $display("Sorted array:");
 
     // Check sorted array
     for (i = 0; i < 10; i = i + 1) begin
       actual_value = processor.datapath.memory.mem[i];
+
       $display("  array[%0d] = %0d (expected %0d)", i, actual_value, expected[i]);
 
-      if (actual_value === expected[i]) begin
+      if (actual_value == expected[i]) begin
         passed_tests = passed_tests + 1;
       end else begin
         failed_tests = failed_tests + 1;
-        $display("    FAIL: Element %0d mismatch!", i);
+        // $display("    FAIL: Element %0d mismatch!", i);
       end
     end
 
@@ -147,15 +111,16 @@ module TestBench ();
       $display("SOME TESTS FAILED!");
     end
 
+    // Allow some time for waveform to capture final state
+    #20;
     $stop;
   end
 
-  // Watchdog timer (longer for multicycle)
+  // Watchdog timer
   initial begin
-    #100000;
+    #120000;
     $display("");
-    $display("TIMEOUT: Simulation stopped (check for infinite loops)");
-    $display("PC = 0x%h", processor.datapath.program_counter.pc);
+    $display("TIMEOUT: Simulation stopped");
     $stop;
   end
 
