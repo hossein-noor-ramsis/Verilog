@@ -12,10 +12,10 @@ module Processor (
   // Controller
   Controller controller (
       .opcode(opcode),
-      .funct3(func3),
-      .funct7(func7),
-      .zero_flag(zero),
-      .sign_flag(sign),
+      .func3(func3),
+      .func7(func7),
+      .zero(zero),
+      .sign(sign),
       .clk(clk),
       .rst(rst),
       .PCWrite(PCWrite),

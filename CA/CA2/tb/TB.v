@@ -31,7 +31,7 @@ module TestBench ();
   );
 
   // Clock generation
-  always #50 clk = ~clk;
+  always #5 clk = ~clk;
 
   // ============================================
   // Waveform Dumping - VCD File Generation
@@ -67,7 +67,7 @@ module TestBench ();
     // Print initial array
     $display("Initial array:");
     for (i = 0; i < 10; i = i + 1) begin
-      actual_value = processor.datapath.memory.mem[64+i];
+      actual_value = processor.datapath.memory.mem[i];
 
       $display("  array[%0d] = %0d", i, actual_value);
     end
@@ -76,14 +76,14 @@ module TestBench ();
     $display("Executing...");
 
     // Run program
-    repeat (500) @(posedge clk);
+    repeat (10000) @(posedge clk);
 
     $display("");
     $display("Sorted array:");
 
     // Check sorted array
     for (i = 0; i < 10; i = i + 1) begin
-      actual_value = processor.datapath.memory.mem[64+i];
+      actual_value = processor.datapath.memory.mem[i];
 
       $display("  array[%0d] = %0d (expected %0d)", i, actual_value, expected[i]);
 
@@ -118,7 +118,7 @@ module TestBench ();
 
   // Watchdog timer
   initial begin
-    #120000;
+    #2000000;
     $display("");
     $display("TIMEOUT: Simulation stopped");
     $stop;

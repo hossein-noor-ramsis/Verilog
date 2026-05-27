@@ -1,10 +1,10 @@
 module Controller (
     input [6:0] opcode,
-    input [6:0] funct7,
-    input [2:0] funct3,
+    input [6:0] func7,
+    input [2:0] func3,
 
-    input zero_flag,
-    input sign_flag,
+    input zero,
+    input sign,
     input clk,
     input rst,
 
@@ -127,8 +127,8 @@ module Controller (
         ALUSrcA = 2'b10;  // Register A
         ALUSrcB = 2'b00;  // Register B
 
-        case (funct3)
-          3'b000:  ALUControl = funct7[5] ? ALU_SUB : ALU_ADD;
+        case (func3)
+          3'b000:  ALUControl = func7[5] ? ALU_SUB : ALU_ADD;
           3'b010:  ALUControl = ALU_SLT;
           3'b100:  ALUControl = ALU_XOR;
           3'b110:  ALUControl = ALU_OR;
@@ -160,7 +160,7 @@ module Controller (
           end
 
           default: begin
-            case (funct3)
+            case (func3)
               3'b000:  ALUControl = ALU_ADD;
               3'b010:  ALUControl = ALU_SLT;
               3'b100:  ALUControl = ALU_XOR;
@@ -205,11 +205,11 @@ module Controller (
         ALUControl = ALU_SUB;  // Compare
         ResultSrc = 2'b00;
 
-        case (funct3)
-          3'b000:  PCWriteCond = zero_flag;
-          3'b001:  PCWriteCond = ~zero_flag;
-          3'b100:  PCWriteCond = sign_flag;
-          3'b101:  PCWriteCond = ~sign_flag;
+        case (func3)
+          3'b000:  PCWriteCond = zero;
+          3'b001:  PCWriteCond = ~zero;
+          3'b100:  PCWriteCond = sign;
+          3'b101:  PCWriteCond = ~sign;
           default: PCWriteCond = 1'b0;
         endcase
 

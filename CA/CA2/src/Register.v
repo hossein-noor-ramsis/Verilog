@@ -1,7 +1,7 @@
 module Register (
     input             clk,
     input             rst,
-    input             we,   // write enable
+    input             we,
     input      [31:0] d,
     output reg [31:0] q
 );

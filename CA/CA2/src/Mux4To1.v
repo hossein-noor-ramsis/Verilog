@@ -12,7 +12,7 @@ module Mux4To1 (
       2'b01:   out = in1;
       2'b10:   out = in2;
       2'b11:   out = in3;
-      default: out = 32'd0;  // Safe fallback for X/Z states
+      default: out = 32'd0;
     endcase
   end
 endmodule
