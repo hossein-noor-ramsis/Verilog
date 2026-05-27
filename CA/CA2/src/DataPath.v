@@ -66,7 +66,7 @@ module DataPath (
   // Address Mux for Memory
   Mux2To1 address_mux (
       .in0(PCOut),
-      .in1(ALUOut),  // Use ALUOut for data memory address
+      .in1(Result),
       .sel(AdrSrc),
       .out(Address)
   );
@@ -85,7 +85,7 @@ module DataPath (
       .clk(clk),
       .rst(rst),
       .we (OldPCWrite),
-      .d  (PCOut + 32'd4),  // Store PC+4 for return address
+      .d  (PCOut),
       .q  (OldPCOut)
   );
 
@@ -102,7 +102,7 @@ module DataPath (
   Register MDReg (
       .clk(clk),
       .rst(rst),
-      .we (MemWrite),  // Or dedicated enable from controller
+      .we (1'b1),
       .d  (MemOut),
       .q  (MDROut)
   );
@@ -130,7 +130,7 @@ module DataPath (
   Register AReg (
       .clk(clk),
       .rst(rst),
-      .we (1'b1),  // Always loaded, or controlled by state machine
+      .we (1'b1),
       .d  (RD1),
       .q  (AOut)
   );
@@ -139,7 +139,7 @@ module DataPath (
   Register BReg (
       .clk(clk),
       .rst(rst),
-      .we (1'b1),  // Always loaded, or controlled by state machine
+      .we (1'b1),
       .d  (RD2),
       .q  (BOut)
   );
@@ -176,9 +176,9 @@ module DataPath (
   Register ALUOutReg (
       .clk(clk),
       .rst(rst),
-      .we(1'b1),  // Or controlled by state machine
-      .d(ALUResult),
-      .q(ALUOut)
+      .we (1'b1),
+      .d  (ALUResult),
+      .q  (ALUOut)
   );
 
   // Result Mux (4-to-1) for writeback
