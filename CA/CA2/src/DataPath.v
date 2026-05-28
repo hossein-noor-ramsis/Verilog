@@ -81,7 +81,7 @@ module DataPath (
   );
 
   // Old PC Register (for JAL return address)
-  Register old_pc_reg (
+  Register #("old_pc_reg") old_pc_reg (
       .clk(clk),
       .rst(rst),
       .we (OldPCWrite),
@@ -90,16 +90,16 @@ module DataPath (
   );
 
   // Instruction Register
-  Register IReg (
+  Register #("IReg") IReg (
       .clk(clk),
       .rst(rst),
-      .we (IRWrite),
+      .we (IRWrite),     // bug
       .d  (MemOut),      // Get instruction from memory
       .q  (Instruction)
   );
 
   // Memory Data Register
-  Register MDReg (
+  Register #("MDReg") MDReg (
       .clk(clk),
       .rst(rst),
       .we (1'b1),
@@ -110,7 +110,7 @@ module DataPath (
   // Register File
   RegisterFile RF (
       .clk(clk),
-      .we(RegWrite),
+      .we(RegWrite),  // bug
       .rs1(rs1),
       .rs2(rs2),
       .rd(rd),
@@ -127,7 +127,7 @@ module DataPath (
   );
 
   // A Register (holds RD1) - loaded during decode
-  Register AReg (
+  Register #("AReg") AReg (
       .clk(clk),
       .rst(rst),
       .we (1'b1),
@@ -136,7 +136,7 @@ module DataPath (
   );
 
   // B Register (holds RD2) - loaded during decode
-  Register BReg (
+  Register #("BReg") BReg (
       .clk(clk),
       .rst(rst),
       .we (1'b1),
@@ -173,7 +173,7 @@ module DataPath (
   );
 
   // ALU Output Register
-  Register ALUOutReg (
+  Register #("ALUOutReg") ALUOutReg (
       .clk(clk),
       .rst(rst),
       .we (1'b1),

@@ -1,0 +1,19 @@
+00000413    # addi x8, x0, 0      (base = 0)
+02800513    # addi x10, x0, 40    (size = 40)
+00000593    # addi x11, x0, 0     (i = 0)
+02400693    # addi x13, x0, 36    (limit = 36)
+00458493    # addi x9, x11, 4     (j = i + 4)
+00b40633    # add x12, x8, x11   (addr = base + i)
+00062283    # lw x5, 0(x12)      (load array[i])
+00940633    # add x12, x8, x9    (addr = base + j)
+00062303    # lw x6, 0(x12)      (load array[j])
+00535a63    # bge x6, x5, noswap
+00b40633    # add x12, x8, x11   (addr = base + i)
+00662023    # sw x6, 0(x12)      (store array[j] to array[i])
+00940633    # add x12, x8, x9    (addr = base + j)
+00562023    # sw x5, 0(x12)      (store array[i] to array[j])
+00448493    # addi x9, x9, 4     (j += 4)
+fca4cce3    # blt x9, x10, inner
+00458593    # addi x11, x11, 4   (i += 4)
+fcd5c6e3    # blt x11, x13, outer
+00000063    # beq x0, x0, end    (infinite loop)
