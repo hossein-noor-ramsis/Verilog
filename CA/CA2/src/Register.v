@@ -1,5 +1,5 @@
 module Register #(
-    parameter ID = "UNKNOWN"  // Add parameter for identification
+    parameter ID = "UNKNOWN"
 ) (
     input             clk,
     input             rst,
@@ -10,11 +10,9 @@ module Register #(
   always @(posedge clk) begin
     if (rst) begin
       q <= 32'd0;
-      // Uncomment when needed for debugging specific register
       if (we) $display("Reg %s: rst=%b, we=%b, d=%0d (0x%08h)", ID, rst, we, $signed(d), d);
     end else if (we) begin
       q <= d;
-      // Uncomment to debug specific register
       $display("Reg %s WRITE: d=%0d (0x%08h)", ID, $signed(d), d);
     end
   end

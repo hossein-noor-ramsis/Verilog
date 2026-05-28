@@ -9,7 +9,7 @@ module TestBench ();
   integer i;
   reg signed [31:0] actual_value;
 
-  // Expected sorted array (ascending order)
+  // Expected sorted array
   reg signed [31:0] expected[0:9];
   initial begin
     expected[0] = 1;
@@ -24,7 +24,7 @@ module TestBench ();
     expected[9] = 10;
   end
 
-  // Instantiate RISC-V processor
+  // Instantiate Processor
   Processor processor (
       .clk(clk),
       .rst(rst)
@@ -33,15 +33,6 @@ module TestBench ();
   // Clock generation
   always #5 clk = ~clk;
 
-  // ============================================
-  // Waveform Dumping - VCD File Generation
-  // ============================================
-  initial begin
-    $dumpfile("riscv_waveform.vcd");
-    $dumpvars(0, TestBench);
-    $display("Waveform dumping to 'riscv_waveform.vcd'");
-  end
-
   // Cycle-by-cycle logging
   integer cycle_count;
   always @(posedge clk) begin
@@ -49,8 +40,8 @@ module TestBench ();
       cycle_count = cycle_count + 1;
       $display("========================================");
       $display("Cycle %0d (Time=%0t ns)", cycle_count, $time);
-      $display("PC: %0d (0x%08h)", $signed(processor.datapath.old_pc_reg.q),
-               processor.datapath.old_pc_reg.q);
+      $display("PC: %0d (0x%08h)", $signed(processor.datapath.OldPCReg.q),
+               processor.datapath.OldPCReg.q);
       $display("Instruction: %0d (0x%08h)", $signed(processor.datapath.IReg.q),
                processor.datapath.IReg.q);
       $display("");
@@ -105,11 +96,11 @@ module TestBench ();
     $display("");
     $display("Executing...");
 
-    // Run program for limited cycles for debugging
-    repeat (5000) @(posedge clk);
+    // Run program for limited cycles
+    repeat (6000) @(posedge clk);
 
     $display("");
-    $display("=== DEBUG STOP AFTER 500 CYCLES ===");
+    $display("=== DEBUG STOP AFTER 6000 CYCLES ===");
     $display("");
     $display("Sorted array (decimal):");
 
@@ -143,13 +134,4 @@ module TestBench ();
     #20;
     $stop;
   end
-
-  // Watchdog timer
-  initial begin
-    // #100000;
-    $display("");
-    $display("TIMEOUT: Simulation stopped");
-    // $stop;
-  end
-
 endmodule

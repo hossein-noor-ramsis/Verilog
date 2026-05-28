@@ -64,7 +64,7 @@ module TestBench ();
     $display("Executing...");
 
     // Run program
-    repeat (200) @(posedge clk);
+    repeat (5000) @(posedge clk);
 
     $display("");
     $display("Sorted array:");
@@ -104,10 +104,10 @@ module TestBench ();
 
   // Watchdog timer
   initial begin
-    #10000;
+    // #10000;
     $display("");
     $display("TIMEOUT: Simulation stopped");
-    $stop;
+    // $stop;
   end
 
 endmodule

@@ -81,7 +81,7 @@ module DataPath (
   );
 
   // Old PC Register (for JAL return address)
-  Register #("old_pc_reg") old_pc_reg (
+  Register #("OldPCReg") OldPCReg (
       .clk(clk),
       .rst(rst),
       .we (OldPCWrite),
@@ -182,11 +182,10 @@ module DataPath (
   );
 
   // Result Mux (4-to-1) for writeback
-  Mux4To1 ResultMux (
+  Mux3To1 ResultMux (
       .in0(ALUOut),
       .in1(ALUResult),
       .in2(MDROut),
-      .in3(PCOut),
       .sel(ResultSrc),
       .out(Result)
   );
