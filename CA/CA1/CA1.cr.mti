@@ -89,11 +89,4 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	RegisterFile
 
-} {} {}} E:/Programming/Verilog/CA/CA1/tb/TestBench.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA1/tb/TestBench.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module TestBench
-
-Top level modules:
-	TestBench
-
 } {} {}}
