@@ -88,8 +88,8 @@ module Controller (
         case (func3)
           `beq: ALUControl = 3'b110;
           `bne: ALUControl = 3'b110;
-          `blt: ALUControl = 3'b111;
-          `bge: ALUControl = 3'b111;
+          `blt: ALUControl = 3'b100;
+          `bge: ALUControl = 3'b100;
         endcase
       end
     endcase

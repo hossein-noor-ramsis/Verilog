@@ -13,16 +13,16 @@ module TestBench ();
   // Expected sorted array (ascending order)
   reg signed [31:0] expected[0:9];
   initial begin
-    expected[0] = 1;
-    expected[1] = 2;
+    expected[0] = -4088;
+    expected[1] = 1;
     expected[2] = 3;
     expected[3] = 4;
     expected[4] = 5;
     expected[5] = 6;
     expected[6] = 7;
-    expected[7] = 8;
-    expected[8] = 9;
-    expected[9] = 10;
+    expected[7] = 9;
+    expected[8] = 196618;
+    expected[9] = 16711682;
   end
 
   // Instantiate RISC-V processor
