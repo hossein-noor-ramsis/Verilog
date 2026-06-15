@@ -16,7 +16,6 @@ module ALU (
       3'b010:  res = SrcA + SrcB;
       3'b110:  res = SrcA - SrcB;
       3'b011:  res = SrcA ^ SrcB;
-      3'b111:  res = SrcA < SrcB ? 'd1 : 'd0;  // unsigned
       3'b100:  res = $signed(SrcA) < $signed(SrcB) ? 'd1 : 'd0;  // signed
       default: res = 32'd0;
     endcase
