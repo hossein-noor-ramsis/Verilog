@@ -1,1 +1,204 @@
-project open {E:/Archive/Simister 4/DSD Lab/03/Lab3}
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of controller.v was successful.
+# Compile of DataMem.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of HazardUnit.v was successful.
+# Compile of ImmExt.v was successful.
+# Compile of InstMem.v was successful.
+# Compile of Mux2to1.v was successful.
+# Compile of Mux3to1.v was successful.
+# Compile of Mux4to1.v was successful.
+# Compile of Register.v was successful.
+# Compile of RegisterBlocks.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TestBench.v was successful.
+# 17 compiles, 1 failed with no errors.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of controller.v was successful.
+# Compile of DataMem.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of HazardUnit.v was successful.
+# Compile of ImmExt.v was successful.
+# Compile of InstMem.v was successful.
+# Compile of Mux2to1.v was successful.
+# Compile of Mux3to1.v was successful.
+# Compile of Mux4to1.v was successful.
+# Compile of Register.v was successful.
+# Compile of RegisterBlocks.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of TestBench.v was successful.
+# Compile of DFF.v was successful.
+# 18 compiles, 0 failed with no errors.
+vsim -gui work.TestBench
+# vsim -gui work.TestBench 
+# Start time: 14:59:12 on Jun 15,2026
+# Loading work.TestBench
+# Loading work.RISC_V
+# Loading work.Controller
+# Loading work.HazardUnit
+# Loading work.Decoder
+# Loading work.DataPath
+# Loading work.Mux3to1
+# Loading work.Register
+# Loading work.InstMemory
+# Loading work.Adder
+# Loading work.IF_ID_Regs
+# Loading work.RegisterFile
+# Loading work.ImmExt
+# Loading work.ID_EX_Regs
+# Loading work.Mux2to1
+# Loading work.ALU
+# Loading work.EX_Mem_Regs
+# Loading work.DataMem
+# Loading work.Mem_WB_Regs
+# Trace back: Error QStructure::sort: invalid command name ""
+#   <6:D:/mtitcl/vsim/qstructure.tc_:2478: ::QStructure::sort .main_pane.structure 0 descending
+#   <5:eval:1: ::QStructure::structsort .main_pane.structure 0 descending
+#   <4:eval:1: ::namespace inscope ::QStructure {structsort .main_pane.structure} 0 descending
+#   >3:proc:26: ::.main_pane.structure.interior.cs.body.struct sort 0 descending
+#   >2:proc:10: ::.main_pane.structure.interior.cs.body.struct _initializeSortColumn
+#   <1:eval:1: ::namespace inscope ::vsimwidgets::Hierarchy {::.main_pane.structure.interior.cs.body.struct _initializeSortColumn}
+add wave -position insertpoint sim:/TestBench/*
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "inst.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA3/src/InstMem.v(13)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/DP/IM
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA3/src/DataMem.v(18)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/DP/DataMemory
+# ========================================
+#     RISC-V Sorting Test
+# ========================================
+# 
+# Resetting processor...
+# Reset completed
+# 
+# Initial array:
+#   array[0] = x
+#   array[1] = x
+#   array[2] = x
+#   array[3] = x
+#   array[4] = x
+#   array[5] = x
+#   array[6] = x
+#   array[7] = x
+#   array[8] = x
+#   array[9] = x
+# 
+# Executing...
+# 
+# Sorted array:
+#   array[0] = x (expected -4088)
+#   array[1] = x (expected 1)
+#   array[2] = x (expected 3)
+#   array[3] = x (expected 4)
+#   array[4] = x (expected 5)
+#   array[5] = x (expected 6)
+#   array[6] = x (expected 7)
+#   array[7] = x (expected 9)
+#   array[8] = x (expected 196618)
+#   array[9] = x (expected 16711682)
+# 
+# ========================================
+#     Test Results Summary
+# ========================================
+# Array Elements Tested: 10
+# Passed: 0
+# Failed: 10
+# ========================================
+# SOME TESTS FAILED!
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA3/tb/TestBench.v(100)
+#    Time: 10009 ns  Iteration: 1  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA3/tb/TestBench.v line 100
+vsim -gui work.TestBench
+# End time: 14:59:34 on Jun 15,2026, Elapsed time: 0:00:22
+# Errors: 0, Warnings: 8
+# vsim -gui work.TestBench 
+# Start time: 14:59:34 on Jun 15,2026
+# Loading work.TestBench
+# Loading work.RISC_V
+# Loading work.Controller
+# Loading work.HazardUnit
+# Loading work.Decoder
+# Loading work.DataPath
+# Loading work.Mux3to1
+# Loading work.Register
+# Loading work.InstMemory
+# Loading work.Adder
+# Loading work.IF_ID_Regs
+# Loading work.RegisterFile
+# Loading work.ImmExt
+# Loading work.ID_EX_Regs
+# Loading work.Mux2to1
+# Loading work.ALU
+# Loading work.EX_Mem_Regs
+# Loading work.DataMem
+# Loading work.Mem_WB_Regs
+mem load -i E:/Programming/Verilog/CA/CA3/tb/data.mem -format hex /TestBench/risc_v/DP/DataMemory/data_mem
+mem load -i E:/Programming/Verilog/CA/CA3/tb/inst.mem -format hex -update_properties /TestBench/risc_v/DP/IM/inst_mem
+add wave -position insertpoint  \
+sim:/TestBench/risc_v/DP/DataMemory/clk \
+sim:/TestBench/risc_v/DP/DataMemory/we \
+sim:/TestBench/risc_v/DP/DataMemory/A \
+sim:/TestBench/risc_v/DP/DataMemory/WD \
+sim:/TestBench/risc_v/DP/DataMemory/ReadData \
+sim:/TestBench/risc_v/DP/DataMemory/data_mem \
+sim:/TestBench/risc_v/DP/DataMemory/i \
+sim:/TestBench/risc_v/DP/DataMemory/word_index
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "inst.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA3/src/InstMem.v(13)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/DP/IM
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : E:/Programming/Verilog/CA/CA3/src/DataMem.v(18)
+#    Time: 0 ns  Iteration: 0  Instance: /TestBench/risc_v/DP/DataMemory
+# ========================================
+#     RISC-V Sorting Test
+# ========================================
+# 
+# Resetting processor...
+# Reset completed
+# 
+# Initial array:
+#   array[0] = 5
+#   array[1] = 4
+#   array[2] = 6
+#   array[3] = 3
+#   array[4] = 16711682
+#   array[5] = -4088
+#   array[6] = 7
+#   array[7] = 1
+#   array[8] = 9
+#   array[9] = 196618
+# 
+# Executing...
+# 
+# Sorted array:
+#   array[0] = -4088 (expected -4088)
+#   array[1] = 1 (expected 1)
+#   array[2] = 3 (expected 3)
+#   array[3] = 4 (expected 4)
+#   array[4] = 5 (expected 5)
+#   array[5] = 6 (expected 6)
+#   array[6] = 7 (expected 7)
+#   array[7] = 9 (expected 9)
+#   array[8] = 196618 (expected 196618)
+#   array[9] = 16711682 (expected 16711682)
+# 
+# ========================================
+#     Test Results Summary
+# ========================================
+# Array Elements Tested: 10
+# Passed: 10
+# Failed: 0
+# ========================================
+# ALL TESTS PASSED!
+# ** Note: $stop    : E:/Programming/Verilog/CA/CA3/tb/TestBench.v(100)
+#    Time: 10009 ns  Iteration: 1  Instance: /TestBench
+# Break in Module TestBench at E:/Programming/Verilog/CA/CA3/tb/TestBench.v line 100
