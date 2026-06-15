@@ -159,21 +159,19 @@ module DataPath (
       RD2E
   );
 
-  Mux4to1 ForwardAMux (
+  Mux3to1 ForwardAMux (
       ForwardAE,
       RD1E,
       ResultW,
       ALUResultM,
-      ExtImmE,
       SrcAE
   );
 
-  Mux4to1 ForwardBMux (
+  Mux3to1 ForwardBMux (
       ForwardBE,
       RD2E,
       ResultW,
       ALUResultM,
-      ExtImmE,
       WriteDataE
   );
 
@@ -244,12 +242,11 @@ module DataPath (
       PCPlus4W
   );
 
-  Mux4to1 ResultSrcMux (
+  Mux3to1 ResultSrcMux (
       ResultSrcW,
       ALUResultW,
       ReadDataW,
       PCPlus4W,
-      ExtImmW,
       ResultW
   );
 

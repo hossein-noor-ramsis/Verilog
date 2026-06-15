@@ -1,6 +1,6 @@
 `define R_Type 7'b0110011
 `define I_Type 7'b0010011
-`define Lw 7'b0000011
+`define LW 7'b0000011
 `define Jalr 7'b1100111
 `define S_Type 7'b0100011
 `define J_Type 7'b1101111
@@ -12,14 +12,12 @@
 `define And 10'b0000_0001_11
 `define Or 10'b0000_0001_10
 `define Slt 10'b0000_0000_10
-`define Sltu 10'b0000_0000_11
 
 `define lw 3'b010
 `define addi 3'b000
 `define xori 3'b100
 `define ori 3'b110
 `define slti 3'b010
-`define sltiu 3'b011
 `define jalr 3'b000
 
 `define beq 3'b000
@@ -59,16 +57,15 @@ module Controller (
       `R_Type: begin
         RegWrite = 1'b1;
         case (func)
-          `Add:  ALUControl = 3'b010;
-          `Sub:  ALUControl = 3'b110;
-          `And:  ALUControl = 3'b000;
-          `Or:   ALUControl = 3'b001;
-          `Slt:  ALUControl = 3'b100;
-          `Sltu: ALUControl = 3'b111;
+          `Add: ALUControl = 3'b010;
+          `Sub: ALUControl = 3'b110;
+          `And: ALUControl = 3'b000;
+          `Or:  ALUControl = 3'b001;
+          `Slt: ALUControl = 3'b100;
         endcase
       end
 
-      `Lw: {RegWrite, ResultSrc, ALUSrc} = 4'b1011;
+      `LW: {RegWrite, ResultSrc, ALUSrc} = 4'b1011;
 
       `I_Type: begin
         {ALUSrc, RegWrite} = 2'b11;
@@ -77,10 +74,6 @@ module Controller (
           `xori: ALUControl = 3'b011;
           `ori:  ALUControl = 3'b001;
           `slti: ALUControl = 3'b100;
-          `sltiu: begin
-            ALUControl = 3'b111;
-            ImmSrc = 3'b101;
-          end
         endcase
       end
 
@@ -99,8 +92,6 @@ module Controller (
           `bge: ALUControl = 3'b111;
         endcase
       end
-
-      `U_Type: {ResultSrc, ImmSrc, RegWrite} = 6'b111001;
     endcase
   end
 
