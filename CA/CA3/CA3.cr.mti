@@ -82,6 +82,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Mux2to1
 
+} {} {}} E:/Programming/Verilog/CA/CA3/src/DFF.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA3/src/DFF.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module DFF
+
+Top level modules:
+	DFF
+
 } {} {}} E:/Programming/Verilog/CA/CA3/src/DataMem.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA3/src/DataMem.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module DataMem
@@ -89,12 +96,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	DataMem
 
-} {} {}} E:/Programming/Verilog/CA/CA3/src/Mux4to1.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA3/src/Mux4to1.v
+} {} {}} E:/Programming/Verilog/CA/CA3/src/ALU.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA3/src/ALU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Mux4to1
+-- Compiling module ALU
 
 Top level modules:
-	Mux4to1
+	ALU
 
 } {} {}} E:/Programming/Verilog/CA/CA3/src/HazardUnit.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA3/src/HazardUnit.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -103,12 +110,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	HazardUnit
 
-} {} {}} E:/Programming/Verilog/CA/CA3/src/ALU.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA3/src/ALU.v
+} {} {}} E:/Programming/Verilog/CA/CA3/src/Mux4to1.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA3/src/Mux4to1.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ALU
+-- Compiling module Mux4to1
 
 Top level modules:
-	ALU
+	Mux4to1
 
 } {} {}} E:/Programming/Verilog/CA/CA3/src/RegisterBlocks.v {1 {vlog -work work -stats=none E:/Programming/Verilog/CA/CA3/src/RegisterBlocks.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
